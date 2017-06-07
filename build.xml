@@ -4,6 +4,7 @@
         Builds an ISE3-based website from a TEI dataset.
     </description>
 
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
     <taskdef name="schematron"
         classpath="lib/ant-schematron-2010-04-14.jar"
         classname="com.schematron.ant.SchematronTask"/>
@@ -12,10 +13,22 @@
 
     <target name="dist" depends="validate">
         <!-- create distribution artifacts, eg. HTML, derived TEI, eXist app -->
+        <overridableFilter file="exist-app.properties"/>
+        <!--copy todir="dist" filtering="true"/-->
     </target>
 
     <target name="validate">
         <!-- make sure everything validates according to its schema -->
     </target>
-    
+
+    <macrodef name="overridableFilter">
+        <attribute name="file"/>
+        <filter filtersfile="${file}"/>
+        <if>
+            <available file="${data}/${file}"/>
+            <then>
+                <filter filtersfile="${data}/${file}"/>
+            </then>
+        </if>
+    </macrodef>
 </project>

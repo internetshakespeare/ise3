@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <meta xmlns="http://exist-db.org/xquery/repo">
-    <description>Internet Shakespeare Editions</description>
-    <author>Internet Shakespeare Editions</author>
-    <website>http://internetshakespeare.uvic.ca</website>
+    <description>@description@</description>
+    <author>@author@</author>
+    <website>@website@</website>
     <status>alpha</status>
     <license>none</license>
     <copyright>true</copyright>
     <type>application</type>
-    <target>ise</target>
-    <permissions user="ise" password="" group="ise" mode="rw-r--r--"/>
+    <target>@abbrev@</target>
+    <permissions
+        user="@user@"
+        group="@group@"
+        password="@password@"
+        mode="rw-r--r--"
+    />
     <prepare>pre-install.xql</prepare>
     <finish/>
 </meta>

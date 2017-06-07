@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package xmlns="http://expath.org/ns/pkg" name="http://internetshakespeare.uvic.ca/exist/apps/ise" abbrev="ise" version="0.0.1" spec="1.0">
-    <title>Internet Shakespeare Editions</title>
+<package xmlns="http://expath.org/ns/pkg" spec="1.0"
+    name="@name@"
+    abbrev="@abbrev@"
+    version="@version@"
+>
+    <title>@title@</title>
     <dependency processor="eXist-db" version="3.2"/>
 </package>
