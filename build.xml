@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="ise3_contentBuild" default="all">
+    <description>
+        Builds an ISE3-based website from a TEI dataset.
+    </description>
+
+    <taskdef name="schematron"
+        classpath="lib/ant-schematron-2010-04-14.jar"
+        classname="com.schematron.ant.SchematronTask"/>
+    
+    <target name="all" depends="dist"/>
+
+    <target name="dist" depends="validate">
+        <!-- create distribution artifacts, eg. HTML, derived TEI, eXist app -->
+    </target>
+
+    <target name="validate">
+        <!-- make sure everything validates according to its schema -->
+    </target>
+    
+</project>

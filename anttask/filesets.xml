@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir=".." name="ise3_filesets" default="">
+    <fileset id="xsl">
+        <include name="**.xsl"/>
+    </fileset>
+    <fileset id="odd">
+        <include name="**.odd"/>
+    </fileset>
+    <fileset id="sch">
+        <include name="**.sch"/>
+    </fileset>
+    <fileset id="ant">
+        <include name="build.xml"/>
+        <include name="anttask/**.xml"/>
+    </fileset>
+    
+    <fileset id="exist-xml">
+        <include name="expath-pkg/**.xml"/>
+    </fileset>
+    
+    <fileset id="xml">
+        <union>
+            <resources refid="exist-xml"/>
+            <resources refid="xsl"/>
+            <resources refid="odd"/>
+            <resources refid="sch"/>
+            <resources refid="ant"/>
+        </union>
+    </fileset>
+</project>
