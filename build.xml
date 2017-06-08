@@ -13,7 +13,7 @@
 
     <target name="dist" depends="validate">
         <!-- create distribution artifacts, eg. HTML, derived TEI, eXist app -->
-        <overridableFilter file="exist-app.properties"/>
+        <overridableFilter using="exist-app.properties"/>
         <!--copy todir="dist" filtering="true"/-->
     </target>
 
@@ -22,13 +22,15 @@
     </target>
 
     <macrodef name="overridableFilter">
-        <attribute name="file"/>
-        <filter filtersfile="${file}"/>
-        <if>
-            <available file="${data}/${file}"/>
-            <then>
-                <filter filtersfile="${data}/${file}"/>
-            </then>
-        </if>
+        <attribute name="using"/>
+        <sequential>
+            <filter filtersfile="@{using}"/>
+            <if>
+                <available file="${data}/@{using}"/>
+                <then>
+                    <filter filtersfile="${data}/@{using}"/>
+                </then>
+            </if>
+        </sequential>
     </macrodef>
 </project>
