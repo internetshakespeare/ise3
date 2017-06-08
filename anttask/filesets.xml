@@ -19,12 +19,10 @@
     </fileset>
     
     <fileset id="xml">
-        <union>
-            <resources refid="exist-xml"/>
-            <resources refid="xsl"/>
-            <resources refid="odd"/>
-            <resources refid="sch"/>
-            <resources refid="ant"/>
-        </union>
+        <include name="**.xml"/>
+        <include name="**.xsl"/>
+        <include name="**.sch"/>
+        <include name="**.odd"/>
+        <include name="**.rng"/>
     </fileset>
 </project>
