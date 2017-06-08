@@ -8,29 +8,38 @@
     <taskdef name="schematron"
         classpath="lib/ant-schematron-2010-04-14.jar"
         classname="com.schematron.ant.SchematronTask"/>
-    
-    <target name="all" depends="dist"/>
 
-    <target name="dist" depends="validate">
-        <!-- create distribution artifacts, eg. HTML, derived TEI, eXist app -->
-        <overridableFilter using="exist-app.properties"/>
-        <!--copy todir="dist" filtering="true"/-->
-    </target>
+    <import file="anttask/overridable.xml"/>
+
+
+    <target name="all" depends="validate, build, package"/>
 
     <target name="validate">
         <!-- make sure everything validates according to its schema -->
     </target>
 
-    <macrodef name="overridableFilter">
-        <attribute name="using"/>
-        <sequential>
-            <filter filtersfile="@{using}"/>
-            <if>
-                <available file="${data}/@{using}"/>
-                <then>
-                    <filter filtersfile="${data}/@{using}"/>
-                </then>
-            </if>
-        </sequential>
-    </macrodef>
+    <target name="build">
+        <!-- TODO: generate derivative TEI, HTML, etc -->
+        <mkdir dir="build/data"/>
+        <!-- TODO: any processing needed of web resources? -->
+        <!-- apply filters to expath-pkg -->
+        <overridableFilter using="exist-app.properties"/>
+        <copy todir="build/expath-pkg">
+            <fileset dir="expath-pkg"/>
+        </copy>
+    </target>
+
+    <target name="package">
+        <overridableProperties using="exist-app.properties"/>
+        <zip destfile="build/${abbrev}-${version}.xar">
+            <fileset dir="build/expath-pkg"/>
+            <zipfileset dir="build/data" prefix="content"/>
+            <zipfileset dir="web" prefix="content"/>
+        </zip>
+    </target>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
 </project>

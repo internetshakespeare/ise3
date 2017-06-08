@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir=".." name="ise3_overridable">
+
+    <macrodef name="overridableFilter">
+        <attribute name="using"/>
+        <sequential>
+            <filter filtersfile="@{using}"/>
+            <if>
+                <available file="${data}/@{using}"/>
+                <then>
+                    <filter filtersfile="${data}/@{using}"/>
+                </then>
+            </if>
+        </sequential>
+    </macrodef>
+
+    <macrodef name="overridableProperties">
+        <attribute name="using"/>
+        <sequential>
+            <property file="@{using}"/>
+            <if>
+                <available file="${data}/@{using}"/>
+                <then>
+                    <property file="${data}/@{using}"/>
+                </then>
+            </if>
+        </sequential>
+    </macrodef>
+
+</project>
