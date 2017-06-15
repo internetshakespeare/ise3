@@ -3,39 +3,56 @@
     xmlns:sqf="http://www.schematron-quickfix.com/validator/process">
     
     <pattern>
-        <rule context="text()[contains(., '\n')]">
-            <report test="matches(., '\n\s*\t')">
+        <rule context="*[text()[contains(., '\n')]]">
+            <report test="some $txt in text() satisfies matches(., '\n\s*\t')">
                 Indentation must not use hard tabs; use spaces instead.
             </report>
-            
-            <let name="nestingLevel" value="count(ancestor::*)"/>
-            <let name="isLastChild" value="parent::*/*[last()] is ."/>
-            <let name="lineStarts" value="
-                tokenize(., '\n')[position() gt 1][
-                    position() eq last() or
-                    matches(., '\S')
-                ]
+
+            <let name="lastChild" value="node()[last()]"/>
+
+            <let name="nestingLevel" value="count(ancestor::*) + 1"/>
+            <let name="indentSpaces" value="4"/>
+            <let name="internalIndents" value="
+                for $txt in text()[contains(., '\n')],
+                    $line in tokenize($txt, '\n')
+                        [position() gt 1]
+                        [
+                            not($txt is $lastChild)
+                            or
+                            position() ne last()
+                        ]
+                return
+                    replace($line, '\S.*$', '')
             "/>
-            <assert test="(
-               (every $indent in
-                   $lineStarts[
-                       not($isLastChild) or
-                       (position() ne last())
-                   ]
-                   satisfies (
-                        string-length(replace($indent, '\S.*$', ''))
-                        eq
-                        ($nestingLevel * 4)
-                   )
-                )
-                and
-                (every $indent in $lineStarts[last()][$isLastChild] satisfies (
-                    string-length(replace($indent, '\S.*$', ''))
-                    eq
-                    (($nestingLevel - 1) * 4)
-                ))
-            )">
+            <assert test="
+                every $indent in ($internalIndents)
+                satisfies string-length($indent) eq ($nestingLevel * $indentSpaces)
+            ">
                 Lines should be indented by 4 spaces for every level of nesting.
+            </assert>
+
+            <let name="finalIndentLength" value="
+                ($indentSpaces * ($nestingLevel - 1))
+            "/>
+            <let name="finalIndent" value="
+                string-join(
+                    for $s in (1 to $finalIndentLength)
+                    return ' '
+                    ,
+                    ''
+                )
+            "/>
+            <assert test="
+                not($lastChild instance of text())
+                or
+                ends-with(
+                    $lastChild,
+                    concat('\n', $finalIndent)
+                )
+            ">
+                Expecting closing tag to be indented
+                <value-of select="$finalIndentLength"/>
+                spaces.
             </assert>
         </rule>
     </pattern>
