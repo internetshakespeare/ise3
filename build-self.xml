@@ -4,9 +4,7 @@
         Builds schemas and tools for the ISE3 platform
     </description>
 
-    <taskdef name="schematron"
-        classpath="lib/ant-schematron-2010-04-14.jar"
-        classname="com.schematron.ant.SchematronTask"/>
+    <taskdef name="schematron" classname="com.schematron.ant.SchematronTask"/>
     
     <import file="anttask/filesets.xml"/>
 
@@ -15,6 +13,7 @@
     <target name="codestyle">
         <schematron
             schema="codestyle/indentation.sch"
+            queryLanguageBinding="xslt2"
             diagnose="yes"
             failOnError="true">
             <fileset refid="xml"/>
