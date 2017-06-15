@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir=".." name="ise3_filesets">
-    <fileset id="xsl">
+    <fileset id="xsl" dir=".">
         <include name="**.xsl"/>
+        <exclude name="xsl/schematron/**"/>
     </fileset>
-    <fileset id="odd">
+    <fileset id="odd" dir=".">
         <include name="**.odd"/>
     </fileset>
-    <fileset id="sch">
+    <fileset id="sch" dir=".">
         <include name="**.sch"/>
     </fileset>
-    <fileset id="ant">
+    <fileset id="ant" dir=".">
         <include name="build.xml"/>
+        <include name="build-self.xml"/>
         <include name="anttask/**.xml"/>
     </fileset>
     
-    <fileset id="exist-xml">
+    <fileset id="exist-xml" dir=".">
         <include name="expath-pkg/**.xml"/>
     </fileset>
     
-    <fileset id="xml">
-        <include name="**.xml"/>
-        <include name="**.xsl"/>
-        <include name="**.sch"/>
-        <include name="**.odd"/>
-        <include name="**.rng"/>
+    <fileset id="xml" dir=".">
+        <include name="**/*.xml"/>
+        <include name="**/*.xsl"/>
+        <include name="**/*.sch"/>
+        <include name="**/*.odd"/>
+        <include name="**/*.rng"/>
+        <exclude name="xsl/schematron/**"/>
+        <exclude name="**/.*"/>
     </fileset>
 </project>
