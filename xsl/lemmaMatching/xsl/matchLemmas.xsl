@@ -52,7 +52,8 @@
         <xsl:variable name="termTokens" select="tokenize(normalize-space($term),'\s*\.\s*\.\s*\.\s*')" as="xs:string+"/>
         <xsl:variable name="termCount" select="count($termTokens)"/>
         <xsl:if test="$termCount gt 2">
-            <xsl:message terminate="yes">Found <xsl:value-of select="$termCount"/> term tokens!</xsl:message>
+            <xsl:message>ERROR: "<xsl:value-of select="$term"/>" (<xsl:value-of select="$from"/>-<xsl:value-of select="$to"/>) is incorrectly delimited (<xsl:value-of select="$termCount"/> tokens).</xsl:message>
+            <xsl:message terminate="yes">Aborting.</xsl:message>
         </xsl:if>
        <!-- <xsl:message>Checking <xsl:value-of select="$term"/></xsl:message>-->
         <xsl:variable name="points" as="xs:string*">
