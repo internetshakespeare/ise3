@@ -17,12 +17,20 @@
         </xd:desc>
     </xd:doc>
     
-    <xsl:output indent="yes" encoding="UTF-8"/>
+    <xsl:output indent="no" encoding="UTF-8"/>
     
-    <xsl:param name="sourceText" select="document('../xml/iseH5_FM.xml')"/>
-    <xsl:param name="apparatus" select="document('../xml/iseH5_FM_annotations.xml')"/>
-    <xsl:variable name="docOutPath" select="'../results/iseH5_FM_withMilestones.xml'"/>
-    <xsl:variable name="appOutPath" select="'../results/iseH5_FM_annotations_withMilestones.xml'"/>
+    
+    <xsl:param name="sourceText" select="document('../../../../svn/data/texts/H5/iseH5_FM.xml')"/>
+    <xsl:param name="apparatus" select="document('../../../../svn/data/texts/H5/iseH5_FM_annotations.xml')"/>
+    <!--<xsl:param name="sourceText" select="document('../xml/iseH5_FM_test.xml')"/>
+    <xsl:param name="apparatus" select="document('../xml/iseH5_FM_annotations_test.xml')"/>-->
+    <xsl:param name="outPath" select="'../results/'"/>
+    <xsl:variable name="sourceUri" select="document-uri($sourceText)"/>
+    <xsl:variable name="sourceId" select="$sourceText//TEI/@xml:id"/>
+    <xsl:variable name="appId" select="$apparatus//TEI/@xml:id"/>
+    <xsl:variable name="docResultsUri" select="resolve-uri(concat($outPath,$sourceId,'.xml'))"/>
+    <xsl:variable name="appResultsUri" select="resolve-uri(concat($outPath,$appId,'.xml'))"/>
+  
     <xsl:variable name="excludedElements" select="'teiHeader'"/>
     <xsl:variable name="sourceTextWithChars">
         <xsl:apply-templates select="$sourceText" mode="firstPass"/>
@@ -38,17 +46,15 @@
         <xsl:call-template name="addMilestonesToApparatus"/>
     </xsl:variable>
     
-    
-    <!--This has to be figured out a bit better-->
-    <xsl:variable name="apps" select="$apparatus//app"/>
-    <xsl:variable name="notes" select="$apparatus//note"/>
+    <xsl:key name="c-to-appFrom" match="*" use="concat($docResultsUri,'#',@from)"/>
+    <xsl:key name="c-to-appTo" match="*" use="concat($docResultsUri,'#',@to)"/>
     
     <xsl:template match="/">
-        <xsl:message>Matching apparatus...</xsl:message>
-        <xsl:result-document href="{$docOutPath}">
+      <xsl:message>Correlating apparatus and text...</xsl:message>
+        <xsl:result-document href="{$docResultsUri}">
             <xsl:copy-of select="$finalText"/>    
         </xsl:result-document>
-        <xsl:result-document href="{$appOutPath}">
+        <xsl:result-document href="{$appResultsUri}">
            <xsl:copy-of select="$appsWithPointers"/>
         </xsl:result-document>
     </xsl:template>
@@ -60,28 +66,32 @@
     
     
   
-    <xsl:template match="note/span" mode="modifyApparatus">
-        <xsl:variable name="term" select="following-sibling::term"/>
-        <xsl:message>Checking <xsl:value-of select="$term"/></xsl:message>
+    <xsl:template match="note/span | app" mode="modifyApparatus">
+        
+        <!--<xsl:message>Checking <xsl:value-of select="if (self::span) then following-sibling::term else lem"/></xsl:message>-->
         <xsl:copy>
-            <xsl:attribute name="from" select="concat('iseH5_FM_withMilestones.xml#',hcmc:getCharId(parent::note,'start'))"/>
-            <xsl:attribute name="to" select="concat('iseH5_FM_withMilestones.xml#',hcmc:getCharId(parent::note,'end'))"/>
+            <!--This function can likely be shorted so that it can output both the @to and @from
+                attributes-->
+            <xsl:attribute name="from" select="concat($docResultsUri,'#',hcmc:getCharId(if (self::span) then parent::note else self::app,'start'))"/>
+            <xsl:attribute name="to" select="concat($docResultsUri,'#', hcmc:getCharId(if (self::span) then parent::note else self::app,'end'))"/>
+            <xsl:apply-templates mode="#current"/>
         </xsl:copy>
     </xsl:template>
     
+        
     
     <xsl:function name="hcmc:getCharId">
-        <xsl:param name="note" as="element()"/>
+        <xsl:param name="app" as="element()"/>
         <xsl:param name="place" as="xs:string"/>
-        
-        <xsl:variable name="term" select="$note/term"/>
+        <xsl:variable name="isAnnotation" select="if ($app/local-name()='note') then true() else false()"/>
+        <xsl:variable name="term" select="if ($isAnnotation) then normalize-space(string-join($app/term/text(),'')) else normalize-space(string-join($app/lem/text(),''))" as="xs:string"/>
         
         <!--Froms are necessary, tos are not-->
-        <xsl:variable name="from" select="$note/span/@from" as="attribute(from)"/>
+        <xsl:variable name="from" select="if ($isAnnotation) then $app/span/@from else $app/@from" as="attribute(from)"/>
         
         <!--We have to be more cautious if the phrase is across a line-->
         
-        <xsl:variable name="to" select="if ($note/span/@to) then $note/span/@to else $from" as="attribute()"/>
+        <xsl:variable name="to" select="if ($isAnnotation) then if ($app/span/@to) then $app/span/@to else $from else if ($app/@to) then $app/@to else $from" as="attribute()"/>
         
         <!--Tokenize the term based on elipses-->
         <xsl:variable name="termTokens" select="tokenize(normalize-space($term),'\s*\.\s*\.\s*\.\s*')" as="xs:string+"/>
@@ -94,29 +104,22 @@
         
         <!--We check up one if its the 'end' test, since many end lemmas will cross across lines-->
         
-        <xsl:variable name="tlnToCheck" select="if ($place='start') then substring-after($from,'tln:') else number(substring-after($to,'tln:'))"/>
+        <xsl:variable name="tlnToCheck" select="if ($place='start') then substring-after($from,'tln:') else substring-after($to,'tln:')"/>
         
         <!--TLN to check-->
         <xsl:variable name="thisTln" select="$sourceTextWithCharIds//lb[@type='tln'][@n=$tlnToCheck]" as="element(lb)"/>
-        <xsl:variable name="nextTln" select="$thisTln/following::lb[@type='tln'][1]" as="element(lb)"/>
+        <xsl:variable name="precedingTln" select="$thisTln/preceding::lb[@type='tln'][1]"/>
+        <xsl:variable name="thisTlnId" select="generate-id($thisTln)"/>
+        <xsl:variable name="precedingTlnId" select="generate-id($precedingTln)"/>
+        <xsl:variable name="followingChars" select="$thisTln/following::c[generate-id(preceding::lb[@type='tln'][1])=$thisTlnId]"/>
+        <xsl:variable name="charsToProcess" select="if ($place='end') then ($thisTln/preceding::c[position() lt $termCharCount],$followingChars) else $followingChars" as="element(c)+"/>
         
-        <xsl:variable name="followingChars" as="element(c)+">
-            <xsl:choose>
-                <xsl:when test="$place='end'">
-                    <xsl:sequence select="$thisTln/preceding::c[position() lt $termCharCount],$thisTln/following::c[generate-id(preceding::lb[@type='tln'][1])=generate-id($thisTln)]"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:sequence select="$thisTln/following::c[generate-id(preceding::lb[@type='tln'][1])=generate-id($thisTln)]"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-
+        <xsl:message>Checking <xsl:value-of select="$termToCheck"/> (TLN <xsl:value-of select="$tlnToCheck"/>)</xsl:message>
         <xsl:variable name="idToReturn" as="xs:string*">
-            <xsl:for-each select="$followingChars[starts-with($termToCheck,@n)]">
+            <xsl:for-each select="$charsToProcess[starts-with($termToCheck,@n)]">
                 <xsl:variable name="thisChar" select="."/>
                 <xsl:variable name="charSeq" select="($thisChar, following::c[position() lt $termCharCount])"/>
                 <xsl:variable name="concattedChars" select="string-join($charSeq,'')"/>
-                <xsl:message><xsl:value-of select="$concattedChars"/>: <xsl:value-of select="string-length($concattedChars)"/></xsl:message>
                 <xsl:if test="$concattedChars = $termToCheck">
                     <xsl:value-of select="if ($place='start') then $thisChar/@xml:id else $charSeq[last()]/@xml:id"/>
                 </xsl:if>             
@@ -125,16 +128,16 @@
         
         <xsl:choose>
             <xsl:when test="count($idToReturn) = 1">
-                <xsl:message>Found match.</xsl:message>
+              <!--  <xsl:message>Found match.</xsl:message>-->
             </xsl:when>
             <xsl:when test="count($idToReturn) gt 1">
-                <xsl:message>Found too many matches!</xsl:message>
+                <xsl:message>Found too many matches! Returning the first one by default. (<xsl:value-of select="$termToCheck"/> (TLN <xsl:value-of select="$tlnToCheck"/>))</xsl:message>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:message>No match found.</xsl:message>
+                <xsl:message>No match found. (<xsl:value-of select="$termToCheck"/> (TLN <xsl:value-of select="$tlnToCheck"/>))</xsl:message>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:value-of select="$idToReturn"/>
+        <xsl:value-of select="$idToReturn[1]"/>
     </xsl:function>
     
     
@@ -156,7 +159,7 @@
             <xd:p>This template tokenizes the text.</xd:p>
         </xd:desc>
     </xd:doc>
-    <xsl:template match="text()[ancestor::body]" name="tokenizeText" mode="firstPass">
+    <xsl:template match="text()[ancestor::text]" name="tokenizeText" mode="firstPass">
         <xsl:analyze-string select="." regex="." flags="s">
             <xsl:matching-substring>
                 <c n="{.}"><xsl:value-of select="."/></c>
@@ -166,16 +169,20 @@
     
     <!--Third pass cleaning transform, which just gets rid of the temporary stuff made in pass 1-->
     
+ <!--   <xsl:template match="c" mode="clean">
+        <xsl:apply-templates mode="#current"/>
+    </xsl:template>
+    -->
     <xsl:template match="c" mode="clean">
-        
+        <xsl:variable name="thisId" select="concat($docResultsUri,'#',@xml:id)"/>
         <xsl:choose>
-            <xsl:when test="concat('iseH5_FM_withMilestones.xml#',@xml:id) = $appsWithPointers//@from">
+            <xsl:when test="$appsWithPointers//@from=$thisId">
                 <anchor>
                     <xsl:attribute name="xml:id" select="@xml:id"/>
                 </anchor>
                 <xsl:apply-templates mode="#current"/>
             </xsl:when>
-            <xsl:when test="concat('iseH5_FM_withMilestones.xml#',@xml:id)=$appsWithPointers//@to">
+            <xsl:when test="$appsWithPointers//@to=$thisId">
                 <xsl:apply-templates mode="#current"/>
                 <anchor>
                     <xsl:attribute name="xml:id" select="@xml:id"/>
@@ -187,6 +194,8 @@
         </xsl:choose>
        
     </xsl:template>
+    
+
     
     
     <!--Identity transform; applies to all modes-->
