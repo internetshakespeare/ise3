@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="Match lemmas" default="all">
+  <description>This ant build matches text from an apparatus file and adds anchors to the source text.</description>
+    
+    
+    <fileset dir="results" id="results">
+        <include name="**.xml"/>
+    </fileset>
+    
+    <property name="xmlDir" value="xml"/>
+    
+    
+    <!--Properties for running test text-->
+    <property name="mlaId" value="H5"/>
+    <property name="text" value="FM"/>
+    <property name="app" value="annotations"/>
+   
+    <property name="svnXmlDir" value="../../../svn/data/texts/${mlaId}"/>
+
+    
+    <property name="dirToUse" value="${svnXmlDir}"/>
+    <!--Depends on mlaId, text, app-->
+    <property name="iseId" value="ise${mlaId}"/>
+    <property name="textBase" value="${iseId}_${text}"/>
+
+    <property name="appBase" value="${textBase}_${app}"/>
+
+    <property name="resultsDir" value="results"/>
+    
+    <!--SVN Texts-->
+    <!--Text-->
+    <property name="sourceXml" value="${textBase}.xml"/>
+    <property name="tokenizedXml" value="${textBase}_tokenized.xml"/>
+    <property name="finalSourceXml" value="${textBase}_final.xml"/>
+    
+    <!--Apparatus-->
+    <property name="sourceApparatusXml" value="${appBase}.xml"/>
+    <property name="finalApparatusXml" value="${appBase}_final.xml"/>
+    
+    <property name="sourceToTransform" value="${dirToUse}/${sourceXml}"/>
+    <property name="apparatusToTransform" value="${dirToUse}/${sourceApparatusXml}"/>
+    
+  <target name="init">
+      <echo message="Cleaning up previous run..."/>
+      <delete>
+          <fileset refid="results"/>
+      </delete>
+  </target>  
+  
+  <target name="tokenizeText">
+      <echo message="First, tokenize text"/>
+      <xslt in="${sourceToTransform}" out="${resultsDir}/${tokenizedXml}" style="xsl/tokenizeText.xsl">
+          <classpath path="../../lib/saxon9he.jar"/>
+          <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+      </xslt>
+  </target>
+    
+  <target name="matchLemmas">
+      <echo message="Now, matching the tokenized text..."/>
+      <java classname="net.sf.saxon.Transform" classpath="../../lib/saxon9he.jar" fork="true">
+          <jvmarg value="-Xmx1024m"/>
+          <arg value="-s:${apparatusToTransform}"/>
+          <arg value="-o:${resultsDir}/${finalApparatusXml}"/>
+          <arg value="-xsl:xsl/matchLemmas.xsl"/>
+          <arg value="tokenizedXml=../${resultsDir}/${tokenizedXml}"/>
+          <arg value="docResultsPath=${finalSourceXml}"/>
+      </java>
+  </target>
+    
+  <target name="cleanText">
+      <echo message="Now, cleaning up the tokenized text so only necessary anchors remain..."/>
+      <java classname="net.sf.saxon.Transform" classpath="../../lib/saxon9he.jar" fork="true">
+          <jvmarg value="-Xmx1024m"/>
+          <arg value="-s:${resultsDir}/${tokenizedXml}"/>
+          <arg value="-xsl:xsl/cleanText.xsl"/>
+          <arg value="-o:${resultsDir}/${finalSourceXml}"/>
+          <arg value="apparatusDocPath=../${resultsDir}/${finalApparatusXml}"/>
+      </java>
+  </target>
+    
+    <target name="all">
+        <antcall target="init"/>
+        <antcall target="tokenizeText"/>
+        <antcall target="matchLemmas"/>
+        <antcall target="cleanText"/>
+    </target>
+  
+</project>
