@@ -96,9 +96,6 @@
         
         <xsl:variable name="tlnToCheck" select="if ($place='start') then substring-after($from,'tln:') else number(substring-after($to,'tln:'))"/>
         
-        
-        
-        
         <!--TLN to check-->
         <xsl:variable name="thisTln" select="$sourceTextWithCharIds//lb[@type='tln'][@n=$tlnToCheck]" as="element(lb)"/>
         <xsl:variable name="nextTln" select="$thisTln/following::lb[@type='tln'][1]" as="element(lb)"/>
@@ -125,6 +122,7 @@
                 </xsl:if>             
             </xsl:for-each>
         </xsl:variable>
+        
         <xsl:choose>
             <xsl:when test="count($idToReturn) = 1">
                 <xsl:message>Found match.</xsl:message>
