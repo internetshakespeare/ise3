@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Test annotation document for Henry V</title>
+            <author>Joey Takeda</author>
+         </titleStmt>
+         <publicationStmt>
+            <p>Published solely as a test case for lemma matching; no critical
+            significance.</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Born digital.</p>
+         </sourceDesc>
+      </fileDesc>
+     <encodingDesc>
+        <listPrefixDef>
+           <prefixDef ident="tln"
+              matchPattern="(.+)"
+              replacementPattern="doc:iseH5_FM#$1">
+              <p>The tln prefix def matches a TLN in a document.</p>
+           </prefixDef>
+        </listPrefixDef>
+     </encodingDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <div>
+            <note>
+               <span from="tln:866"/>
+                  <term>shog</term>
+                  <gloss>A simple one.</gloss>
+               
+            </note>
+            <note>
+               <span from="tln:882" to="tln:883"/>
+                  <term>I thee command</term>
+                  <gloss>A phrase that goes across a TLN milestone.</gloss>
+               
+            </note>
+            <note>
+               <span from="tln:871" to="tln:873"/>
+                  <term>men's faiths are . . . be thy counselor</term>
+                  <gloss>A particularly complicated gloss across many hierarchies.</gloss>
+               
+            </note>
+            <note>
+               <span from="tln:871"/>
+                  <term>men's faiths</term>
+                  <gloss>Another note on the same term.</gloss>
+               
+            </note>
+            <note>
+               <span from="tln:879"/>
+                  <term>Kisses her</term>
+                  <gloss>A phrase in a stage direction.</gloss>
+               
+            </note>
+           <note>
+              <span from="tln:873"/>
+              <term>food, they say</term>
+              <gloss>Wrong.</gloss>
+           </note>
+            <note>
+               <span from="tln:879"/>
+               <term>mouth and march</term>
+               <gloss>Seeing if it attempts to find more than one.</gloss>
+            </note>
+          </div>
+      </body>
+  </text>
+</TEI>
