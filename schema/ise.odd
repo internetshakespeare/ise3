@@ -30,9 +30,9 @@
         <moduleRef key="textcrit" include="app lem listApp listWit rdg wit witDetail witness"/>
         <moduleRef key="tei"/>
         <moduleRef key="textstructure" include="TEI back body byline closer dateline div docAuthor docDate docEdition docImprint docTitle front group opener text titlePage titlePart trailer"/>
-        <moduleRef key="transcr" include="fw space"/>
+        <moduleRef key="transcr" include="fw space supplied"/>
         
-        <classSpec ident="att.pointing.group" type="atts" module="tei" mode="delete"/>
+        <!--   <classSpec ident="att.pointing.group" type="atts" module="tei" mode="delete"/>
         <classSpec ident="att.ranging" type="atts" module="tei" mode="delete"/>
         <classSpec ident="att.readFrom" type="atts" module="tei" mode="delete"/>
         <classSpec ident="att.repeatable" type="atts" module="tei" mode="delete"/>
@@ -42,7 +42,7 @@
         <classSpec ident="att.textCritical" type="atts" module="tei" mode="delete"/>
         <classSpec ident="att.timed" type="atts" module="tei" mode="delete"/>
         <classSpec ident="att.transcriptional" type="atts" module="tei" mode="delete"/>
-        <classSpec ident="att.translatable" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.translatable" type="atts" module="tei" mode="delete"/>-->
         
       </schemaSpec>
     </body>
