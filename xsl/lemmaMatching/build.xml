@@ -11,8 +11,8 @@
     
     
     <!--Properties for running test text-->
-    <property name="mlaId" value="H5"/>
-    <property name="text" value="FM"/>
+    <property name="mlaId" value="JC"/>
+    <property name="text" value="M"/>
     <property name="app" value="annotations"/>
    
     <property name="svnXmlDir" value="../../../svn/data/texts/${mlaId}"/>

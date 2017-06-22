@@ -2,7 +2,7 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="iseH5_FM_annotations_test">
   <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -30,45 +30,3599 @@
   <text>
       <body>
          <div>
-            <note>
-               <span from="tln:866"/>
-                  <term>shog</term>
-                  <gloss>A simple one.</gloss>
-               
+                     <note>
+               <span from="tln:2" to="tln:35" n="1-34"/>
+      
+               <term>O for a . . . our play.</term>
+               <note type="level-2">Listen to <ref target="sip:artifact:30244" rend="lightbox:artifact:30244#standard">a recording of the Chorus's opening speech in
+            "original pronunciation."</ref> This approximation of the phonetics of
+         sixteenth-century English is drawn from studies of rhyme and pun in contemporary poetry,
+         from patterns of linguistic evolution, and from early modern philologists' manuals of
+         English spelling, rhetoric, and pronunciation. It follows the principles described by
+         linguist David Crystal in <hi rend="simple:italic">Pronouncing Shakespeare: The Globe Experiment </hi>(Cambridge:
+         Cambridge University Press, 2005).</note>
             </note>
+
             <note>
-               <span from="tln:882" to="tln:883"/>
-                  <term>I thee command</term>
-                  <gloss>A phrase that goes across a TLN milestone.</gloss>
-               
+               <span from="tln:2" n="1"/>
+      
+               <term>muse</term>
+               <gloss>Goddess of inspiration.</gloss>
             </note>
+
             <note>
-               <span from="tln:871" to="tln:873"/>
-                  <term>men's faiths are . . . be thy counselor</term>
-                  <gloss>A particularly complicated gloss across many hierarchies.</gloss>
-               
+               <span from="tln:2" n="1"/>
+      
+               <term>fire,</term>
+               <note type="level-2">The lightest of the four elements (air, earth, fire, and water), and thus the
+         most likely to <hi rend="simple:italic">ascend</hi>.</note>
             </note>
+
             <note>
-               <span from="tln:871"/>
-                  <term>men's faiths</term>
-                  <gloss>Another note on the same term.</gloss>
-               
+               <span from="tln:3" n="2"/>
+      
+               <term>The brightest heaven</term>
+               <note type="level-2">In ancient cosmology, the empyrean, or highest heaven, was a sphere of fire at
+         the outmost edge of the universe.</note>
             </note>
+
             <note>
-               <span from="tln:879"/>
-                  <term>Kisses her</term>
-                  <gloss>A phrase in a stage direction.</gloss>
-               
+               <span from="tln:3" n="2"/>
+      
+               <term>invention,</term>
+               <gloss>Imagination; the spirit of creativity.</gloss>
+               <note type="level-2">Pronounced with four syllables.</note>
             </note>
-           <note>
-              <span from="tln:873"/>
-              <term>food, they say</term>
-              <gloss>Wrong.</gloss>
-           </note>
+
             <note>
-               <span from="tln:879"/>
-               <term>mouth and march</term>
-               <gloss>Seeing if it attempts to find more than one.</gloss>
+               <span from="tln:4" n="3"/>
+      
+               <term>princes</term>
+               <gloss>Monarchs.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> prince <hi rend="simple:italic">n</hi>. 1. The Chorus here wishes for "the power to re-create the very
+         persons of history," imagining that "the rulers of England and France wage war while the
+         other crowned heads of Europe . . . look on" (Craik).</note>
+            </note>
+
+            <note>
+               <span from="tln:5" n="4"/>
+      
+               <term>swelling</term>
+               <gloss>Magnificent, majestic.</gloss>
+               <note type="level-2">Cf. <hi rend="simple:italic">Mac</hi> TLN 239-240: "the swelling Act / Of the Imperiall Theame".</note>
+            </note>
+
+            <note>
+               <span from="tln:6" n="5"/>
+      
+               <term>like himself,</term>
+               <gloss>In a manner suiting his status.</gloss>
+               <note type="level-2">Part of the Chorus's rhetorical apology for the inadequacy of theater, this
+         tautological simile is a reminder of the difference between the historical figure and the
+         actor who plays him.</note>
+            </note>
+
+            <note>
+               <span from="tln:7" n="6"/>
+      
+               <term>port</term>
+               <gloss>Bearing, demeanor.</gloss>
+               <note type="level-2">With a pun on an actor's "part," which was probably pronounced identically; see
+            <hi rend="simple:italic">LLL</hi> TLN 1946-1947, where "part" is rhymed with "short".</note>
+            </note>
+
+            <note>
+               <span from="tln:7" n="6"/>
+      
+               <term>Mars,</term>
+               <gloss>Roman god of war.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:8" n="7"/>
+      
+               <term>Leashed in</term>
+               <gloss>Kept on a leash.</gloss>
+               <note type="level-2">Also, linked together in a group of three: see <hi rend="simple:italic">OED</hi> leash <hi rend="simple:italic">v</hi>. 1.b.
+         and <hi rend="simple:italic">n.</hi> 2.</note>
+            </note>
+
+            <note>
+               <span from="tln:8" n="7"/>
+      
+               <term>famine, sword, and fire</term>
+               <note type="level-2">Traditional tools of war, perhaps suggested here by Holinshed's "blood, fire,
+         and famine" (567). See also <hi rend="simple:italic">1H6</hi>, where Talbot threatens Bordeaux with "my three
+         attendants, / Leane Famine, quartering Steele, and climbing Fire" (<ref target="text:ise1H6_F1#tln-1960">TLN 1960-61</ref>).</note>
+            </note>
+
+            <note>
+               <span from="tln:9" n="8"/>
+      
+               <term>gentles</term>
+               <gloss>Ladies and gentlemen.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:10" n="9"/>
+      
+               <term>flat unraisèd spirits</term>
+               <gloss>"[D]ull, uninspired actors and playwright" (Walter).</gloss>
+               <note type="level-2">Taylor notes a play on the idea of raising spirits by incantation.</note>
+            </note>
+
+            <note>
+               <span from="tln:10" n="9"/>
+      
+               <term>hath</term>
+               <note type="level-2">A singular verb with a plural subject is common in early modern English. See
+         E.A. Abbott, <hi rend="simple:italic">A Shakespearean Grammar</hi>, section 247.</note>
+            </note>
+
+            <note>
+               <span from="tln:11" n="10"/>
+      
+               <term>scaffold,</term>
+               <gloss>Stage.</gloss>
+               <note type="level-2">"As this word was used often of stages, for plays, proclamations, and public
+         exhibitions, neither the implications of ephemerality in modern 'scaffolding' nor the sense
+         'place of execution' is relevant" (Taylor).</note>
+            </note>
+
+            <note>
+               <span from="tln:12" n="11"/>
+      
+               <term>cockpit</term>
+               <gloss>Circular arena (for cockfighting).</gloss>
+               <note type="level-2">Literal cockpits were similar in structure, but much smaller than an Elizabethan
+         theater.</note>
+            </note>
+
+            <note>
+               <span from="tln:13" n="12"/>
+      
+               <term>vasty</term>
+               <gloss>Vast.</gloss>
+               <note type="level-2">A Shakespearean coinage, probably merely for metrical purposes.</note>
+            </note>
+
+
+            <note>
+               <span from="tln:14" n="13"/>
+      
+               <term>wooden O</term>
+               <gloss>The circle of the playhouse.</gloss>
+               <note type="level-2">For discussion and illustration of playhouse shape and structure, see <ref target="slt:stage/public theater/index.html">"The Public Theater."</ref>.
+         Critics and editors (John Dover Wilson excepted) long presumed that the playhouse here
+         mentioned was the newly-built Globe, as represented memorably in Olivier's film adaptation.
+         But Tiffany Stern argues convincingly from both internal and external evidence that
+            <hi rend="simple:italic">Henry V</hi> was one of the last plays the Lord Chamberlain's Men put on at the
+         Curtain. See "'The Curtain is Yours,'" in <hi rend="simple:italic">Locating the Queen's Men, 1583-1603</hi>, ed.
+         Ostovich, Syme, and Griffin (Burlington, VT: Ashgate, 2009), 77-96.</note>
+            </note>
+
+            <note>
+               <span from="tln:14" n="13"/>
+      
+               <term>casques</term>
+               <gloss>Helmets.</gloss>
+               <note type="level-2">Malone read "The very casques" as "<hi rend="simple:italic">even</hi> the casques or helmets, much less
+         the men by whom they were worn" (see <hi rend="simple:italic">OED</hi> very 9.b.). Gurr finds a connection to the
+         cask (barrel) suggested by "Wooden O."</note>
+            </note>
+
+            <note>
+               <span from="tln:15" n="14"/>
+      
+               <term>affright</term>
+               <gloss>Frighten.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:15" n="14"/>
+      
+               <term>Agincourt?</term>
+               <gloss>Battlefield in northern France, site of the English victory over the French on
+         25 October 1415.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:16" n="15"/>
+      
+               <term>figure</term>
+               <gloss>Numerical symbol; here, a 1.</gloss>
+               <note type="level-2">The metaphor compares the small company of actors to the six zeros ("ciphers")
+         that make the numeral one ("a crooked figure") into one million. Most modern editors gloss
+         the "crooked figure" as the round zero, but the implication is that the actor, or even
+         Henry himself, is the "figure," with "crooked" suggesting possible overtones of craftiness
+         and deception; compare Canterbury's disdain for the French "crooked titles" (<ref target="text:iseH5_FM#tln-241">TLN 241</ref>), and cf. <hi rend="simple:italic">WT</hi>
+                  <ref target="text:iseWT_M#tln-55">TLN 55-56.</ref>
+               </note>
+            </note>
+
+            <note>
+               <span from="tln:18" n="17"/>
+      
+               <term>ciphers</term>
+               <gloss>1) Zeros; 2) symbolic representations; 3) worthless characters.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:18" n="17"/>
+      
+               <term>account,</term>
+               <gloss>Sum total.</gloss>
+               <note type="level-2">Craik points out that the possible secondary sense of "account" is unknown
+         elsewhere in Shakespeare, and that its earliest recorded use is in 1614.</note>
+            </note>
+
+            <note>
+               <span from="tln:19" n="18"/>
+      
+               <term>your imaginary forces</term>
+               <gloss>Powers of your imagination.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">Forces</hi> may also suggest that the audience's imagination is being recruited into an
+         army. See <hi rend="simple:italic">OED</hi> force<hi rend="simple:italic"> n.<hi rend="simple:sup">1</hi>
+                  </hi> 4.</note>
+            </note>
+
+            <note>
+               <span from="tln:20" n="19"/>
+      
+               <term>girdle</term>
+               <gloss>Encircling boundary.</gloss>
+               <note type="level-2">"[W]ith the implication of restraint . . . picked up in <hi rend="simple:italic">confined</hi>"
+         (Taylor).</note>
+            </note>
+
+            <note>
+               <span from="tln:21" n="20"/>
+      
+               <term>two mighty monarchies,</term>
+               <gloss>England and France.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:22" n="21"/>
+      
+               <term>abutting</term>
+               <gloss>Projecting toward each other; butting, striking each other.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:22" n="21"/>
+      
+               <term>fronts</term>
+               <gloss>1) The cliffs of Dover and Calais imagined as foreheads, butting or projecting
+         toward each other; 2) frontiers; 3) lines of battle.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:23" n="22"/>
+      
+               <term>perilous narrow ocean</term>
+               <gloss>The English Channel.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:24" n="23"/>
+      
+               <term>Piece out</term>
+               <gloss>Supplement, extend.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:26" n="25"/>
+      
+               <term>puissance.</term>
+               <gloss>Military power.</gloss>
+               <note type="level-2">Trisyllabic.</note>
+            </note>
+
+            <note>
+               <span from="tln:29" n="28"/>
+      
+               <term>deck</term>
+               <gloss>Clothe, adorn.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:30" n="29"/>
+      
+               <term>jumping o'er times,</term>
+               <note type="level-2">The play covers the historical period from the 1414 parliament at Leicester to
+         the 1420 treaty of Troyes.</note>
+            </note>
+
+            <note>
+               <span from="tln:32" n="31"/>
+      
+               <term>hourglass:</term>
+               <gloss>The space of an hour.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:32" n="31"/>
+      
+               <term>for the which supply,</term>
+               <gloss>To aid in which.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">Supply</hi> is used here in the military sense of "reinforcement" (<hi rend="simple:italic">OED</hi> 5). See
+            <hi rend="simple:italic">1H6</hi> TLN 171 ("The Earle of Salisbury craueth supply") and <hi rend="simple:italic">1H4</hi> TLN 2464
+         ("lookes he not for supply?").</note>
+            </note>
+
+            <note>
+               <span from="tln:34" n="33"/>
+      
+               <term>prologue-like,</term>
+               <gloss>Speaking like a prologue; in the traditional costume of a prologue.</gloss>
+               <note type="level-2">Heywood's <hi rend="simple:italic">Four Prentices of London</hi> (<hi rend="simple:italic">c. </hi>1592, p. 1614) suggests the
+         conventional staging of a dramatic prologue: <cit>
+                     <quote>Doe you not know that I am the
+            Prologue? Do you not see this long blacke veluet cloke vpon my backe? Haue you not
+            sounded thrice? Do I not looke pale, as fearing to bee out in my speech? Nay, haue I not
+            all the signes of a Prologue about me? (A4).</quote>
+                  </cit>
+               </note>
+            </note>
+
+            <note>
+               <span from="tln:34" n="33"/>
+      
+               <term>your humble patience pray</term>
+               <gloss>Humbly ask for your patience.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:36" n="0"/>
+      
+               <term>1.1</term>
+               <gloss>Location: the royal court.</gloss>
+               <note type="level-2">According to Shakespeare's historical sources, the setting of the first act
+         should be "the last daie of Aprill in the towne of Leicester" (Holinshed 545). The Chorus
+         suggests at <ref target="text:iseH5_FM#tln-496">TLN 496</ref>, however, that the
+         play begins in London.</note>
+            </note>
+
+            <note>
+               <span from="tln:39" n="1"/>
+      
+               <term>self</term>
+               <gloss>Same.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:40" n="2"/>
+      
+               <term>th'eleventh year of the last king's reign</term>
+               <gloss>In Henry IV's reign, the year 1410, four years before the present action.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:41" n="3"/>
+      
+               <term>like,</term>
+               <gloss>Likely (to have "passed").</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 8.</note>
+            </note>
+
+            <note>
+               <span from="tln:41" n="3"/>
+      
+               <term>against us</term>
+               <gloss>Against the interests of the clergy.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:42" n="4"/>
+      
+               <term>scambling</term>
+               <gloss>Turbulent, contentious (here, characterized by civil war).</gloss>
+               <note type="level-2">To <hi rend="simple:italic">scamble</hi> is literally to struggle for food or money scattered on the
+         ground. Steevens notes a reference in the household book of the fifth Earl of
+         Northumberland to the "scambling days," a period in Lent when no regular meals were
+         provided to the household and individuals had to fend for themselves.</note>
+            </note>
+
+            <note>
+               <span from="tln:43" n="5"/>
+      
+               <term>question.</term>
+               <gloss>Debate, discussion.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:46" n="8"/>
+      
+               <term>possession,</term>
+               <gloss>Wealth, property.</gloss>
+               <note type="level-2">Until Henry VIII's seizure of it in the 1530s, and even beyond, Church property
+         was a subject of perennial conflict between the Church and English secular powers. Gurr,
+         following John Cox, sees an allusion here to the struggles of Richard Cox, the Elizabethan
+         Bishop of Ely, to keep his own property out of royal control.</note>
+            </note>
+
+            <note>
+               <span from="tln:47" to="tln:48" n="9-10"/>
+      
+               <term>temporal lands . . . Church</term>
+               <gloss>Lands held by laymen and bequeathed to the Church in the owners' wills ("by
+         testament").</gloss>
+            </note>
+
+            <note>
+               <span from="tln:49" n="11"/>
+      
+               <term>they</term>
+               <gloss>The House of Commons.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:50" to="tln:57" n="12-19"/>
+      
+               <term>As much as would . . . by th'year.</term>
+               <note type="level-2">This passage is almost verbatim -- though altered to verse -- from Holinshed
+            (545):<cit>
+                     <quote>a bill exhibited in the parlement holden at Westminster in the
+            eleuenth yeare of king Henrie the fourth (which by reason the king was then troubled by
+            ciuill discord, came to none effect) might now with good deliberation be pondered, and
+            brought to good conclusion. The effect of which supplication was, that the temporall
+            lands deuoutlie giuen, and disordinatlie spent by religious, and other spirituall
+            persons, should be seized into the kings hands, sith the same might suffice to
+            mainteine, to the honor of the king, and defense of the realme, fifteene earles,
+            fifteene hundred knights, six thousand and two hundred esquires, and a hundred
+            almesse-houses, for reliefe onelie of the poore, impotent, and needie persons, and the
+            king to haue cleerelie to his coffers twentie thousand pounds, with manie other
+            prouisions and values of religious houses, which I passe ouer.</quote>
+                  </cit> The bill in
+         question was proposed by a group of Lollards in the parliament of 1410, a fact that might
+         implicitly raise historical comparisons -- especially in the minds of Shakespeare's
+         original audience -- to anticlerical movements during the Protestant Reformation, and
+         especially to Henry VIII's <ref target="text:ideas/religion/henryviii.html">dissolution of the
+            monasteries</ref>. See <ref target="text:H5/GenIntro#tln-55">introduction</ref>. Maurice
+         Hunt points out the historical correspondences of behavior between Henry V and Henry VIII,
+         and discusses Shakespeare's dramatic association of the two kings. See "The Hybrid
+         Reformations of Shakespeare's Second Henriad," <hi rend="simple:italic">Comparative Drama </hi>32 (1988), 176–206,
+         189–92.</note>
+            </note>
+
+            <note>
+               <span from="tln:50" n="12"/>
+      
+               <term>maintain,</term>
+               <gloss>Bear the expenses of.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:50" n="12"/>
+      
+               <term>to the king's honor,</term>
+               <gloss>To demonstrate the king's generosity.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:52" n="14"/>
+      
+               <term>esquires,</term>
+               <gloss>Gentry ranking immediately below knights.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:53" n="15"/>
+      
+               <term>lazars</term>
+               <gloss>Lepers.</gloss>
+               <note type="level-2">From the proper name <hi rend="simple:italic">Lazarus</hi>; see Luke 16:20.</note>
+            </note>
+
+            <note>
+               <span from="tln:53" n="15"/>
+      
+               <term>weak age</term>
+               <gloss>The elder years.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:54" n="16"/>
+      
+               <term>indigent faint souls past corporal toil,</term>
+               <gloss>Poor people too weak for physical work.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:55" n="17"/>
+      
+               <term>almshouses,</term>
+               <gloss>Houses for dispensing charity.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:56" n="18"/>
+      
+               <term>coffers</term>
+               <gloss>Treasury (literally, money boxes).</gloss>
+            </note>
+
+            <note>
+               <span from="tln:56" n="18"/>
+      
+               <term>beside,</term>
+               <gloss>Additionally.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:57" n="19"/>
+      
+               <term>A thousand . . . year.</term>
+               <note type="level-2">"[T]he sum that Holinshed's 20,000 pounds would bring in at 5 per cent interest"
+         (Craik).</note>
+            </note>
+
+            <note>
+               <span from="tln:57" n="19"/>
+      
+               <term>bill.</term>
+               <gloss>Parliamentary act.</gloss>
+               <note type="level-2">With a pun on the sense of "statement of amount owed."</note>
+            </note>
+
+            <note>
+               <span from="tln:58" n="20"/>
+      
+               <term>drink deep.</term>
+               <gloss>Swallow up our wealth.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:60" n="21"/>
+      
+               <term>what prevention?</term>
+               <gloss>How may the bill be prevented?</gloss>
+               <note type="level-2">This incomplete line after the previous shared line, a repetition of Ely's
+         earlier question, perhaps suggests a thoughtful pause before Canterbury's next speech. The
+         bishops' political subterfuge is more explicitly stated in Shakespeare's source:
+            <cit>
+                     <quote>This bill was much noted, and more feared among the religious sort, whom
+            suerlie it touched verie neere, and therefore to find remedie against it, they
+            determined to assaie all ways to put by and ouerthrow this bill: wherein they thought
+            best to trie if they might mooue the kings mood with some sharpe inuention, that he
+            should not regard the importunate petitions of the commons. (Holinshed 545)</quote>
+                  </cit>
+               </note>
+            </note>
+
+            <note>
+               <span from="tln:61" n="22"/>
+      
+               <term>grace</term>
+               <gloss>Virtue, honor.</gloss>
+               <note type="level-2">In the theological, chiefly Protestant sense of the term, divine favor or
+         providential election.</note>
+            </note>
+
+            <note>
+               <span from="tln:62" n="22"/>
+      
+               <term>fair regard.</term>
+               <gloss>1) Respect, consideration; 2) is highly esteemed.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:64" n="24"/>
+      
+               <term>courses</term>
+               <gloss>Habits, behavior.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:65" to="tln:69" n="24-29"/>
+      
+               <term>The breath no sooner . . . out of him,</term>
+               <note type="level-2">The phrasing evokes Saint Paul, but for this passage, Shakespeare seems to have
+         been influenced less by any biblical passage than by a prayer of confession to the Holy
+         Ghost in Thomas Becon's <hi rend="simple:italic">Flour of godly praiers</hi> (London, 1551): "thou maki[n]g me a
+         new creature by mortifying old Adam in me, and by geui[n]g me a good spirite, mayeste
+         delyght in me as a father in hys sonne, and continually dwell in me as in thy holy temple."
+         (fol. xii<hi rend="simple:sup">v</hi>-xiii). See also D. J. Palmer, "Casting off the Old Man: History and
+         St. Paul in <hi rend="simple:italic">Henry V</hi>," <hi rend="simple:italic">Critical Quarterly </hi>12 (1970): 267-83.</note>
+            </note>
+
+            <note>
+               <span from="tln:66" n="26"/>
+      
+               <term>mortified</term>
+               <gloss>1) Killed; 2) suppressed by self-discipline.</gloss>
+               <note type="level-2">The mortification of unlawful desire is a common theological conceit. See
+         Alexander Nowell's <hi rend="simple:italic">Catechisme</hi> (1570): <cit>
+                     <quote>By the force of Christ's death our
+            old man is, after a certain manner, crucified and mortified, and the corruptness of our
+            nature is, as it were, buried. (T3<hi rend="simple:sup">v</hi>)</quote>
+                  </cit> Cf. <hi rend="simple:italic">2H4</hi>
+                  <ref target="text:ise2H4_F1#tln-3008">TLN 3008-9</ref>: "My Father is gone wilde
+         into his Graue, / (For in his Tombe, lye my Affections)."</note>
+            </note>
+
+            <note>
+               <span from="tln:68" n="28"/>
+      
+               <term>Consideration</term>
+               <gloss>Reflection, contemplation.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:69" n="29"/>
+      
+               <term>th'offending Adam</term>
+               <gloss>The sinful nature.</gloss>
+               <note type="level-2">As Adam was ejected by an Angel from the garden of Eden after the fall (Genesis
+         3:23-24), Henry's "Adam" has been "whipped" out of him.</note>
+            </note>
+
+            <note>
+               <span from="tln:70" n="30"/>
+      
+               <term>paradise,</term>
+               <gloss>A place of sinless innocence, like Eden before the fall of man.</gloss>
+               <note type="level-2">The state of sinlessness that Canterbury's metaphor implies in Henry is,
+         strictly speaking, heretical, since according to Christian doctrine only Christ is without
+         sin: "for all haue sinned, and are depriued of the glorie of God" (Romans 3:23). Unless
+         otherwise noted, biblical citations refer to the Geneva Bible of 1576.</note>
+            </note>
+
+            <note>
+               <span from="tln:71" n="31"/>
+      
+               <term>celestial spirits.</term>
+               <gloss>1) Heavenly inclinations; 2) supernatural spirits, angels.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:73" n="33"/>
+      
+               <term>reformation</term>
+               <gloss>Moral improvement.</gloss>
+               <note type="level-2">The word echoes Hal's soliloquy in <hi rend="simple:italic">1H4</hi>: "My reformation, glitt'ring o'er
+         my fault, / Shall show more goodly and attract more eyes / Than that which hath no foil to
+         set it off" (<ref target="text:ise1H4_M#tln-314">TLN 314-16</ref>). Spoken by a
+         fifteenth-century cleric, it is an anachronistic word; <hi rend="simple:italic">OED </hi>gives 1425 as the first
+         instance of the word in its moral sense, and 1531 for the first use in the
+         religio-political context familiar today (n1 4.a., 3.b.). The only Shakespearean character
+         to use <hi rend="simple:italic">reform </hi>in the specifically religious context with which history is familiar
+         is the Lord Chancellor in <hi rend="simple:italic">Henry VIII</hi>, who ironically uses it in defense of Catholic
+         orthodoxy, advising Cranmer that his new Protestant opinions "are heresies, / And not
+         reformed, may prove pernicious" (<ref target="text:iseH8_F1#tln-3066">TLN
+            3066-67</ref>).</note>
+            </note>
+
+            <note>
+               <span from="tln:73" n="33"/>
+      
+               <term>flood</term>
+               <note type="level-2">Canterbury's metaphor for Henry's "reformation" recalls two biblical floods at
+         once, both common to the rhetoric of sixteenth-century religious polemic. On the one hand
+         it recalls the image of the Genesis deluge -- the first godly reform --that cleansed the
+         false religion that held sway in Noah's sinful world. Calvin, in Arthur Golding's 1583
+         translation of his sermons on Deuteronomy, had evoked that flood in language that
+         Shakespeare may imitate here:<cit>
+                     <quote>the seruice of GOD was imbaced euen in the life of
+            Adam, and that it was fayne to bee reformed againe as it were by miracle. When the
+            floude came, God cleansed the earth newe againe. (1129)</quote>
+                  </cit> But the phrase also
+         has a potentially negative religious connotation for Shakespeare's audience, and it is
+         telling that the current that scours away Prince Hal's faults is "heady" -- threatening,
+         disorderly, uncontrollable -- a word the play applies only once (in the F2 reading)
+         elsewhere: to the "murder, spoil, and villainy" with which Henry threatens the defeated
+         Harfleur (<ref target="text:iseH5_FM#tln-1291">TLN 1291</ref>). This second
+         connotation of <hi rend="simple:italic">flood</hi>, along with Canterbury's mention of "hydra-headed willfulness"
+         immediately following, suggests instead an allusion to the flood that proceeds from the
+         mouth of the many-headed dragon of Revelation: "And ye serpe[n]t cast out of his mouth
+         water after ye woman like a flood, yt he might cause her to be caryed away of the flood"
+         (Revelation 12:15). Traditionally read as an allegory of the Arian heresy that threatened
+         the early Church, the dragon-flood metaphor was activated by both early-modern reformers
+         and Catholics to describe the Satanically-inspired waves of heresy that each confession saw
+         flowing from the other.</note>
+            </note>
+
+            <note>
+               <span from="tln:74" n="34"/>
+      
+               <term>heady</term>
+               <gloss>Headlong, violent.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:74" n="34"/>
+      
+               <term>currence</term>
+               <gloss>Current.</gloss>
+               <note type="level-2">There is no reason to characterize this, as Walter does, as a nonce-word. It is
+         variant of <hi rend="simple:italic">currency</hi>, in its obsolete sense of "stream, current" (<hi rend="simple:italic">OED</hi> currency
+         1.a., first example 1657). F2's spelling, "currant" (i.e., current) may also be correct,
+         possibly reflecting a t/c compositorial error.</note>
+            </note>
+
+            <note>
+               <span from="tln:74" n="34"/>
+      
+               <term>scouring</term>
+               <gloss>Flushing away.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:75" n="35"/>
+      
+               <term>hydra-headed</term>
+               <gloss>Many headed like the Hydra of Greek myth, thus a difficult monster to kill.</gloss>
+               <note type="level-2">Johnson notes that the image of flushing away filth in the previous line may
+         have brought to the author's mind Hercules's labor of cleaning the Augean stables, which
+         then led to his allusion to the Hydra, another of the twelve labors.</note>
+            </note>
+
+            <note>
+               <span from="tln:76" n="36"/>
+      
+               <term>seat,</term>
+               <gloss>Throne, place of authority.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:78" n="37"/>
+      
+               <term>We are</term>
+               <note type="level-2">Could be pronounced "We're" to regularize the meter, though Johnson's emendation
+         is unnecessary.</note>
+            </note>
+
+            <note>
+               <span from="tln:79" n="38"/>
+      
+               <term>reason in divinity,</term>
+               <gloss>Argue matters of theology.</gloss>
+               <note type="level-2">As Craik points out, Henry V was known to have disputed theology with the
+         Lollard Sir John Oldcastle, the historical model for Shakespeare's Falstaff. See Holinshed,
+         544, and my <ref target="text:H5/GenIntro#tln-62">introduction</ref>.</note>
+            </note>
+
+            <note>
+               <span from="tln:81" n="40"/>
+      
+               <term>prelate.</term>
+               <gloss>High-ranking clergyman.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:83" n="42"/>
+      
+               <term>all in all</term>
+               <gloss>Entirely.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:84" n="43"/>
+      
+               <term>List</term>
+               <gloss>Listen to.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:85" n="44"/>
+      
+               <term>rendered you in music.</term>
+               <gloss>Eloquently described.</gloss>
+               <note type="level-2">Henry, that is, finds the harmony within the chaos of battle.</note>
+            </note>
+
+            <note>
+               <span from="tln:86" n="45"/>
+      
+               <term>cause of policy,</term>
+               <gloss>Political issue.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:87" n="46"/>
+      
+               <term>Gordian knot</term>
+               <gloss>A knot proverbially impossible to untie.</gloss>
+               <note type="level-2">The original Gordian knot was intricately tied -- by King Midas, according to
+         myth -- to an oxcart standing in the palaces of the kings of Phrygia in Gordium. According
+         to the biographers of Alexander the great, it could only be untied by the destined ruler of
+         Asia; in 333 BCE Alexander cut the knot with his sword, an act that became a metaphor for
+         an intractable problem solved by bold thinking (see Tilley G375). This is first of several
+         comparisons between Alexander's conquests and Henry's campaign: see <ref target="text:iseH5_FM#tln-1102">TLN 1102</ref>, <ref target="text:iseH5_FM#tln-2537">TLN 2537-73</ref>.</note>
+            </note>
+
+            <note>
+               <span from="tln:88" n="47"/>
+      
+               <term>Familiar as his garter;</term>
+               <gloss>As easily as he would his garter, a band tied around the leg to support the
+         stockings.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:89" n="48"/>
+      
+               <term>chartered</term>
+               <gloss>Licensed.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:89" n="48"/>
+      
+               <term>libertine,</term>
+               <gloss>One free from restraint, who follows his own inclination.</gloss>
+               <note type="level-2">For the proverbial metaphor of the air as a "chartered libertine" cf. Jaques's
+         "I must have liberty / Withal, as large a charter as the wind" (<hi rend="simple:italic">AYL</hi> 1021-1022; see
+         also Dent A88). Here, uncharacteristically for Shakespeare, <hi rend="simple:italic">libertine</hi> seems to carry
+         no negative connotations, though Craik argues that we might understand Henry to be
+         converting the breeze from waywardness.</note>
+            </note>
+
+            <note>
+               <span from="tln:90" n="49-50"/>
+      
+               <term>the mute wonder lurketh in men's ears</term>
+               <gloss>Wonder (at Henry's "sentences") makes men mute.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:92" to="tln:93" n="51-52"/>
+      
+               <term>practic part . . . this theoric.</term>
+               <gloss>Henry must have learned how to theorize from practical experience ("the practic
+         part of life").</gloss>
+            </note>
+
+            <note>
+               <span from="tln:94" n="53"/>
+      
+               <term>glean it,</term>
+               <gloss>Acquire this wisdom.</gloss>
+               <note type="level-2">Literally, pick it up like scattered grain after a harvest.</note>
+            </note>
+
+            <note>
+               <span from="tln:95" to="tln:100" n="54-59"/>
+      
+               <term>Since his . . . and popularity.</term>
+               <note type="level-2">According to fifteenth-century historical tradition, passed down to
+         Shakespeare's historical sources and dramatized in both parts of <hi rend="simple:italic">Henry IV</hi>, before
+         acceding to the crown, Henry had surrounded himself with dissolute and lawless friends --
+         represented by Shakespeare in the characters of Sir John Falstaff, Pistol, Bardolph, and
+         Nym -- whose companionship he had dutifully discarded at his accession: <cit>
+                     <quote>this
+            king even at first appointing with himselfe, to shew that in his person princelie honors
+            should change publike manners, he determined to put on him the shape of a new man. For
+            whereas aforetime he had made himselfe a companion unto misrulie mates of dissolute
+            order and life, he now banished them all from his presence (but not unrewarded, or else
+            unpreferred) inhibiting them upon a great paine, not once to approach, lodge, or
+            sojourne within ten miles of his court or presence: and in their places he chose men of
+            gravitie, wit, and high policie. (Holinshed 543)</quote>
+                  </cit>
+               </note>
+            </note>
+
+            <note>
+               <span from="tln:95" n="54"/>
+      
+               <term>addiction</term>
+               <gloss>Inclination.</gloss>
+               <note type="level-2">Not necessarily with negative connotations (<hi rend="simple:italic">OED</hi> addiction <hi rend="simple:italic">n</hi>. 2.).</note>
+            </note>
+
+            <note>
+               <span from="tln:96" n="55"/>
+      
+               <term>companies</term>
+               <gloss>Companions; different groups of followers.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:96" n="96"/>
+      
+               <term>unlettered,</term>
+               <gloss>Uneducated, illiterate.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:96" n="55"/>
+      
+               <term>rude,</term>
+               <gloss>Uncivilized, coarse.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:97" n="56"/>
+      
+               <term>riots,</term>
+               <gloss>Revelry, debauchery.</gloss>
+               <note type="level-2">Shakespeare refers to Prince Hal's behavior as <hi rend="simple:italic">riot</hi> or <hi rend="simple:italic">riots</hi> four
+         times in the <hi rend="simple:italic">Henry IV</hi> plays: <hi rend="simple:italic">1H4</hi>
+                  <ref target="text:ise1H4_M#tln-88">TLN 88</ref>; <hi rend="simple:italic">2H4</hi>
+                  <ref target="text:ise2H4_F1#tln-2440">TLN 2440</ref>, <ref target="text:ise2H4_F1#tln-2667">TLN 2667</ref>, and <ref target="text:ise2H4_F1#tln-3274">TLN 3274</ref>.</note>
+            </note>
+
+            <note>
+               <span from="tln:98" n="57"/>
+      
+               <term>never noted</term>
+               <gloss>There was never seen.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:99" n="58"/>
+      
+               <term>sequestration</term>
+               <gloss>Retirement, seclusion.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:100" n="59"/>
+      
+               <term>open haunts</term>
+               <gloss>Public places, especially those frequented by lowlifes.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:100" n="59"/>
+      
+               <term>popularity.</term>
+               <gloss>Ordinary, vulgar people.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:101" to="tln:103" n="60-62"/>
+      
+               <term>strawberry grows underneath . . . baser quality</term>
+               <note type="level-2">Elizabethan horticulturalists believed that <cit>
+                     <quote>a plant derived from its
+            neighbours the good or evil qualities they possessed: but the strawberry was an
+            exception. Although it crept along the ground exposed to every sort of contamination,
+            yet no evil companionship could taint its purity. (R. E. Prothero, <hi rend="simple:italic">Shakespeare's
+               England</hi> 1: 373)</quote>
+                  </cit> The strawberry thus came to be a symbol of
+         incorruptible righteousness. The Bishop of Ely is similarly associated with strawberries --
+         for which Ely Place, Holborn, was noted -- in <hi rend="simple:italic">R3</hi> (<ref target="text:iseR3_M#tln-1999">TLN 1999-2001</ref>).</note>
+            </note>
+
+            <note>
+               <span from="tln:103" n="62"/>
+      
+               <term>baser</term>
+               <gloss>Inferior.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:104" n="63"/>
+      
+               <term>obscured</term>
+               <gloss>Hid, covered.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:104" n="63"/>
+      
+               <term>contemplation</term>
+               <gloss>1) Thinking; 2) devout meditation.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:105" n="64"/>
+      
+               <term>veil</term>
+               <gloss>Disguise, mask.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:105" n="64"/>
+      
+               <term>which</term>
+               <gloss>His "contemplation" (<ref target="text:iseH5_FM#tln-104">TLN
+            104</ref>), not his "wildness."</gloss>
+            </note>
+
+            <note>
+               <span from="tln:107" n="66"/>
+      
+               <term>crescive</term>
+               <gloss>Growing.</gloss>
+               <note type="level-2">This very rare word is borrowed from the Latin <hi rend="simple:italic">crescere</hi> and used by
+         Shakespeare only in this line. As Steevens notes, the line parallels a passage in a
+         Horatian ode: "crescit occulto velut arbor aevo / fama Marcelli" -- The glory of Marcellus,
+         like a tree, grows by the silent lapse of time -- (Horace, trans. C. E. Bennet, Loeb
+         Classical Library [Cambridge, MA: Harvard UP, 1960], 38-39). Renaissance versions of the
+         sentiment became so commonplace as to be used in English grammar schools, like
+         Shakespeare's, to illustrate the colon rule. See T. W. Baldwin, <hi rend="simple:italic">William Shakspere's
+            Small Latine &amp; Lesse Greeke</hi>, vol. 2 (Urbana: U. of Illinois Press, 1944),
+         501-503.</note>
+            </note>
+
+            <note>
+               <span from="tln:107" n="66"/>
+      
+               <term>in his faculty.</term>
+               <gloss>By its nature.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:108" n="67"/>
+      
+               <term>It must be so, for miracles are ceased,</term>
+               <gloss>The king's transformation must be a natural phenomenon, since the supernatural
+         events recorded in the Bible no longer occur.</gloss>
+               <note type="level-2">The Protestant doctrine of cessationism, the belief that miracles ceased to be
+         performed early in Christian history, while familiar to Shakespeare's audience, is an
+         anachronism in the mouth of a medieval archbishop.</note>
+            </note>
+
+            <note>
+               <span from="tln:109" n="68"/>
+      
+               <term>needs</term>
+               <gloss>Necessarily.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:109" n="68"/>
+      
+               <term>admit</term>
+               <gloss>Acknowledge, allow.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:109" n="68"/>
+      
+               <term>means</term>
+               <gloss>Natural cause.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:110" n="69"/>
+      
+               <term>perfected.</term>
+               <gloss>1) Accomplished; 2) made perfect.</gloss>
+               <note type="level-2">Accented on the first syllable.</note>
+            </note>
+
+            <note>
+               <span from="tln:112" n="70"/>
+      
+               <term>mitigation</term>
+               <gloss>Reducing the severity.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:113" n="71"/>
+      
+               <term>commons?</term>
+               <gloss>House of Commons, the lower house of parliament.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:114" n="72"/>
+      
+               <term>Incline to</term>
+               <gloss>Support, favor.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:116" n="73"/>
+      
+               <term>swaying more upon</term>
+               <gloss>Leaning toward.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:117" n="74"/>
+      
+               <term>exhibitors</term>
+               <gloss>Those proposing the bill.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:118" to="tln:124" n="75-89"/>
+      
+               <term>For I have made an offer . . . part withal</term>
+               <note type="level-2">These lines, the gist of which is repeated at <ref target="text:iseH5_FM#tln-279">TLN 279-82</ref>, closely follow the ending of the Archbishop's
+         speech in Holinshed (546): <cit>
+                     <quote>the archbishop declared that in their spiritual
+            conuocation, they had granted to his highnesse such a summe of monie, as neuer by no
+            spirituall persons was to any prince before those daies giuen or aduanced.</quote>
+                  </cit>
+         Shakespeare's innovation is to place the "offer to his majesty" in the private scene prior
+         to the public speech, thus implying a back-room agreement between the king and the clergy.</note>
+            </note>
+
+            <note>
+               <span from="tln:119" n="76"/>
+      
+               <term>Upon</term>
+               <gloss>During, on the occasion of, as a result of.</gloss>
+               <note type="level-2">Another possible sense is "concerning, touching upon" (<hi rend="simple:italic">OED</hi> 22.). Modern
+         editors often gloss the word as "on behalf of," but this sense is not to be found in
+            <hi rend="simple:italic">OED</hi> and requires "convocation" to serve as an overly specific metonym for the
+         clergy and their interests.</note>
+            </note>
+
+            <note>
+               <span from="tln:119" n="76"/>
+      
+               <term>convocation,</term>
+               <gloss>Assembly, meeting.</gloss>
+               <note type="level-2">Canterbury means either an assembly of the clergy, or a private meeting between
+         the king and the archbishop.</note>
+            </note>
+
+            <note>
+               <span from="tln:120" n="77"/>
+      
+               <term>causes</term>
+               <gloss>Legal matters.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:121" n="78"/>
+      
+               <term>opened</term>
+               <gloss>Disclosed.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:121" n="78"/>
+      
+               <term>at large,</term>
+               <gloss>Either 1) fully, or 2) in general terms.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:122" n="79"/>
+      
+               <term>touching</term>
+               <gloss>Concerning.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:122" n="79"/>
+      
+               <term>to give a greater sum</term>
+               <note type="level-2">Canterbury plans to let the Church take a smaller loss by financing the war than
+         it would should the commons' bill pass. During Elizabeth's reign, Dollimore and Sinfield
+         point out, "[t]he Church resented the fact that it was expected to help finance foreign
+         wars, but in 1588 Archbishop Whitgift encouraged his colleagues to contribute generously
+         towards resistance to the Armada on the grounds -- just as in <hi rend="simple:italic">Henry V</hi> -- that it
+         would head off criticism of the Church's wealth" ("History and Ideology" 216).</note>
+            </note>
+
+            <note>
+               <span from="tln:124" n="81"/>
+      
+               <term>withal.</term>
+               <gloss>With.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:126" n="83"/>
+      
+               <term>of his majesty,</term>
+               <gloss>By the king.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:128" n="85"/>
+      
+               <term>fain</term>
+               <gloss>Eagerly, willingly.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:129" n="86"/>
+      
+               <term>severals</term>
+               <gloss>Particulars.</gloss>
+               <note type="level-2">Also a legal term meaning lands, over which one has a private right of
+         possession (<hi rend="simple:italic">OED</hi> several <hi rend="simple:italic">n.</hi> 2).</note>
+            </note>
+
+            <note>
+               <span from="tln:129" n="86"/>
+      
+               <term>passages</term>
+               <gloss>Lines of inheritence.</gloss>
+               <note type="level-2">With a play on the sense of passages of legal text.</note>
+            </note>
+
+            <note>
+               <span from="tln:130" n="87"/>
+      
+               <term>true titles to . . . dukedoms,</term>
+               <note type="level-2">"Wherevpon, on a daie in the parlement, Henrie Chichelie archbishop of
+         Canturburie made a pithie oration, wherein he declared, how not onelie the duchies of
+         Normandie and Aquitaine, with the counties of Aniou and Maine, and the countrie of
+         Gascoigne, were by vndoubted title apperteining to the king, as to the lawfull and onelie
+         heire of the same; but also the whole realme of France, as heire to his great grandfather
+         king Edward the third" (Holinshed 545).</note>
+            </note>
+
+            <note>
+               <span from="tln:132" n="89"/>
+      
+               <term>Edward, his great-grandfather.</term>
+               <gloss>King Edward III (1312-77).</gloss>
+               <note type="level-2">Edward III's mother, Isabella (<hi rend="simple:italic">c.</hi> 1295-1358), was the daughter of the
+         French King Philip IV, making Henry Philip's direct descendant. The fact that this claim is
+         "derived" through the female line becomes the legal crux of the following scene and of the
+         play at large (see note to <ref target="text:iseH5_FM#tln-158">TLN 158</ref>).
+         Although all three of her elder brothers died without issue, the French barred Isabella
+         from succession in order to exclude Edward III. Shakespeare and his collaborators recall
+         this legal history in the opening scene of <hi rend="simple:italic">Edward III</hi> (1596), QLN 9-31. See the
+            <ref target="slt:history/the histories/kings1.html">family tree of British
+            monarchs</ref>.</note>
+            </note>
+
+            <note>
+               <span from="tln:138" n="97"/>
+      
+               <term>embassy,</term>
+               <gloss>Message.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:142.1" n="0"/>
+      
+               <term>[1.2]</term>
+               <gloss>Location: the royal presence chamber.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:143" n="0 SD"/>
+      
+               <term>Humphrey</term>
+               <note type="level-2">Henry's youngest brother Humphrey (1390-1447) is referred to throughout this
+         play as "Gloucester," and only here by his name, though he appears as "Duke Humphrey" in
+         the <hi rend="simple:italic">H6</hi> plays.</note>
+            </note>
+
+            <note>
+               <span from="tln:143" n="0 SD"/>
+      
+               <term>Bedford, Clarence,</term>
+               <note type="level-2">The king's brother Bedford, referred to as John of Lancaster in <hi rend="simple:italic">2H4</hi>,
+         speaks no lines in this scene, and does not appear in the scene's analog in Q. His brother
+         Clarence speaks no line in the entire play, and is only mentioned twice, appearing in this
+         stage direction and addressed once (<ref target="text:iseH5_FM#tln-3072">TLN
+            3072</ref>). Taylor, who follows Q in deleting Bedford's appearance and giving his
+         lines to Clarence, argues (in <hi rend="simple:italic">Three Studies</hi>, 101) that Q indicates an authoritative
+         intention to streamlines these characters. The appearance of all four royal brothers,
+         however, is symbolically fitting; as Gurr argues, retaining them all in this scene
+         underscores the play's emphasis on brotherhood. Historically, Thomas, Duke of Clarence
+            (<hi rend="simple:italic">c</hi>. 1388-1421), was part of the 1415 French campaign until he was invalided home
+         after the battle of Harfleur, in which he took a leading role.</note>
+            </note>
+
+            <note>
+               <span from="tln:145" n="1"/>
+      
+               <term>gracious</term>
+               <gloss>Righteous, endowed with divine grace.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 6.</note>
+            </note>
+
+            <note>
+               <span from="tln:146" n="2"/>
+      
+               <term>presence.</term>
+               <gloss>The presence chamber (the room where monarchs receive visitors).</gloss>
+               <note type="level-2">The king's presence took on its own aura of authority, as indicated in Thomas
+         Smith's <hi rend="simple:italic">De Republica Anglorum</hi> (1583): "in the chamber of presence where the cloath
+         of estate is set, no man dare walke, yea though the prince be not there, no man dare tarrie
+         there but bareheaded" (2.47).</note>
+            </note>
+
+            <note>
+               <span from="tln:149" n="3"/>
+      
+               <term>cousin.</term>
+               <note type="level-2">A term of polite address among the nobility, though Ralph Neville, first earl of
+         Westmorland (1354-1425), was Henry's cousin by marriage.</note>
+            </note>
+
+            <note>
+               <span from="tln:149" n="4"/>
+      
+               <term>We would</term>
+               <gloss>The royal pronoun, i.e., "I would."</gloss>
+            </note>
+
+            <note>
+               <span from="tln:149" n="4"/>
+      
+               <term>resolved,</term>
+               <gloss>Freed from uncertainty.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 3.a.</note>
+            </note>
+
+            <note>
+               <span from="tln:150" n="5"/>
+      
+               <term>weight</term>
+               <gloss>Importance.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:151" n="6"/>
+      
+               <term>task</term>
+               <gloss>Employ, occupy.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:154" n="8"/>
+      
+               <term>become it.</term>
+               <gloss>Grace it with your presence.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:157" n="10"/>
+      
+               <term>justly and religiously</term>
+               <gloss>1) With precise logic; 2) righteously</gloss>
+            </note>
+
+            <note>
+               <span from="tln:158" n="11"/>
+      
+               <term>law Salic,</term>
+               <gloss>A law prohibiting the inheritance of titles from a female ancestor.</gloss>
+               <note type="level-2">The <hi rend="simple:italic">Pactus Legis Salicae</hi> was a legal code that adapted Roman law for the
+         governance of the barbarian tribes under Frankish rule. Issued by the Frankish King Clovis
+         I between 508 and 511, the <hi rend="simple:italic">Pactus</hi> governed crime as well as inheritance, but when
+         later French jurists used it to combat English claims of inheritance, it came to be
+         synonymous with the tenet of agnatic succession, i.e., the exclusion of females from the
+         inheritance of titles in "Salic" land, a phrase that, as Canterbury points out, has no
+         certain interpretation. See Patrick Geary, <hi rend="simple:italic">Before France and Germany</hi> (Oxford: Oxford
+         UP, 1988), 90-91 and 105-106. An Elizabethan audience would be well aware of the
+         obsolescence of any such laws in Tudor England, but they would also be familiar with the
+         Salic Law from its prominence in public discourse about the queen's proposed marriage to
+         the Duke of Alençon in the 1570s. In 1579, the puritan John Stubbes wrote "The Discoverie
+         of a Gaping Gulf," an immediately censored, but much-read pamphlet against the marriage
+         that suggested that Salic Law would strip Elizabeth of her power should she marry a
+         Frenchman.</note>
+            </note>
+
+            <note>
+               <span from="tln:159" n="12"/>
+      
+               <term>Or should or should not</term>
+               <gloss>Either should or should not.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:159" n="12"/>
+      
+               <term>claim.</term>
+               <gloss>Claim to the throne of France.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:161" n="14"/>
+      
+               <term>fashion,</term>
+               <gloss>Counterfeit.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 4.b.</note>
+            </note>
+
+            <note>
+               <span from="tln:161" n="14"/>
+      
+               <term>wrest,</term>
+               <gloss>Pervert, turn from the true meaning.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 5.</note>
+            </note>
+
+            <note>
+               <span from="tln:161" n="14"/>
+      
+               <term>bow</term>
+               <gloss>Bend</gloss>
+            </note>
+
+            <note>
+               <span from="tln:162" n="15"/>
+      
+               <term>nicely</term>
+               <gloss>1) Foolishly, wickedly; 2) by reading too subtly.</gloss>
+               <note type="level-2">See <hi rend="simple:italic">OED</hi> nicely 1 and 5.a.</note>
+            </note>
+
+            <note>
+               <span from="tln:162" n="15"/>
+      
+               <term>charge</term>
+               <gloss>Load, burden.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:162" n="15"/>
+      
+               <term>understanding</term>
+               <gloss>1) Intelligent; 2) "knowing the truth to be otherwise" (Wilson).</gloss>
+            </note>
+
+            <note>
+               <span from="tln:163" n="16"/>
+      
+               <term>opening</term>
+               <gloss>Expounding.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> open 13.</note>
+            </note>
+
+            <note>
+               <span from="tln:163" n="16"/>
+      
+               <term>titles miscreate,</term>
+               <gloss>False (misshapen) grounds for claims.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:163" n="16"/>
+      
+               <term>right</term>
+               <gloss>1) Legal entitlement; 2) justice, moral propriety.</gloss>
+               <note type="level-2">In this scene, Henry precisely and strategically calculates his rhetoric to
+         collapse two not quite identical senses of <hi rend="simple:italic">right</hi>. Here, he seems to use the word in
+         its legal sense (<hi rend="simple:italic">OED </hi>II.): he will have the legal "right" to claim the titles,
+         presuming they are not "miscreate." In this sense, <hi rend="simple:italic">right</hi> is merely a synonym of
+            <hi rend="simple:italic">title</hi> or <hi rend="simple:italic">claim</hi>, and one might conceivably claim a legal right that was
+         derived falsely, i.e., "suiting not with the truth." This is the sense Canterbury employs
+         consistently in the scene: "right and title of the female" (<ref target="text:iseH5_FM#tln-236">TLN 236</ref>); "with blood and sword and fire to win your right"
+            (<ref target="text:iseH5_FM#tln-278">TLN 278</ref>). Henry, however, subtly
+         alters the meaning of the word when he next uses it: "May I with right and conscience make
+         this claim?" (<ref target="text:iseH5_FM#tln-243">TLN 243</ref>). The pairing of
+            "right"<hi rend="simple:italic"> </hi>with "conscience"<hi rend="simple:italic"> </hi>suggests their equivalency, that the moral sense
+         of <hi rend="simple:italic">right </hi>(<hi rend="simple:italic">OED </hi>I.) is now in play. This retroactively renders Henry's
+         injunction at <ref target="text:iseH5_FM#tln-163">TLN 163</ref> absurd: if the
+         titles are right in the moral sense, then they are also, already, true. The dual senses
+         form a pivot around which the archbishop, and Henry himself, can turn the legal argument.
+         His clever equivocation, moving the <hi rend="simple:italic">right </hi>from the contingency of "claim" to the
+         certainty of "truth" decides the matter even as the question is being posed, and prevents
+         an unfavorable answer. I am indebted to Catherine Lisak, editor of the ISE <hi rend="simple:italic">R2</hi>, for
+         the conversation that led to this observation.</note>
+            </note>
+
+            <note>
+               <span from="tln:164" n="17"/>
+      
+               <term>Suits not in native colors with</term>
+               <gloss>Does not match in its inherent, natural appearance.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:166" n="19"/>
+      
+               <term>drop their blood</term>
+               <gloss>Die or be wounded.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:166" n="19"/>
+      
+               <term>approbation</term>
+               <gloss>Proving true, putting to trial.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:168" n="21"/>
+      
+               <term>impawn our person,</term>
+               <gloss>Commit me.</gloss>
+               <note type="level-2">Both the sense of "put into pawn, give as a pledge" (<hi rend="simple:italic">OED</hi> 1.) and "put in
+         hazard" (2.) are relevant, with the further implication of the archbishop moving Henry like
+         a pawn in chess. <hi rend="simple:italic">Impawn</hi>, as Taylor points out, is a Shakespearean coinage: see
+            <hi rend="simple:italic">1H4</hi>
+                  <ref target="text:ise1H4_M#tln-2579">TLN 2579</ref>.</note>
+            </note>
+
+            <note>
+               <span from="tln:170" n="23"/>
+      
+               <term>charge</term>
+               <gloss>Command.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:173" n="26"/>
+      
+               <term>woe,</term>
+               <gloss>Cry of grief.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:173" n="26"/>
+      
+               <term>complaint</term>
+               <gloss>Lamentation.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:174" n="27"/>
+      
+               <term>whose wrongs</term>
+               <gloss>1) The awareness of whose grievances; 2) whose wrongdoing.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:176" n="29"/>
+      
+               <term>conjuration</term>
+               <gloss>Entreaty, imposition of an oath.</gloss>
+               <note type="level-2">The more sinister sense of compelling a demon to do one's bidding is also
+         implicit.</note>
+            </note>
+
+            <note>
+               <span from="tln:177" n="30"/>
+      
+               <term>note,</term>
+               <gloss>Pay close attention.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:177" to="tln:179" n="30-32"/>
+      
+               <term>believe in heart . . . baptism.</term>
+               <note type="level-2">Henry's beforehand declaration that he will believe what Canterbury says is
+         truth subtly undercuts the speech's ostensible attempt to police and evaluate the truth. It
+         may be meant to imply, as does the certainty of "your reverence <hi rend="simple:italic">shall</hi> incite us"
+         (TLN 167), that the decision to go to war is a <hi rend="simple:italic">fait accomplis</hi>.</note>
+            </note>
+
+            <note>
+               <span from="tln:180" to="tln:242" n="33-95"/>
+      
+               <term>Then hear me, . . . progenitors.</term>
+               <note type="level-2">Other than Shakespeare's versification of Canterbury's speech, it is nearly
+         verbatim from Holinshed (545-546): <cit>
+                     <quote>Herein did he much inueie against the
+            surmised and false fained law Salike, which the Frenchmen alledge euer against the kings
+            of England in barre of their iust title to the crowne of France. The verie words of that
+            supposed law are these, In terram Salicam mulieres ne succedant, that is to saie, Into
+            the Salike land let not women succeed. Which the French glossers expound to be the
+            realme of France, and that this law was made by king Pharamond; whereas yet their owne
+            authors affirme, that the land Salike is in Germanie, betweene the riuers of Elbe and
+            Sala; and that when Charles the great had ouercome the Saxons, he placed there certeine
+            Frenchmen, which hauing in disdeine the dishonest manners of the Germane women, made a
+            law, that the females should not succeed to any inheritance within that land, which at
+            this daie is called Meisen, so that if this be true, this law was not made for the
+            realme of France, nor the Frenchmen possessed the land Salike, till foure hundred and
+            one and twentie yeares after the death of Pharamond, the supposed maker of this Salike
+            law, for this Pharamond deceased in the yeare 426, and Charles the great subdued the
+            Saxons; and placed the Frenchmen in those parts beyond the riuer of Sala, in the yeare
+            805. Moreouer, it appeareth by their owne writers, that king Pepine, which deposed
+            Childerike, claimed the crowne of France, as heire generall, for that he was descended
+            of Blithild daughter to king Clothair the first: Hugh Capet also, who vsurped the crowne
+            upon Charles duke of Loraine, the sole heire male of the line and stocke of Charles the
+            great, to make his title seem true, and appeare good, though in deed it was starke
+            naught, conueied himselfe as heire to the ladie Lingard, daughter to king Charlemaine,
+            sonne to Lewes the emperour, that was son to Charles the great. King Lewes also the
+            tenth otherwise called saint Lewes, being verie heire to the said vsurper Hugh Capet,
+            could neuer be satisfied in his conscience how he might iustlie keepe and possesse the
+            crowne of France, till he was persuaded and fullie instructed, that queene Isabell his
+            grandmother was lineallie descended of the ladie Ermengard daughter and heire to the
+            aboue named duke of Loraine, by the which marriage, the bloud and line of Charles the
+            great was againe vnited and restored to the crowne and scepter of France, so that more
+            cleere than the sunne it openlie appeareth, that the title of king Pepin, the claime of
+            Hugh Capet, the possession of Lewes, yea and the French kings to this daie, are deriued
+            and conueied from the heire female, though they would vnder the colour of such a fained
+            law, barre the kings and princes of this realme of England of their right and lawfull
+            inheritance.</quote>
+                  </cit>
+               </note>
+            </note>
+
+            <note>
+               <span from="tln:180" n="33"/>
+      
+               <term>peers</term>
+               <gloss>Nobles.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:182" n="35"/>
+      
+               <term>imperial</term>
+               <note type="level-2">This word, used six times in the play to describe attributes of the English
+         crown, is relevant to the contexts of this play, beyond the archbishop's flattering
+         rhetoric, but somewhat anachronistic within the play's historical setting. Henry VIII
+         declared England an "Impire" in 1532 (<hi rend="simple:italic">Act 24 Hen. VIII</hi> c. 12) as a legal assertion
+         of his break with Rome after the Reformation. Historically, as <ref target="text:iseH5_FM#tln-1890">TLN 1890-91</ref> and <ref target="text:iseH5_FM#tln-2888">TLN 2888</ref> make clear, Henry, like all crowned heads of
+         Europe, was legally considered subject to the Holy Roman Emperor.</note>
+            </note>
+
+            <note>
+               <span from="tln:182" n="35"/>
+      
+               <term>bar</term>
+               <gloss>Legal objection.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:184" n="37"/>
+      
+               <term>they</term>
+               <gloss>The French.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:184" n="37"/>
+      
+               <term>Pharamond:</term>
+               <gloss>A legendary king of the early Franks, supposedly reigning in the fifth century.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:185" n="38"/>
+      
+               <term>"In terram Salicam . . . succedant"</term>
+               <gloss>Translated in the next line.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:186" n="39"/>
+      
+               <term>succeed</term>
+               <gloss>Inherit a title or estate.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:186" n="39"/>
+      
+               <term>Salic land"</term>
+               <note type="level-2">Salic land originally referred not to a specific geographical region, but to any
+         land falling under the Salic law of succession. Canterbury, like the French, is glossing
+         somewhat unjustly.</note>
+            </note>
+
+            <note>
+               <span from="tln:187" n="40"/>
+      
+               <term>gloss</term>
+               <gloss>Define, interpret.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:189" n="42"/>
+      
+               <term>female bar.</term>
+               <gloss>Prohibition against women's succession.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:192" n="45"/>
+      
+               <term>floods</term>
+               <gloss>Rivers.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:192" n="45"/>
+      
+               <term>Saale and of Elbe,</term>
+               <gloss>Rivers in Germany.</gloss>
+               <note type="level-2">The Folio's spelling of the latter river (Elue) comes perhaps from the mistaken
+         reading of v for b, easily confused in the blackletter type in which Holinshed's
+            <hi rend="simple:italic">Chronicles</hi> are printed.</note>
+            </note>
+
+            <note>
+               <span from="tln:193" n="46"/>
+      
+               <term>Charles the Great,</term>
+               <gloss>Charlemagne (<hi rend="simple:italic">c</hi>. 747-814), king of the Franks and first Holy Roman
+         Emperor.</gloss>
+               <note type="level-2">Charlemagne campaigned to settle and impose Christianity on the German region of
+         Saxony starting in 773; the last rebellions there were put down in 804.</note>
+            </note>
+
+            <note>
+               <span from="tln:194" n="47"/>
+      
+               <term>French</term>
+               <note type="level-2">These "French" were properly Franks, the Germanic tribes that Charlemagne ruled.
+         The anachronistic distinction between French and Germans is, however, crucial to
+         Canterbury's case.</note>
+            </note>
+
+            <note>
+               <span from="tln:196" n="49"/>
+      
+               <term>dishonest manners</term>
+               <gloss>Lewd behavior.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:197" n="50"/>
+      
+               <term>to wit,</term>
+               <gloss>Namely.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:198" n="51"/>
+      
+               <term>inheritrix</term>
+               <gloss>Heiress.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:199" n="52"/>
+      
+               <term>'twixt</term>
+               <gloss>Between.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:200" n="53"/>
+      
+               <term>Meissen.</term>
+               <gloss>A town in Saxony on the banks of the Elbe.</gloss>
+               <note type="level-2">The punctuation of F3, adopted by many editors ("in Germany called Meissen"),
+         weakens Canterbury's point that Salic land is German, not French.</note>
+            </note>
+
+            <note>
+               <span from="tln:204" to="tln:211" n="57-64"/>
+      
+               <term>four hundred one-and-twenty . . . Eight hundred five.</term>
+               <note type="level-2">The arithmetical mistake here is maintained from Holinshed's <hi rend="simple:italic">Chronicles</hi>;
+         the correct number would be 379.</note>
+            </note>
+
+            <note>
+               <span from="tln:205" n="58"/>
+      
+               <term>defunction</term>
+               <gloss>Death.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:207" n="60"/>
+      
+               <term>within the year of our redemption</term>
+               <gloss>A.D.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:209" n="62"/>
+      
+               <term>seat</term>
+               <gloss>Settle.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:211" n="64"/>
+      
+               <term>Besides,</term>
+               <gloss>Additionally.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:212" n="65"/>
+      
+               <term>Pepin, which deposèd Childeric,</term>
+               <note type="level-2">Childeric III, the last Frankish king of the Merovingian dynasty, held no real
+         power and was deposed in 751 by his Mayor of the Palace, Pepin the Short, who became the
+         first Carolingian king and the father of Charlemagne.</note>
+            </note>
+
+            <note>
+               <span from="tln:213" n="66"/>
+      
+               <term>heir general,</term>
+               <gloss>Heir claiming legitimacy through either male or female lines of succession.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:214" n="67"/>
+      
+               <term>Chlothar,</term>
+               <note type="level-2">Chlothar I (497-561) may or may not have had a daughter called Blithild (or
+         Blithilde or Bilichild).</note>
+            </note>
+
+            <note>
+               <span from="tln:216" n="69"/>
+      
+               <term>Hugh Capet</term>
+               <note type="level-2">The first Frankish king of the Capetian dynasty, Capet's accession to the throne
+         in 987 was by election rather than succession.</note>
+            </note>
+
+            <note>
+               <span from="tln:217" to="tln:218" n="70-71"/>
+      
+               <term>Charles the Duke of Lorraine, . . . Charles the Great,</term>
+               <note type="level-2">A sixth-generation descendant of Charlemagne who was briefly crowned, Charles,
+         Duke of Lower Lorraine (953-93) was excluded from the throne by the Frankish nobles in
+         favor of Hugh Capet.</note>
+            </note>
+
+            <note>
+               <span from="tln:218" n="71"/>
+      
+               <term>Charles the Great,</term>
+               <gloss>Charlemagne.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:219" n="72"/>
+      
+               <term>find</term>
+               <gloss>Supply, furnish.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 18.a. Editors have frequently preferred Q's "fine" in the sense of "refine,
+         purify," or attempted to justify the Folio reading with various legal senses of
+         <hi rend="simple:italic">find</hi>.</note>
+            </note>
+
+            <note>
+               <span from="tln:221" n="74"/>
+      
+               <term>Conveyed</term>
+               <gloss>Lineally derived.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> convey 11.</note>
+            </note>
+
+            <note>
+               <span from="tln:221" n="74"/>
+      
+               <term>Lingare,</term>
+               <note type="level-2">There seems to have been no such historical person. "Lingard" may be Holinshed's
+         spelling of the Frankish Luitgard, the name of Charlemagne's last wife (d. 800), but not
+         that of a daughter of either Charlemagne or Charles the Bald.</note>
+            </note>
+
+            <note>
+               <span from="tln:222" n="75"/>
+      
+               <term>Charlemagne,</term>
+               <gloss>Historically, this is Charles II, or Charles the Bald (823-877), rather than the
+         "Charles the Great" mentioned earlier (<ref target="text:iseH5_FM#tln-199">TLN
+            199</ref>, <ref target="text:iseH5_FM#tln-208">TLN 208</ref>, and <ref target="text:iseH5_FM#tln-218">TLN 218</ref>).</gloss>
+               <note type="level-2">Again, Shakespeare preserves this error from Holinshed (if indeed it is an
+         error; as Boswell points out, Charles the Bald, like his grandfather, assumed the title of
+            <hi rend="simple:italic">Magnus</hi>). Editorial desire for historical accuracy throughout this passage led
+         Joseph Rann to emend to <hi rend="simple:italic">Charlechauve</hi> (Charles the Bald).</note>
+            </note>
+
+            <note>
+               <span from="tln:223" n="76"/>
+      
+               <term>Louis the emperor,</term>
+               <gloss>King Louis the Pious (778-840), who ruled as Holy Roman Emperor after his father
+         Charlemagne.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:224" n="77"/>
+      
+               <term>Louis the Tenth,</term>
+               <gloss>An error for King Louis IX (1214-1270).</gloss>
+               <note type="level-2">The error appears in Holinshed's <hi rend="simple:italic">Chronicle</hi>, but not in Hall's, a fact
+         which Edmund Malone used to show that Holinshed was Shakespeare's primary historical
+         source.</note>
+            </note>
+
+            <note>
+               <span from="tln:226" n="79"/>
+      
+               <term>quiet</term>
+               <gloss>Peace of mind, tranquility.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:228" n="81"/>
+      
+               <term>Isabelle,</term>
+               <gloss>Isabelle of Hainaut (1170-1190), a female descendant of Charlemagne.</gloss>
+               <note type="level-2">The Capetian King Philip II (1165-1223) married Isabelle in 1180 in order to
+         shore up his dynasty's legitimacy through connection with the Carolingian.</note>
+            </note>
+
+            <note>
+               <span from="tln:229" n="82"/>
+      
+               <term>lineal</term>
+               <gloss>Descended.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:233" n="86"/>
+      
+               <term>as clear as is the summer's sun,</term>
+               <note type="level-2">Though often played for laughs in performance, this is not necessarily irony
+         either on Canterbury's or Shakespeare's part.</note>
+            </note>
+
+            <note>
+               <span from="tln:235" n="88"/>
+      
+               <term>Louis his</term>
+               <gloss>Louis's (an archaic form of the possessive).</gloss>
+            </note>
+
+            <note>
+               <span from="tln:235" n="88"/>
+      
+               <term>satisfaction,</term>
+               <gloss>Contentment in the legitimacy of his title.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:236" n="89"/>
+      
+               <term>hold</term>
+               <gloss>Be held.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 20.</note>
+            </note>
+
+            <note>
+               <span from="tln:238" n="91"/>
+      
+               <term>Howbeit</term>
+               <gloss>Although.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:240" n="93"/>
+      
+               <term>net</term>
+               <gloss>1) A complicated web of lines of descent; 2) a tangle of contradictions.</gloss>
+               <note type="level-2">Perhaps with reference to the proverb "You dance in a net and think nobody sees
+         you" (Tilley N130).</note>
+            </note>
+
+            <note>
+               <span from="tln:241" n="94"/>
+      
+               <term>amply</term>
+               <gloss>Broadly, openly.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:241" n="94"/>
+      
+               <term>embar</term>
+               <gloss>Forbid, bar; i.e., the French would rather rely on the intricacies of the Salic
+         Law than legally bar their own false claims.</gloss>
+               <note type="level-2">Gurr's spelling is also that of the <hi rend="simple:italic">OED</hi>, which cites this line for the
+         definition of <hi rend="simple:italic">embar</hi>. The Folio's spelling, "imbarre," suggests a second possible
+         sense, "imbare," which many editors following Theobald have adopted. The word does not
+         appear in <hi rend="simple:italic">OED</hi>, but following the model of <hi rend="simple:italic">impaint</hi>, <hi rend="simple:italic">impawn</hi>, etc., it
+         would be a perfectly logical Shakespearean coinage, meaning "to make bare." But laying bare
+         their "crooked titles" would reveal their illegitimacy, implicitly embarring them, so if a
+         double meaning is implied, both have the same effect. Other suggested emendations are less
+         satisfactory and harder to justify.</note>
+            </note>
+
+            <note>
+               <span from="tln:241" n="94"/>
+      
+               <term>crooked</term>
+               <gloss>Indirectly derived.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:242" n="95"/>
+      
+               <term>progenitors.</term>
+               <gloss>Ancestors.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:244" n="97"/>
+      
+               <term>The sin upon my head,</term>
+               <gloss>If the claim is false, I will accept moral responsibility.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:246" to="tln:247" n="99-100"/>
+      
+               <term>"When the man dies, . . . daughter."</term>
+               <gloss>Numbers 27:8.</gloss>
+               <note type="level-2">"It was customary to seek authority for modern law and practice in special
+         Hebrew legislation in the Old Testament" (Kittredge). Both Hall and Holinshed cite the
+         verse, "If a man die and haue no sonne, then ye shall turne his inheritaunce vnto his
+         daughter." Shakespeare shortens the verse for the sake of meter, sacrificing some of the
+         explicit sense in both the Folio and the Quarto, which reads "When the sonne dies, let the
+         inheritance / Descend vnto the daughter."</note>
+            </note>
+
+            <note>
+               <span from="tln:248" n="101"/>
+      
+               <term>Stand for your own.</term>
+               <gloss>Defend your right to France.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:250" n="103"/>
+      
+               <term>great-grandsire's</term>
+               <gloss>King Edward III's.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:251" n="104"/>
+      
+               <term>From whom you claim;</term>
+               <gloss>As whose descendant you make this claim.</gloss>
+               <note type="level-2">Edward III's maternal grandfather was King Philip IV of France.</note>
+            </note>
+
+            <note>
+               <span from="tln:252" n="105"/>
+      
+               <term>Edward the Black Prince,</term>
+               <gloss>The eldest of Edward III's seven sons, Edward (1330-76) was popularly known as
+         the Black Prince of Wales because of a gift of black armor given to him after his famous
+         victory at Crécy.</gloss>
+               <note type="level-2">In this play, Shakespeare strategically and selectively avoids reference to the
+         dynastic conflicts that underlay the Wars of the Roses, the subject of his first
+         "tetralogy" of English history plays (<hi rend="simple:italic">1H6</hi>, <hi rend="simple:italic">2H6</hi>, <hi rend="simple:italic">3H6</hi>, and <hi rend="simple:italic">R3</hi>).
+         The Black Prince's son, Richard II, was deposed by Henry Bolingbroke, later Henry IV, an
+         act that would lead to the civil wars. In the current play, Henry V is aware of the divine
+         disapproval of his father's usurpation of Richard's throne (see <ref target="text:iseH5_FM#tln-2144">TLN 2144-46</ref>), but Canterbury's public linkage of Henry V
+         to his great-uncle's glory downplays the conflict.</note>
+            </note>
+
+            <note>
+               <span from="tln:253" n="106"/>
+      
+               <term>a tragedy,</term>
+               <gloss>The battle of Crécy, 1346, at which the Black Prince led the English forces.</gloss>
+               <note type="level-2">The first of several implicit metaphors comparing warfare to drama. As Taylor
+         points out, this comparison might also glance at <hi rend="simple:italic">ground</hi> in the sense of "The bare
+         floor which constituted the pit of a theatre" (<hi rend="simple:italic">OED</hi> 8.e.,).</note>
+            </note>
+
+            <note>
+               <span from="tln:255" n="108"/>
+      
+               <term>his most mighty father on a hill</term>
+               <note type="level-2">According to Holinshed, Edward III "stood aloft on a windmill hill" at Crécy and
+         refused to join the battle, commanding that his officers <cit>
+                     <quote>send no more to me for
+            any aduenture that falleth, so long as my son is aliue, for I will that this iournie be
+            his, with the honor thereof (372).</quote>
+                  </cit>
+               </note>
+            </note>
+
+            <note>
+               <span from="tln:256" n="109"/>
+      
+               <term>whelp</term>
+               <gloss>Cub.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:257" n="110"/>
+      
+               <term>Forage in</term>
+               <gloss>1) Plunder; 2) eat ravenously, like a wild beast.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:258" n="111"/>
+      
+               <term>entertain</term>
+               <gloss>Engage in battle.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 9.c.</note>
+            </note>
+
+            <note>
+               <span from="tln:259" n="112"/>
+      
+               <term>half</term>
+               <note type="level-2">"[A]ctually two-thirds" (Wilson).</note>
+            </note>
+
+            <note>
+               <span from="tln:261" n="114"/>
+      
+               <term>cold for action!</term>
+               <gloss>1) Cold through lack of action; 2) indifferent or unmoved to action.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:262" n="115"/>
+      
+               <term>valiant dead,</term>
+               <gloss>Henry's ancestors.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:263" n="116"/>
+      
+               <term>puissant</term>
+               <gloss>Mighty.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:265" n="118"/>
+      
+               <term>renownèd them</term>
+               <gloss>Made them famous.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:267" n="120"/>
+      
+               <term>May-morn of his youth,</term>
+               <note type="level-2">In 1415, Henry was twenty-seven years old.</note>
+            </note>
+
+            <note>
+               <span from="tln:271" n="124"/>
+      
+               <term>the former lions of your blood.</term>
+               <gloss>Your kingly ancestors.</gloss>
+               <note type="level-2">As a symbol of English royalty, the lion appears on the English royal coat of
+         arms.</note>
+            </note>
+
+            <note>
+               <span from="tln:273" n="126"/>
+      
+               <term>So hath your highness.</term>
+               <gloss>You do indeed have what they know you have.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:275" to="tln:276" n="128-129"/>
+      
+               <term>Whose hearts have left . . . fields of France</term>
+               <gloss>Who are already imagining themselves in military tents on a French battlefield.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:277" to="tln:282" n="130-135"/>
+      
+               <term>Oh, let their bodies follow, . . . your ancestors.</term>
+               <note type="level-2">Again, Shakespeare follows his source in Holinshed closely: <cit>
+                     <quote>The
+            archbishop . . . exhorted him to aduance foorth his banner to fight for his right, to
+            conquer his inheritance, to spare neither bloud, sword, nor fire, sith his warre was
+            iust, his cause good, and his claime true. And to the intent his louing chaplains and
+            obedient subiects of the spiritualitie might shew themselues willing and desirous to aid
+            his maiestie, for the recouerie of his ancient right and true inheritance, the
+            archbishop declared that in their spirituall conuocation, they had granted to his
+            highnesse such a summe of monie, as neuer by no spirituall persons was to any prince
+            before those daies giuen or aduanced (546).</quote>
+                  </cit>
+               </note>
+            </note>
+
+            <note>
+               <span from="tln:278" n="131"/>
+      
+               <term>right.</term>
+               <gloss>Rightful claim to France.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:279" n="132"/>
+      
+               <term>spiritualty</term>
+               <gloss>Clergy.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:284" n="137"/>
+      
+               <term>lay down our proportions</term>
+               <gloss>Determine the appropriate military force.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> does not list the sense of <hi rend="simple:italic">proportion</hi> as "military force," but here and
+         elsewhere Shakespeare uses the plural in this sense. See <ref target="text:iseH5_FM#tln-455">TLN 455</ref>, <ref target="text:iseH5_FM#tln-934">TLN
+            934</ref>, and <hi rend="simple:italic">Ham</hi>
+                  <ref target="text:iseHam_FM#tln-211">TLN 211</ref>.</note>
+            </note>
+
+            <note>
+               <span from="tln:285" n="138"/>
+      
+               <term>the Scot,</term>
+               <gloss>Scotland.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:285" n="138"/>
+      
+               <term>make road</term>
+               <gloss>Invade, make inroads.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:286" n="139"/>
+      
+               <term>With all advantages.</term>
+               <gloss>At any opportunity; i.e., with our military power engaged in France.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:287" n="140"/>
+      
+               <term>those marches,</term>
+               <gloss>The Scottish border lands.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> march <hi rend="simple:italic">n.</hi> 3. "The Wardens of the Marches, bordering Scotland and Wales,
+         kept a military retinue and a quasi-regal authority there until the seventeenth century"
+         (Gurr).</note>
+            </note>
+
+            <note>
+               <span from="tln:289" n="142"/>
+      
+               <term>Our inland</term>
+               <gloss>The interior part of England, as opposed to the marches.</gloss>
+               <note type="level-2">Some editors accept Q's "England" on the theory that F's "in-land" is a
+         compositorial misreading of "Ingland" in the manuscript copy.</note>
+            </note>
+
+            <note>
+               <span from="tln:289" n="142"/>
+      
+               <term>pilfering borderers.</term>
+               <gloss>Raiding Scots.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:290" n="143"/>
+      
+               <term>coursing snatchers</term>
+               <gloss>Swift thieves.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">Coursing</hi> refers to hunting hares with greyhounds (<hi rend="simple:italic">OED</hi> course <hi rend="simple:italic">v.</hi> 1.).</note>
+            </note>
+
+            <note>
+               <span from="tln:291" n="144"/>
+      
+               <term>intendment</term>
+               <gloss>Disposition, general character.</gloss>
+               <note type="level-2">This sense (<hi rend="simple:italic">OED</hi> 6.) seems primary in the context of the passage, though
+            <hi rend="simple:italic">OED</hi> cites this line under 5.: intention or design.</note>
+            </note>
+
+            <note>
+               <span from="tln:292" n="145"/>
+      
+               <term>still</term>
+               <gloss>Always.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:292" n="145"/>
+      
+               <term>giddy</term>
+               <gloss>Unstable, inconstant.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:293" to="tln:301" n="146-154"/>
+      
+               <term>For you shall read . . . th'ill neighborhood.</term>
+               <note type="level-2">From 1295 to 1560, France and Scotland made a series of treaties, the "Auld
+         Alliance," providing mutual military aid in conflicts with England. In 1346, during Edward
+         III's campaign in France, the Scottish King David II invaded England, though as Canterbury
+         notes below, he did so unsuccessfully. Hall (fol. 39), though not Holinshed, has
+         Westmorland, as warden of the Scottish marches, make a similar argument:<cit>
+                     <quote>None of
+            your progenitors euer passed the sea in iust quarell against the Fre[n]che nacion, but
+            the Scottishe people in their absence entered your realme, spoyled your houses, slewe
+            your people and toke great praies innumerable, only to prouoke your auncestors for to
+            returne fro[m] the inuayding of Frau[n]ce."</quote>
+                  </cit> The English fears were well
+         grounded in this instance; the Scottish Earl of Douglas had made arrangements in 1413 with
+         the nominally pro-English Duke of Burgundy to provide each other military aid. See Anne
+         Curry, <hi rend="simple:italic">Agincourt: A New History</hi> (Stroud: Tempus, 2006), 37.</note>
+            </note>
+
+            <note>
+               <span from="tln:295" n="148"/>
+      
+               <term>unfurnished</term>
+               <gloss>Unprotected.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:296" n="149"/>
+      
+               <term>breach</term>
+               <gloss>Gap in a sea wall.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:297" n="150"/>
+      
+               <term>brim</term>
+               <gloss>Overflowing.</gloss>
+               <note type="level-2">See <hi rend="simple:italic">OED</hi> brimful. <hi rend="simple:italic">Brim</hi> is also an adjective used for raging, severe
+         seas, still in use in northern English dialects (<hi rend="simple:italic">OED</hi> breme <hi rend="simple:italic">adj</hi>
+                  <hi rend="simple:italic">.</hi> 6.).</note>
+            </note>
+
+            <note>
+               <span from="tln:298" n="151"/>
+      
+               <term>Galling</term>
+               <gloss>Harassing, wounding.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:298" n="151"/>
+      
+               <term>gleanèd</term>
+               <gloss>Picked clean.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:298" n="151"/>
+      
+               <term>hot assays,</term>
+               <gloss>Violent attacks.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:299" n="152"/>
+      
+               <term>Girding</term>
+               <gloss>Surrounding.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:300" n="153"/>
+      
+               <term>That</term>
+               <gloss>So that.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:301" n="154"/>
+      
+               <term>th'ill neighborhood.</term>
+               <gloss>The bad neighborliness, i.e., the open hostility.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:302" n="155"/>
+      
+               <term>She</term>
+               <gloss>England.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:302" n="155"/>
+      
+               <term>feared</term>
+               <gloss>Frightened.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:303" n="156"/>
+      
+               <term>hear her but exampled by herself:</term>
+               <gloss>Just listen to how her history represents her.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:304" n="157"/>
+      
+               <term>chivalry</term>
+               <gloss>Knights.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:307" n="160"/>
+      
+               <term>stray</term>
+               <gloss>Stray dog.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:308" n="161"/>
+      
+               <term>The king of Scots,</term>
+               <note type="level-2">The Scottish King David II, captured at the battle of Neville's Cross, 1346,
+         while Edward III was in France. Historically, and in Holinshed, David II is not sent to
+         France, though he is so in <hi rend="simple:italic">Edward III</hi>.</note>
+            </note>
+
+            <note>
+               <span from="tln:309" n="162"/>
+      
+               <term>fame</term>
+               <gloss>Reputation.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:310" n="163"/>
+      
+               <term>their</term>
+               <gloss>The English.</gloss>
+               <note type="level-2">Editors have emended unnecessarily to "his" (i.e., Edward's) or "her" (i.e.,
+         England's), but the Folio reading emphasizes the communal ownership of English history.</note>
+            </note>
+
+            <note>
+               <span from="tln:310" n="163"/>
+      
+               <term>chronicle</term>
+               <gloss>Recorded history.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:311" n="164"/>
+      
+               <term>ooze</term>
+               <gloss>Muddy bed.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:312" n="165"/>
+      
+               <term>wreck</term>
+               <gloss>The cargo of wrecked or sunken ships.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 1. Legally, wreck (or wrack) became royal property.</note>
+            </note>
+
+            <note>
+               <span from="tln:312" n="165"/>
+      
+               <term>sumless</term>
+               <gloss>Immeasurable, uncountable.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:313" n="166 SP"/>
+      
+               <term>Ely</term>
+               <note type="level-2">Many editors since Warburton have assigned this speech to Westmorland, arguing
+         that Holinshed's account of this council has Westmorland making this argument (see
+         third-level note). Assigning this reasonable caveat about Scotland to the bishop, however,
+         makes the character more than Canterbury's yes-man, and it adds nuance to the clergy's case
+         for the war. Holinshed (546) suggests that Westmorland had a personal agenda for making
+         this argument: <cit>
+                     <quote>When the archbishop had ended his prepared tale, Rafe Neuill
+            earle of Westmerland, and as then lord Warden of the marches against Scotland,
+            understanding that the king vpon a courageous desire to recouer his right in France,
+            would suerlie take the wars in hand, thought good to mooue the king to begin first with
+            Scotland, and thereupon declared how easie a matter it should be to make a conquest
+            there, and how greatlie the same should further his wished purpose for the subduing of
+            the Frenchmen, concluding the summe of his tale with this old saieng: that <hi rend="simple:italic">Who so
+               will France win, must with Scotland first begin</hi>. Manie matters he touched, as
+            well to shew how necessarie the conquest of Scotland should be, as also to prooue how
+            iust a cause the king had to attempt it, trusting to persuade the king and all other to
+            be of his opinion.</quote>
+                  </cit>
+               </note>
+            </note>
+
+            <note>
+               <span from="tln:314" n="167-168"/>
+      
+               <term>"If that you will France win, . . . first begin."</term>
+               <note type="level-2">See Tilley (F663), which lists Hall's chronicle as the earliest instance of the
+         proverb. In Holinshed (546), both versions of the proverb are cited, first by Westmorland
+         and then inverted by Exeter, who <cit>
+                     <quote>replied against the erle of Westmerlands
+            oration, affirming rather that he which would Scotland win, he with France must first
+            begin. For if the king might once compasse the conquest of France, Scotland could not
+            long resist; so that conquere France, and Scotland would soone obeie. For where should
+            the Scots lerne policie and skill to defend themselves, if they had not their bringing
+            vp and training in France? If the French pensions mainteined not the Scotish nobilitie,
+            in what case should they be? Then take awaie France, and the Scots will soone be tamed;
+            France being to Scotland the same that the sap is to the tree, which being taken awaie,
+            the tree must needs die and wither.</quote>
+                  </cit>
+               </note>
+            </note>
+
+            <note>
+               <span from="tln:315" n="169"/>
+      
+               <term>in prey,</term>
+               <gloss>A predator.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:318" n="172"/>
+      
+               <term>Playing the mouse . . . cat,</term>
+               <note type="level-2">Proverbial: "While the cat's away, the mice will play" (Tilley C175).</note>
+            </note>
+
+            <note>
+               <span from="tln:319" n="173"/>
+      
+               <term>'tame</term>
+               <gloss>Attame: to meddle with, or to penetrate into food stores.</gloss>
+               <note type="level-2">See <hi rend="simple:italic">OED</hi> attame 2, 3. Editors puzzled by F's <hi rend="simple:italic">tame</hi> have emended to
+         more common verbs, the most common being <hi rend="simple:italic">tear</hi> and <hi rend="simple:italic">taint</hi>.</note>
+            </note>
+
+            <note>
+               <span from="tln:319" n="173"/>
+      
+               <term>havoc</term>
+               <gloss>Lay waste.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:321" n="175"/>
+      
+               <term>but a crushed necessity,</term>
+               <gloss>Not really a necessity.</gloss>
+               <note type="level-2">I.e., only a forced logic could make staying at home seem necessary; Exeter
+         questions the conclusion of Ely's reasoning. Various editors have suggested unnecessary
+         emendations of F's <hi rend="simple:italic">crush'd</hi>, all of which lead to a weakened sense. Compare
+         Malvolio's "to crush this a little, it would bow to mee" (<hi rend="simple:italic">TN</hi>
+                  <ref target="text:iseTN_F1#tln-1146">TLN 1146</ref>).</note>
+            </note>
+
+            <note>
+               <span from="tln:323" n="177"/>
+      
+               <term>pretty</term>
+               <gloss>Clever, cunning.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 1.a.</note>
+            </note>
+
+            <note>
+               <span from="tln:325" n="179"/>
+      
+               <term>advisèd</term>
+               <gloss>Judicious, wise.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:326" to="tln:327" n="180-181"/>
+      
+               <term>though high and low . . . Put into parts,</term>
+               <gloss>Though it be put into parts according to social hierarchy.</gloss>
+               <note type="level-2">The phrase also establishes the musical metaphor of a chorus of parts singing in
+         harmony. As Theobald notes, Shakespeare closely follows Cicero's <hi rend="simple:italic">De re publica</hi>
+         (2.42) in his comparison of the state to musical harmony:<cit>
+                     <quote>For just as in the
+            music of harps and flutes or in the voices of singers a certain harmony of the different
+            tones must be preserved . . . so also is a State made harmonious by agreement among
+            dissimilar elements, brought about by a fair and reasonable blending together of the
+            upper, middle, and lower classes, just as if they were musical tones. What musicians
+            call harmony in song is concord in a State, the strongest and best bond of permanent
+            union in any commonwealth</quote>
+                  </cit> (trans. Clinton Walker Keyes, Loeb Classical
+         Library, 1928).</note>
+            </note>
+
+            <note>
+               <span from="tln:327" n="181"/>
+      
+               <term>consent,</term>
+               <gloss>Agreement, consensus.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 3. As Hudson argues, the spelling <hi rend="simple:italic">concent</hi>, meaning "harmony," is a more
+         specific musical term of art -- deriving from the Latin <hi rend="simple:italic">con cantus</hi>, a singing
+         together -- and would better elaborate the musical metaphor, but the difference in the
+         spoken words is inaudible, and would limit the range of meaning intended.</note>
+            </note>
+
+            <note>
+               <span from="tln:328" n="182"/>
+      
+               <term>Congreeing</term>
+               <gloss>Agreeing together.</gloss>
+               <note type="level-2">A word recorded by the <hi rend="simple:italic">OED</hi> only in this line.</note>
+            </note>
+
+            <note>
+               <span from="tln:328" n="182"/>
+      
+               <term>close</term>
+               <gloss>The conclusion of a musical phrase.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> close <hi rend="simple:italic">n.<hi rend="simple:sup">2</hi>
+                  </hi> 2.</note>
+            </note>
+
+            <note>
+               <span from="tln:331" n="183"/>
+      
+               <term>state</term>
+               <gloss>Governance.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:331" n="184"/>
+      
+               <term>divers</term>
+               <gloss>Several, various.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:333" to="tln:334" n="185-187"/>
+      
+               <term>To which is fixèd, . . . Obedience.</term>
+               <gloss>Obedience is the target, as in archery, toward which the "continual motion" of
+         all human endeavor is directed.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:333" n="186"/>
+      
+               <term>aim</term>
+               <gloss>Thing aimed at.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 6.</note>
+            </note>
+
+            <note>
+               <span from="tln:333" n="186"/>
+      
+               <term>butt,</term>
+               <gloss>Target.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> butt <hi rend="simple:italic">n.<hi rend="simple:sup">4</hi>
+                  </hi> 2.a.</note>
+            </note>
+
+            <note>
+               <span from="tln:334" n="187"/>
+      
+               <term>honeybees,</term>
+               <note type="level-2">The trope of bees as a model for human society and government is ancient,
+         appearing in Virgil's <hi rend="simple:italic">Georgics</hi> and Pliny's <hi rend="simple:italic">Natural History</hi>, but Shakespeare
+         may have patterned this speech after the theme's treatment in Elyot's <hi rend="simple:italic">The Governour</hi>
+         (1537), 7<hi rend="simple:sup">v</hi>, or an extended passage in Lyly's <hi rend="simple:italic">Euphues and his England</hi>
+         (1580), F4-G1<hi rend="simple:sup">v</hi>.</note>
+            </note>
+
+            <note>
+               <span from="tln:335" n="188"/>
+      
+               <term>by a rule in nature</term>
+               <gloss>By instinct.</gloss>
+               <note type="level-2">Wilson glosses "rule in nature" as "instinctive polity," but no paradox or
+         oxymoron is necessarily intended.</note>
+            </note>
+
+            <note>
+               <span from="tln:336" n="189"/>
+      
+               <term>act</term>
+               <gloss>Activity.</gloss>
+               <note type="level-2">The sense of "law" or "statute" may be intended, as suggested by the equivalent
+         line in Q, but it makes less sense here; laws are not taught. F5's reading, ("art") may be
+         correct.</note>
+            </note>
+
+            <note>
+               <span from="tln:336" n="189"/>
+      
+               <term>peopled kingdom.</term>
+               <gloss>Kingdom of humans.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:337" n="190"/>
+      
+               <term>king,</term>
+               <note type="level-2">The Aristotelian belief that the leader of a beehive was male was traditional
+         until the late sixteenth century. As Taylor notes, the fact of the queen bee's sex was not
+         published in England until Charles Butler's <hi rend="simple:italic">The Feminine Monarchy</hi> in 1609.</note>
+            </note>
+
+            <note>
+               <span from="tln:337" n="190"/>
+      
+               <term>of sorts,</term>
+               <gloss>Of various kinds or ranks.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:338" n="191"/>
+      
+               <term>magistrates</term>
+               <gloss>Civil justices.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:338" n="191"/>
+      
+               <term>correct</term>
+               <gloss>Punish (wrongdoers).</gloss>
+            </note>
+
+            <note>
+               <span from="tln:339" n="192"/>
+      
+               <term>venture</term>
+               <gloss>1) Send; 2) financially speculate in.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:341" n="194"/>
+      
+               <term>Make boot upon</term>
+               <gloss>Plunder.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:341" n="194"/>
+      
+               <term>velvet</term>
+               <gloss>1) Soft; 2) prosperously dressed.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:342" n="195"/>
+      
+               <term>pillage</term>
+               <gloss>Spoils, booty.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:343" n="196"/>
+      
+               <term>tent-royal</term>
+               <gloss>Royal pavilion.</gloss>
+               <note type="level-2">The image anticipates the battlefield pavilion that Henry will occupy in his
+         French campaign.</note>
+            </note>
+
+            <note>
+               <span from="tln:344" n="197"/>
+      
+               <term>majesties,</term>
+               <gloss>Royal duties.</gloss>
+               <note type="level-2">Most editors since Rowe emend to "majesty," but C. J. Sisson defends F's reading
+            (<hi rend="simple:italic">New Readings in Shakespeare</hi> 2.57):<cit>
+                     <quote>
+                        <hi rend="simple:italic">[M]ajesties</hi> in the plural gives good sense, indeed better sense. To say that the
+            King is 'busy in his majesty' suggests merely that he is absorbed in his lofty rank,
+            whereas 'busy in his majesties' means occupied by all the diverse attributes and
+            functions of a king.</quote>
+                  </cit>
+               </note>
+            </note>
+
+            <note>
+               <span from="tln:345" n="198"/>
+      
+               <term>masons</term>
+               <gloss>Builders.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:346" n="199"/>
+      
+               <term>civil</term>
+               <gloss>Orderly.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:346" n="199"/>
+      
+               <term>citizens</term>
+               <note type="level-2">The term has a more specific sense than "city-dwellers"; "citizen," in
+         Shakespeare's London, signified a member of a recognized trade guild, especially the twelve
+         great "livery companies" from which the city's governors were elected. In the absence of
+         banks in early modern England, wealthy citizen merchants and their guilds were storehouses
+         of liquid wealth, providing loans of ready money to individuals, to civic institutions, and
+         to the crown. Canterbury's characterization of those bees who store the hive's own liquid
+         wealth as "citizens" would thus have seemed particularly apt to the play's original
+         audience.</note>
+            </note>
+
+            <note>
+               <span from="tln:346" n="199"/>
+      
+               <term>kneading up</term>
+               <gloss>Mixing.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:347" n="200"/>
+      
+               <term>mechanic</term>
+               <gloss>Lower-class.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 3.</note>
+            </note>
+
+            <note>
+               <span from="tln:349" n="202"/>
+      
+               <term>sad-eyed justice</term>
+               <gloss>Somber judge.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:349" n="202"/>
+      
+               <term>surly</term>
+               <gloss>Haughty, imperious.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 2.</note>
+            </note>
+
+            <note>
+               <span from="tln:349" n="202"/>
+      
+               <term>hum</term>
+               <gloss>A noise of deliberation, (i.e., "hmmm"); also the buzz of a bee.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:350" n="203"/>
+      
+               <term>executors</term>
+               <gloss>Executioners.</gloss>
+               <note type="level-2">The weaker legal sense of <hi rend="simple:italic">OED</hi> 1, those that carry out a warrant, is
+         possible, but the grimmer sense better fits the context, and foreshadows the execution of
+         Bardolph in the third act.</note>
+            </note>
+
+            <note>
+               <span from="tln:351" n="204"/>
+      
+               <term>drone.</term>
+               <gloss>Non-working male bee whose function is to impregnate the queen.</gloss>
+               <note type="level-2">After their sexual function is fulfilled, drones are ejected from the hive to
+         die. The drone is a common Renaissance figure for laziness.</note>
+            </note>
+
+            <note>
+               <span from="tln:352" to="tln:353" n="205-206"/>
+      
+               <term>having full reference . . . consent,</term>
+               <gloss>All striving for a common purpose.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:353" n="206"/>
+      
+               <term>contrariously.</term>
+               <gloss>In (apparent) opposition.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:354" n="207"/>
+      
+               <term>loosèd several ways</term>
+               <gloss>Shot in different directions.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:355" n="208"/>
+      
+               <term>mark,</term>
+               <gloss>Target.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:355" n="208"/>
+      
+               <term>ways</term>
+               <gloss>Roads.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:357" n="210"/>
+      
+               <term>close</term>
+               <gloss>Converge, unite.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:357" n="210"/>
+      
+               <term>dial's</term>
+               <gloss>Sundial's.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:359" n="212"/>
+      
+               <term>borne</term>
+               <gloss>Carried out.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:361" n="214"/>
+      
+               <term>happy</term>
+               <gloss>Prosperous, fortunate.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> 3.</note>
+            </note>
+
+            <note>
+               <span from="tln:363" n="216"/>
+      
+               <term>withal</term>
+               <gloss>With it (the "one quarter").</gloss>
+               <note type="level-2">The division into quarters "appears as a first indication of the size of the
+         English army in France and the small numbers present at Agincourt" (Gurr).</note>
+            </note>
+
+            <note>
+               <span from="tln:363" n="216"/>
+      
+               <term>Gallia</term>
+               <gloss>The ancient Roman name for France (Gaul).</gloss>
+               <note type="level-2">Craik notes that "all Gallia" recalls the familiar opening to Caesar's <hi rend="simple:italic">Gallic
+            Wars</hi>: "<hi rend="simple:italic">Gallia est omnis divisa in partes tres</hi>" ("All Gaul is divided into
+         three parts").</note>
+            </note>
+
+            <note>
+               <span from="tln:366" n="219"/>
+      
+               <term>worried,</term>
+               <gloss>Shaken to death, as by "the dog."</gloss>
+            </note>
+
+            <note>
+               <span from="tln:367" n="220"/>
+      
+               <term>policy.</term>
+               <gloss>Political shrewdness.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:368" n="221"/>
+      
+               <term>dauphin.</term>
+               <gloss>The title of the heir to the French throne.</gloss>
+               <note type="level-2">The title, held since 1346, was taken from the dolphin depicted on the arms of
+         the French King's eldest son. In productions, the original spelling of the title
+         ("Dolphin") has suggested a fertile joke to directors. In Adrian Noble's 1984 production,
+         for example, Exeter (Brian Blessed) insisted on the English pronunciation in order to irk
+         the French, and the dauphin's reaction, an indignantly precise French pronunciation ("For
+         the -- <hi rend="simple:italic">Doe-fan</hi>, I stand here for him") raised a laugh. Similarly, in 2000, Edward
+         Hall's English characters used the Folio spellings of Dauphin, Calais ("Callice"), etc., as
+         a running joke about the parochialism of the English tourist's refusal to acknowledge local
+         custom.</note>
+            </note>
+
+            <note>
+               <span from="tln:369" n="222"/>
+      
+               <term>Now are we well resolved,</term>
+               <gloss>Now I am determined.</gloss>
+               <note type="level-2">In giving Henry a decisive and vocal role in the move to war, Shakespeare
+         departs from Holinshed's portrayal of the events, in which the bishops' and lords'
+         arguments whip the English into a frenzy, and Henry's voice is absent: <cit>
+                     <quote>To be
+            briefe, the duke of Excester used such earnest and pithie persuasions, to induce the
+            king and the whole assemblie of the parlement to credit his words, that immediatelie
+            after he had made an end, all the companie began to crie; Warre, warre; France, France.
+            Hereby the bill for dissoluing of religious houses was cleerlie set aside, and nothing
+            thought on but onelie the recouering of France, according as the archbishop had mooued.
+            (546)</quote>
+                  </cit>
+               </note>
+            </note>
+
+            <note>
+               <span from="tln:371" n="224"/>
+      
+               <term>France being ours,</term>
+               <gloss>Since France is rightfully ours.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:371" n="224"/>
+      
+               <term>bend it to our awe,</term>
+               <gloss>Make it submit to us in fear.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:372" n="225"/>
+      
+               <term>Or there we'll sit,</term>
+               <gloss>Either I will reign there (in France).</gloss>
+            </note>
+
+            <note>
+               <span from="tln:373" n="226"/>
+      
+               <term>large and ample</term>
+               <gloss>1) Generous, liberal; 2) extensive, wide-ranging.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:373" n="226"/>
+      
+               <term>empery</term>
+               <gloss>Dominion, authority.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:374" n="227"/>
+      
+               <term>kingly</term>
+               <gloss>Grand enough to be kingdoms themselves.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:375" n="228"/>
+      
+               <term>these bones</term>
+               <gloss>My bones.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:375" to="tln:376" n="228-229"/>
+      
+               <term>in an unworthy urn, / Tombless</term>
+               <gloss>In a grave without a monument.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:377" n="230"/>
+      
+               <term>with full mouth</term>
+               <gloss>Loudly.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:379" n="232"/>
+      
+               <term>Turkish mute,</term>
+               <gloss>A Turkish slave with his tongue removed to ensure secrecy.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:380" n="233"/>
+      
+               <term>Not worshipped with a waxen epitaph.</term>
+               <gloss>Not even memorialized in easily-obliterated wax (let alone in stone or brass).</gloss>
+               <note type="level-2">An actor might clarify the line's meaning, as Iain Glen did in the 1994 RSC
+         production, by placing emphasis on "waxen".</note>
+            </note>
+
+            <note>
+               <span from="tln:382" n="284"/>
+      
+               <term>pleasure</term>
+               <gloss>Intention.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:386" n="238"/>
+      
+               <term>render</term>
+               <gloss>Deliver, recite.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:386" n="238"/>
+      
+               <term>what we have in charge,</term>
+               <gloss>What we have been ordered to say.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:387" n="239"/>
+      
+               <term>sparingly</term>
+               <gloss>Reservedly, delicately.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:387" n="239"/>
+      
+               <term>far off</term>
+               <gloss>Indirectly, as if from a distance.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:390" to="tln:391" n="242-243"/>
+      
+               <term>Unto whose grace . . . our prisons.</term>
+               <gloss>Whose anger is subdued by his virtue.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:391" n="243"/>
+      
+               <term>fettered</term>
+               <gloss>Chained.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:394" n="245"/>
+      
+               <term>in few:</term>
+               <gloss>Briefly.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:395" n="246"/>
+      
+               <term>sending into</term>
+               <gloss>Sending an ambassador to.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:396" n="247"/>
+      
+               <term>some certain dukedoms</term>
+               <note type="level-2">Shakespeare alters the chronology of the political wrangling that led up to
+         Henry's invasion. In Holinshed, the tennis ball embassy precedes and more clearly
+         instigates the build-up to war (see <ref target="text:iseH5_FM#tln-408">TLN
+            408</ref> n.). Only after that insult does Canterbury's speech incite the English
+         lords to support the campaign, and after another French embassy Exeter is sent to France to
+         demand that the French king "deliuer vnto the king of England the realme and crowne of
+         France, with the entier duchies of Aquiteine, Normandie and Aniou, with the countries of
+         Poictiou and Maine" and to suggest that Henry "take in mariage the ladie Katharine,
+         daughter to the French king, and to indow hir with all the duchies and countries before
+         rehearsed (Holinshed 546). Shakespeare's alterations to the source -- making the English
+         more clearly into instigators, changing the idea of the royal marriage into a desperate
+         French attempt to avoid war that "likes [Henry] not" (<ref target="text:iseH5_FM#tln-1076">TLN 1076</ref>), and removing Exeter's embassy until the English
+         invasion has already begun -- might be seen cumulatively to portray the English cause less
+         as a righteous response to injury, as in Holinshed, and more as a premeditated campaign
+         looking for a pretext.</note>
+            </note>
+
+            <note>
+               <span from="tln:399" n="250"/>
+      
+               <term>savor</term>
+               <gloss>Have a taste about you.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:400" n="251"/>
+      
+               <term>be advised,</term>
+               <gloss>Take heed.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:400" n="251"/>
+      
+               <term>naught</term>
+               <gloss>Nothing.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:401" n="252"/>
+      
+               <term>galliard</term>
+               <gloss>Lively dance.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:402" n="253"/>
+      
+               <term>revel into</term>
+               <gloss>Party your way into.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:403" n="254"/>
+      
+               <term>meeter</term>
+               <gloss>More appropriate.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:404" n="255"/>
+      
+               <term>tun</term>
+               <gloss>Chest.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:408" n="258"/>
+      
+               <term>Tennis balls,</term>
+               <note type="level-2">The colorful but probably apocryphal anecdote of the dauphin's gift of tennis
+         balls was among the most memorable popular traditions surrounding Henry V. Holinshed (545)
+         places the "disdainfull ambassage" in the spring preceding the Leicester parliament
+         dramatized here: <cit>
+                     <quote>Whilest in the Lent season the king laie at Killingworth,
+            there came to him from Charles Dolphin of France certaine ambassadors, that brought with
+            them a barrel of Paris balles, which from their maister they presented to him for a
+            token that was taken in verie ill part, as sent in scorne, to signifie, that it was more
+            meet for the king to passe the time with such childish exercise, than to attempt any
+            worthie exploit.</quote>
+                  </cit>Following the example of the anonymous 1598 play <hi rend="simple:italic">The
+            Famous Victories of Henry the Fifth</hi> (<ref target="text:iseFV_Q1#tln-867">TLN 867-955</ref>), Shakespeare conflates the tennis ball embassy
+         with the French reply to Henry's demands.</note>
+            </note>
+
+            <note>
+               <span from="tln:411" to="tln:416" n="261-266"/>
+      
+               <term>When we have matched our . . . With chases.</term>
+               <gloss>Henry engages in extended wordplay, quibbling on several terms from tennis (as
+         it was played by the aristocracy of late medieval European courts): rackets, set, hazard,
+         match, courts, chases.</gloss>
+               <note type="level-2">The game of "real" tennis (as opposed to the modern lawn tennis) originated in
+         France, was popular among the English aristocracy from the reign of Henry V to the
+         seventeenth century, and has maintained its enthusiasts to the present day. <figure n="image/569">
+                     <graphic width="100px"
+                              style="float:left"
+                              rend="iserend:lightbox"
+                              mimeType="image/"
+                              url="imagedb:image/569">
+                        <desc/>
+                     </graphic>
+                     <note type="longCaption">Real tennis: a nineteenth-century French illustration.</note>
+                  </figure>It is played
+         indoors on a walled, oblong court, and scoring is achieved when the ball is struck into a
+            <hi rend="simple:italic">hazard</hi> (a hole or concavity in the wall) or when it bounces twice without being
+         returned (a <hi rend="simple:italic">chase</hi>). See <hi rend="simple:italic">Shakespeare's England</hi> 2: 459-462.</note>
+            </note>
+
+            <note>
+               <span from="tln:411" n="261"/>
+      
+               <term>rackets</term>
+               <gloss>1) Tennis rackets; 2) warlike uproar.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> racket <hi rend="simple:italic">n.<hi rend="simple:sup">1</hi>
+                  </hi> 1.b.; <hi rend="simple:italic">n.<hi rend="simple:sup">2</hi>
+                  </hi> 1.a. Prince Hal puns on these two senses in <hi rend="simple:italic">2H4</hi>, <ref target="text:ise2H4_F1#tln-809">TLN 809-11</ref>.</note>
+            </note>
+
+            <note>
+               <span from="tln:412" n="262"/>
+      
+               <term>set</term>
+               <gloss>In tennis, a group of six games.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi>
+                  <hi rend="simple:italic">n.<hi rend="simple:sup">1</hi>
+                  </hi> 26.</note>
+            </note>
+
+            <note>
+               <span from="tln:413" n="263"/>
+      
+               <term>Shall</term>
+               <gloss>That shall.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:413" n="263"/>
+      
+               <term>crown</term>
+               <note type="level-2">With a possible quibble on money wagered on the metaphorical tennis match.</note>
+            </note>
+
+            <note>
+               <span from="tln:413" n="263"/>
+      
+               <term>the hazard.</term>
+               <gloss>1) Jeopardy; 2) in tennis, a recess in the wall opposite the server, who wins by
+         striking the ball into it.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:414" n="264"/>
+      
+               <term>wrangler</term>
+               <gloss>Vigorous quarreler.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:415" n="265"/>
+      
+               <term>courts</term>
+               <note type="level-2">Quibbling on two senses: royal courts and tennis courts.</note>
+            </note>
+
+            <note>
+               <span from="tln:416" n="266"/>
+      
+               <term>chases.</term>
+               <gloss>1) Pursuit of quarry; 2) in tennis, double-bounced balls, the most common means
+         of scoring.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:417" n="267"/>
+      
+               <term>comes o'er us</term>
+               <gloss>Pretends superiority, taunts.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> come 46.c.</note>
+            </note>
+
+            <note>
+               <span from="tln:417" n="267"/>
+      
+               <term>wilder days,</term>
+               <note type="level-2">See <ref target="text:iseH5_FM#tln-96">TLN 96-100</ref>.</note>
+            </note>
+
+            <note>
+               <span from="tln:418" n="268"/>
+      
+               <term>measuring</term>
+               <gloss>Judging.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> measure 14.</note>
+            </note>
+
+            <note>
+               <span from="tln:419" n="269"/>
+      
+               <term>seat</term>
+               <gloss>Throne, court.</gloss>
+               <note type="level-2">The context makes clear that <hi rend="simple:italic">seat</hi> refers metonymically to the royal place
+         and duties, and not, as some early editors surmised, to England itself. But as Craik
+         argues, "'this poor seat' may introduce the ironical idea that England is only the lesser
+         part of his rightful inheritance, his 'throne of France' being the greater part."</note>
+            </note>
+
+            <note>
+               <span from="tln:420" n="270"/>
+      
+               <term>living hence,</term>
+               <gloss>Absent from the court.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:421" n="271"/>
+      
+               <term>license,</term>
+               <gloss>Excessive freedom.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:422" n="272"/>
+      
+               <term>from</term>
+               <gloss>Away from.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:423" n="273"/>
+      
+               <term>keep my state,</term>
+               <gloss>Behave with kingly dignity.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> state <hi rend="simple:italic">n.</hi> 19.</note>
+            </note>
+
+            <note>
+               <span from="tln:424" n="274"/>
+      
+               <term>sail of greatness</term>
+               <gloss>Unfurled glory.</gloss>
+               <note type="level-2">The metaphor carries a reminder of the naval expedition about to ensue.</note>
+            </note>
+
+            <note>
+               <span from="tln:425" n="275"/>
+      
+               <term>rouse me</term>
+               <gloss>Rise up.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:426" n="276"/>
+      
+               <term>For that</term>
+               <gloss>With that goal in mind.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:427" n="277"/>
+      
+               <term>like a man for working days,</term>
+               <gloss>Like a common working man.</gloss>
+               <note type="level-2">Moore Smith reads <hi rend="simple:italic">for working days</hi> as "during working days" and draws a
+         comparison between Henry's ultimate glory and the Sabbath as a day of rest.</note>
+            </note>
+
+            <note>
+               <span from="tln:431" n="281"/>
+      
+               <term>mock</term>
+               <gloss>Act of mockery.</gloss>
+               <note type="level-2">The repetition of the word in the ensuing lines appropriately evokes the sound
+         of a tennis ball struck back and forth.</note>
+            </note>
+
+            <note>
+               <span from="tln:432" n="282"/>
+      
+               <term>balls</term>
+               <gloss>Tennis balls.</gloss>
+               <note type="level-2">Some editors have found a bawdy play on the sense of "testicles."</note>
+            </note>
+
+            <note>
+               <span from="tln:432" n="282"/>
+      
+               <term>gunstones,</term>
+               <gloss>Cannon-balls.</gloss>
+               <note type="level-2">Stones, rather than iron balls, were used as ammunition in early cannons, and
+            <hi rend="simple:italic">gunstones</hi> remained the more usual word until the seventeenth century. Henry's
+         quip about tennis balls returned as ammunition has a long pedigree. Caxton's <hi rend="simple:italic">Cronycles
+            of Englond</hi> (1482), for example, records that Henry<cit>
+                     <quote>was wonder sore
+            agreued &amp; right euyll payed toward the frensshmen, and toward the kyng &amp; the
+            Dolphyn / &amp; thought to auenge hym vpon hem / as sone as god wolde sende hym grace
+            &amp; myght / and anone lete make tenys balles for the dolphyn in al the hast that they
+            mygt be made and they were grete gonne stones for the Dolphyn to playe with all
+            (T5)</quote>
+                  </cit>In <hi rend="simple:italic">Famous Victories</hi>, Henry rejoins that "in steed of balles of
+         leather, / We will tosse him balles of brasse and yron" (<ref target="text:iseFV_Q1#tln-934">TLN 934-935</ref>).</note>
+            </note>
+
+            <note>
+               <span from="tln:433" n="283"/>
+      
+               <term>sore chargèd</term>
+               <gloss>Heavily burdened.</gloss>
+               <note type="level-2">Plays on the sense of "loaded with ammunition" (<hi rend="simple:italic">OED</hi> charge <hi rend="simple:italic">v.</hi> 5.).</note>
+            </note>
+
+            <note>
+               <span from="tln:433" n="283"/>
+      
+               <term>wasteful</term>
+               <gloss>Destructive.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:437" n="287"/>
+      
+               <term>yet ungotten</term>
+               <gloss>Not yet conceived.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:439" to="tln:443" n="289-293"/>
+      
+               <term>But this . . . cause.</term>
+               <note type="level-2">Again Henry's speech to the ambassador follows Holinshed (548)
+            closely:<cit>
+                     <quote>tell this to the vsurper your master, that within three moneths, I
+            will enter into France, as into mine owne true and lawfull patrimonie, appointing to
+            acquire the same, not with brag of words, but with deeds of men, and dint of sword, by
+            the aid of God, in whome is my whole trust and confidence. Further matter at this
+            present I impart not vnto you, sauing that with warrant you maie depart suerlie and
+            safelie into your countrie, where I trust sooner to visit you, than you shall haue cause
+            to bid me welcome.</quote>
+                  </cit>
+               </note>
+            </note>
+
+            <note>
+               <span from="tln:442" n="292"/>
+      
+               <term>venge me</term>
+               <gloss>Avenge myself.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:443" n="293"/>
+      
+               <term>well-hallowed</term>
+               <gloss>Made holy, thoroughly blessed.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:445" n="295"/>
+      
+               <term>savor but of</term>
+               <gloss>Seem merely to proceed from.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> savour <hi rend="simple:italic">v.</hi> 4.a.</note>
+            </note>
+
+            <note>
+               <span from="tln:449" n="298"/>
+      
+               <term>This</term>
+               <gloss>The dauphin's embassy.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:451" n="300"/>
+      
+               <term>omit no happy hour</term>
+               <gloss>Neglect no fortunate opportunity.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:452" n="301"/>
+      
+               <term>furtherance</term>
+               <gloss>Advancement, assistance.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:454" n="303"/>
+      
+               <term>those to God, . . . business</term>
+               <gloss>Prayers that precede the undertaking of the war.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:455" n="304"/>
+      
+               <term>proportions</term>
+               <gloss>Allotted portion of resources.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi>
+                  <hi rend="simple:italic">n.</hi> 6.b.</note>
+            </note>
+
+            <note>
+               <span from="tln:458" n="307"/>
+      
+               <term>God before,</term>
+               <gloss>Led by God, or possibly an oath, i.e., "I swear before God."</gloss>
+            </note>
+
+            <note>
+               <span from="tln:459" n="308"/>
+      
+               <term>chide</term>
+               <gloss>Scold, rebuke.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:460" n="309"/>
+      
+               <term>task</term>
+               <gloss>Employ.</gloss>
+            </note>
+
+            <note>
+               <span from="tln:461" n="310"/>
+      
+               <term>fair</term>
+               <gloss>1) Legitimate; 2) likely to succeed.</gloss>
+               <note type="level-2">See <hi rend="simple:italic">OED</hi>
+                  <hi rend="simple:italic">adj.</hi> 10.a. and 14.a.</note>
+            </note>
+
+            <note>
+               <span from="tln:461" n="310"/>
+      
+               <term>on foot</term>
+               <gloss>To action.</gloss>
+               <note type="level-2">
+                  <hi rend="simple:italic">OED</hi> foot <hi rend="simple:italic">n.</hi> 32.</note>
             </note>
           </div>
       </body>
