@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>TEI Customization for the Internet Shakespeare Editions</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>See publication state for the Internet Shakespeare Editions</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Born digital.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <schemaSpec ident="ise_all" start="TEI">
+        <moduleRef key="analysis" include="span"/>
+        <moduleRef key="core" include="abbr address author bibl cb choice cit corr date desc expan foreign gap gloss graphic head hi item l label lb lg list listBibl media milestone name note p pb ptr publisher q quote ref reg resp respStmt sic sp speaker stage term title"/>
+        <moduleRef key="corpus" include="particDesc"/>
+        <moduleRef key="drama" include="castList"/>
+        <moduleRef key="figures" include="cell figDesc figure row table"/>
+        <moduleRef key="gaiji" include="char charDecl charName charProp g glyph glyphName localName mapping"/>
+        <moduleRef key="header" include="abstract authority availability catDesc catRef category change classDecl distributor edition editionStmt editorialDecl encodingDesc fileDesc idno licence listChange listPrefixDef normalization prefixDef profileDesc projectDesc publicationStmt rendition revisionDesc seriesStmt sourceDesc taxonomy teiHeader textClass titleStmt"/>
+        <moduleRef key="linking" include="ab anchor"/>
+        <moduleRef key="namesdates" include="addName forename listPerson persName person surname"/>
+        <moduleRef key="tagdocs" include="att code gi val ident"/>
+        <moduleRef key="textcrit" include="app lem listApp listWit rdg wit witDetail witness"/>
+        <moduleRef key="tei"/>
+        <moduleRef key="textstructure" include="TEI back body byline closer dateline div docAuthor docDate docEdition docImprint docTitle front group opener text titlePage titlePart trailer"/>
+        <moduleRef key="transcr" include="fw space"/>
+        
+        <classSpec ident="att.pointing.group" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.ranging" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.readFrom" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.repeatable" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.scoping" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.segLike" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.styleDef" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.textCritical" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.timed" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.transcriptional" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.translatable" type="atts" module="tei" mode="delete"/>
+        
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>
