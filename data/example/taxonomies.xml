@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="taxonomies">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Taxonomies used by the Internet Shakespeare Editions</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Add publication statement here.</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Add source description here.</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+        
+         <p>Encoding standards for the Internet Shakespeare Editions</p>
+         
+         <!--Prefix definitions-->
+         
+         <listPrefixDef>
+            <prefixDef ident="doc" matchPattern="(.+)(#.+)?" replacementPattern="http://ise3.uvic.ca/$1.html$2">
+               <p>The <ident>doc</ident> prefix points to a document or a fragment therein.</p>
+            </prefixDef>
+            <prefixDef ident="loc" matchPattern="(.+)" replacementPattern="http://id.loc.gov/vocabulary/relators/$1.html">
+               <p>The <ident>loc</ident> prefix points to abbreviations from the <ref target="http://id.loc.gov/vocabulary/relators.html">MARC Code List of Relators</ref>.</p>
+            </prefixDef>
+            <prefixDef ident="resp" matchPattern="(.+)" replacementPattern="../../taxonomies.xml#$1">
+               <p>The <ident>iseresp</ident> prefix points to a defined taxonomy of responsibilities in the ISE.</p>
+            </prefixDef>
+            <prefixDef ident="pers" matchPattern="(.+)" replacementPattern="../../PERS1.xml#$1">
+               <p>The <ident>pers</ident> prefix maps to a person entry in a centralized personography.</p>
+            </prefixDef>
+            <prefixDef ident="g" matchPattern="(.+)" replacementPattern="../../taxonomies.xml#g_$1">
+               <p>The <ident>iseg</ident> prefix denotes a glyph or other special character defined in the taxonomies document.</p>
+            </prefixDef>
+            <prefixDef ident="idt" matchPattern="(.+)" replacementPattern="../../taxonomies.xml#$1">
+               <p>The <ident>idt</ident> prefix denotes the ISE's document type taxonomy and categories therein</p>
+            </prefixDef>
+            <prefixDef ident="simple" matchPattern="(.+)" replacementPattern="https://github.com/TEIC/TEI/blob/dev/P5/Exemplars/tei_simplePrint.odd#$1">
+               <p>The <ident>simple</ident> prefix points to a predefined vocabulary of rendition types determined by the TEI-Simple working group. Documentation
+                  for TEI Simple can be found here: <ref target="https://github.com/TEIC/TEI-Simple">https://github.com/TEIC/TEI-Simple</ref>.</p>
+            </prefixDef>
+            <prefixDef ident="wit" matchPattern="(.+)" replacementPattern="#$1">
+               <p>The <ident>wit</ident> prefix points to a bibliographic citation in this document.</p>
+            </prefixDef>
+            
+         </listPrefixDef>
+
+         <!--Taxonomies-->
+         
+         <classDecl>
+           
+          <!--Taxonomy of works-->
+            
+            <taxonomy xml:id="iseWorks">
+               <bibl>ISE Works</bibl>
+               <!--The equivalent work ids in the old metadata are:
+                  concat('work_',lower-case(substring-after(@xml:id,'ise'))
+                  -->
+               <category xml:id="ise1H4">
+                  
+                  <catDesc>The First Part of King Henry the Fourth</catDesc>
+                  
+               </category>
+               <category xml:id="ise1H6">
+                  <catDesc>The First Part of King Henry the Sixth</catDesc>
+               </category>
+               <category xml:id="ise2H4">
+                  <catDesc>The Second Part of King Henry the Fourth</catDesc>
+               </category>
+               <category xml:id="ise2H6">
+                  <catDesc>The Second Part of King Henry the Sixth</catDesc>
+               </category>
+               <category xml:id="ise3H6">
+                  <catDesc>The Third Part of King Henry the Sixth</catDesc>
+               </category>
+               <category xml:id="iseAdo">
+                  <catDesc>Much Ado About Nothing</catDesc>
+               </category>
+               <category xml:id="iseAnt">
+                  <catDesc>Antony and Cleopatra</catDesc>
+               </category>
+               <category xml:id="iseAWW">
+                  <catDesc>All's Well That Ends Well</catDesc>
+               </category>
+               <category xml:id="iseAYL">
+                  <catDesc>As You Like It</catDesc>
+               </category>
+               <category xml:id="iseCor">
+                  <catDesc>Coriolanus</catDesc>
+               </category>
+               <category xml:id="iseCym">
+                  <catDesc>Cymbeline</catDesc>
+               </category>
+               <category xml:id="iseEdw">
+                  <catDesc>Edward III</catDesc>
+               </category>
+               <category xml:id="iseErr">
+                  <catDesc>The Comedy of Errors</catDesc>
+               </category>
+               <category xml:id="iseH5">
+                  <catDesc>King Henry the Fifth</catDesc>
+               </category>
+               <category xml:id="iseH8">
+                  <catDesc>King Henry the Eighth</catDesc>
+               </category>
+               <category xml:id="iseHam">
+                  <catDesc>Hamlet</catDesc>
+               </category>
+               <category xml:id="iseJC">
+                  <catDesc>Julius Caesar</catDesc>
+               </category>
+               <category xml:id="iseJn">
+                  <catDesc>King John</catDesc>
+               </category>
+               <category xml:id="iseLC">
+                  <catDesc>A Lover's Complaint</catDesc>
+               </category>
+               <category xml:id="iseLLL">
+                  <catDesc>Love's Labour's Lost</catDesc>
+               </category>
+               <category xml:id="iseLr">
+                  <catDesc>King Lear</catDesc>
+               </category>
+               <category xml:id="iseLuc">
+                  <catDesc>The Rape of Lucrece</catDesc>
+               </category>
+               <category xml:id="iseMac">
+                  <catDesc>Macbeth</catDesc>
+               </category>
+               <category xml:id="iseMM">
+                  <catDesc>Measure for Measure</catDesc>
+               </category>
+               <category xml:id="iseMND">
+                  <catDesc>A Midsummer Night's Dream</catDesc>
+               </category>
+               <category xml:id="iseMV">
+                  <catDesc>The Merchant of Venice</catDesc>
+               </category>
+               <category xml:id="iseOth">
+                  <catDesc>Othello</catDesc>
+               </category>
+               <category xml:id="isePer">
+                  <catDesc>Pericles</catDesc>
+               </category>
+               <category xml:id="isePhT">
+                  <catDesc>The Phoenix and Turtle</catDesc>
+               </category>
+               <category xml:id="isePP">
+                  <catDesc>The Passionate Pilgrim</catDesc>
+               </category>
+               <category xml:id="iseR2">
+                  <catDesc>King Richard the Second</catDesc>
+               </category>
+               <category xml:id="iseR3">
+                  <catDesc>King Richard the Third</catDesc>
+               </category>
+               <category xml:id="iseRom">
+                  <catDesc>Romeo and Juliet</catDesc>
+               </category>
+               <category xml:id="iseShr">
+                  <catDesc>The Taming of the Shrew</catDesc>
+               </category>
+               <category xml:id="iseSon">
+                  <catDesc>Sonnets</catDesc>
+               </category>
+               <category xml:id="iseSTM">
+                  <catDesc>Sir Thomas More</catDesc>
+               </category>
+               <category xml:id="iseTGV">
+                  <catDesc>The Two Gentlemen of Verona</catDesc>
+               </category>
+               <category xml:id="iseTim">
+                  <catDesc>Timon of Athens</catDesc>
+               </category>
+               <category xml:id="iseTit">
+                  <catDesc>Titus Andronicus</catDesc>
+               </category>
+               <category xml:id="iseTmp">
+                  <catDesc>The Tempest</catDesc>
+               </category>
+               <category xml:id="iseTN">
+                  <catDesc>Twelfth Night</catDesc>
+               </category>
+               <category xml:id="iseTNK">
+                  <catDesc>The Two Noble Kinsmen</catDesc>
+               </category>
+               <category xml:id="iseTro">
+                  <catDesc>Troilus and Cressida</catDesc>
+               </category>
+               <category xml:id="iseVen">
+                  <catDesc>Venus and Adonis</catDesc>
+               </category>
+               <category xml:id="iseWiv">
+                  <catDesc>The Merry Wives of Windsor</catDesc>
+               </category>
+               <category xml:id="iseWT">
+                  <catDesc>The Winter's Tale</catDesc>
+               </category>
+            </taxonomy>
+           
+            <!--Taxonomy for document types-->
+            <taxonomy xml:id="iseDocumentTypes" n="All document types">
+               
+               <category xml:id="idtBornDigital" n="Born Digital">
+                  <catDesc>Documents not based on a primary source.</catDesc>
+               </category>
+               <category xml:id="idtPeerReviewed">
+                  <catDesc>Documents that have undergone peer review</catDesc>
+               </category>
+               <category xml:id="idtPrimary">
+                  <catDesc>A digital edition of a primary source document (do not combine with "idtBornDigital")</catDesc>
+                  <category xml:id="idtPrimaryModern">
+                     <catDesc>A modernized version of a primary source.</catDesc>
+                  </category>
+                  <category xml:id="idtPrimarySelections">
+                     <catDesc>A selection or segment of a primary source that has not been transcribed in full.</catDesc>
+                  </category>
+                  <category xml:id="idtPrimaryAnthology">
+                     <catDesc>A collection of related primary sources.</catDesc>
+                  </category>
+                  <category xml:id="idtPrimaryPlay">
+                     <catDesc>A primary source document that is conventionally considered a play.</catDesc>
+                  </category>
+                  <category xml:id="idtPrimaryPoem">
+                     <catDesc>A primary source document that is conventionally considered a poem.</catDesc>
+                  </category>
+                  <category xml:id="idtPrimaryProse">
+                     <catDesc>A primary source document that is conventionally considered non-dramatic prose.</catDesc>
+                  </category>
+               </category>
+               <category xml:id="idtAbout">
+                  <catDesc>Documents that describe the Internet Shakespeare Editions project.</catDesc>
+                  <category xml:id="idtAboutOrg">
+                     <catDesc>Documents related to the ISE as non-profit organizaton.</catDesc>
+                  </category>
+                  <category xml:id="idtAboutLegal">
+                     <catDesc>Documents regarding copyright, etc.</catDesc>
+                  </category>
+                  <category xml:id="idtAboutAcknowledge">
+                     <catDesc>Documents that contain acknowledgments to contributors, insitutional and personal friends, and other parties.</catDesc>
+                  </category>
+               </category>
+               <category xml:id="idtLanding">
+                  <catDesc>A page for orienting the user that contains links to other documents.</catDesc>
+               </category>
+               <category xml:id="idtDocumentation">
+                  <catDesc>Documents related to the documentation of the ISE.</catDesc>
+                  <category
+                     xml:id="idtDocumentationHelp">
+                     <catDesc>Documentation for navigating and using the ISE.</catDesc>
+                  </category>
+                  <category xml:id="idtDocumentationEncoding">
+                     <catDesc>Documentation about the ISE's specific encoding practices.</catDesc>
+                  </category>
+                  <category xml:id="idtDocumentationTechnical">
+                     <catDesc>Technical documentation about the ISE's platform.</catDesc>
+                  </category>
+               </category>
+               <category xml:id="idtDatabase">
+                  <catDesc>A centralised collection of items used across the site.</catDesc>
+                  <category xml:id="idtDatabasePersonography">
+                     <catDesc>A collection of people.</catDesc>
+                  </category>
+                  <category xml:id="idtDatabaseBibliography">
+                     <catDesc>The centralized bibliography for the ISE.</catDesc>
+                  </category>
+                  <category xml:id="idtDatabaseWorks">
+                     <catDesc>List of works of primary interest to the project.</catDesc>
+                  </category>
+               </category>
+               <category xml:id="idtParatext">
+                  <catDesc>Documents that are supplementary to an mdtPrimary document.</catDesc>
+                  <category xml:id="idtParatextBibl">
+                     <catDesc>A document created for an edition by an editor that lists specific resources. May or may not be annotated.</catDesc>
+                  </category>
+                  <category xml:id="idtParatextCharacters">
+                     <catDesc>Documents that list dramatic personae or other lists of literary characters.</catDesc>
+                  </category>
+                  <category xml:id="idtParatextContextual">
+                     <catDesc>Contextual information for supplementing an edition.</catDesc>
+                  </category>
+                  <category xml:id="idtParatextNotes">
+                     <catDesc>Documents that are level 3 notes <!--JT>MT: What does this mean?--></catDesc>
+                  </category>
+                  <category xml:id="idtParatextGloss">
+                     <catDesc>Documents that contain glossary-like entries that supplement specific editions.</catDesc>
+                  </category>
+                  <category xml:id="idtParatextChronology">
+                     <catDesc>Documents that list dates and times relating to a primary source.</catDesc>
+                  </category>
+               </category>
+               <category xml:id="idtPublication">
+                  <catDesc>Documents relating to "publications".</catDesc>
+               </category>
+               <category xml:id="idtFacsimile">
+                  <catDesc>A material copy of a text.</catDesc>
+               </category>
+               <category xml:id="idtEdition">
+                  <catDesc>An ISE/DRE/QME edition.</catDesc>
+               </category>
+               <category xml:id="idtApparatus">
+                  <catDesc>Stand-off file used to augment another document.</catDesc>
+               </category><!-- ?? sub-types -->
+               <category xml:id="idtGenerated">
+                  <catDesc>Documents generated by an automated process.</catDesc>
+               </category>
+            </taxonomy>
+
+            <!--Taxonomy for responsibility types-->
+            
+            <!--Note that values from the ISE2 metadata are
+               in the @n attribute, separated by a comma-->
+            <taxonomy xml:id="iseRespTaxonomy">
+               <category xml:id="aut" corresp="loc:aut" n="author">
+                  <!--Replaces @role="author"-->
+                  <catDesc>
+                     <term>Author</term>
+                     <gloss type="loc">A person, family, or organization responsible for creating a work that is primarily textual in content, regardless of media type (e.g., printed text, spoken word, electronic text, tactile text) or genre (e.g., poems, novels, screenplays, blogs). Use also for persons, etc., creating a new work by paraphrasing, rewriting, or adapting works by another creator such that the modification has substantially changed the nature and content of the original or changed the medium of expression.</gloss>
+                     <gloss type="ise">ISE/QME/DRE use the term author in two contexts: (1) to indicate the author of a primary work or document (such as Hamlet), and (2) to indicate the author of a secondary text (such as the Critical Introduction to Hamlet, by David Bevington).</gloss>
+                  </catDesc>
+               </category>
+               <category xml:id="aut_attrib" corresp="loc:att" n="author|attributed">
+                  <!--Replaces @role="author" and @class="attributed"-->
+                  <catDesc>
+                     <term>Supposed Author</term>
+                     <gloss type="loc">An author, artist, etc., relating him/her to a resource for which there is or once was substantial authority for designating that person as author, creator, etc. of the work.</gloss>
+                     <gloss type="ise"/>
+                  </catDesc>
+               </category>
+               <category xml:id="bsl" corresp="loc:bsl" n="bookseller">
+                  <!--Replaces @role="bookseller"-->
+                  <catDesc>
+                     <term>Bookseller</term>
+                     <gloss type="loc">A person or organization who makes books and other bibliographic materials available for purchase. Interest in the materials is primarily lucrative.</gloss>
+                     <gloss type="ise">ISE/QME/DRE use the term bookseller only in the metadata for publications and copies. In cases where a publication was issued with variant title pages, list all booksellers in all variant states of the title page.</gloss>
+                  </catDesc>
+               </category>
+               <category xml:id="edt" corresp="loc:edt" n="editor">
+                  <!--Replaces @role="editor"-->
+                  <catDesc>
+                     <term>Editor</term>
+                     <gloss type="loc">A person, family, or organization contributing to a resource by revising or elucidating the content, e.g., adding an introduction, notes, or other critical matter. An editor may also prepare a resource for production, publication, or distribution. For major revisions, adaptations, etc., that substantially change the nature and content of the original work, resulting in a new work, see author.</gloss>
+                     <gloss type="ise">ISE/QME/DRE use the general term editor only in edition metadata and only to indicate when a person is responsible for editing all parts of an edition. Otherwise, use the more granular terms to describe the precise nature of the editorial role.</gloss>
+                  </catDesc>
+               </category>
+               <category xml:id="edt_asstcoord" n="editor|assistant coordinating">
+                  <!--Replaces @role="editor" and @class="assistant coordinating"-->
+                  <catDesc>
+                     <term>Assistant Coordinating Editor</term>
+                     <gloss type="ise">The term assistant coordinating editor appears in the metadata for documents produced before 2017. From 2017 on, this term is reserved for project-level credits.</gloss>
+                  </catDesc>
+               </category>
+               <category xml:id="edt_assoccoord" n="editor|associate coordinating">
+                  <!--Replaces @role="editor" and @class="associate coordinating"-->
+                  <catDesc>
+                     <term>Associate Coordinating Editor</term>
+                     <gloss type="ise"/>
+                  </catDesc>
+               </category>
+               <category xml:id="edt_assoctext" n="editor|associate textual">
+                  <!--Replaces @role="editor" and @class="associate textual"-->
+                  <catDesc>
+                     <term>Associate Textual Editor</term>
+                     <gloss type="ise"/>
+                  </catDesc>
+               </category>
+               <category xml:id="edt_cont" n="editor|contributing">
+                  <!--Replaces @role="editor" and @class="contributing"-->
+                  <catDesc>
+                     <term>Contributing Editor</term>
+                     <gloss type="ise"/>
+                  </catDesc>
+               </category>
+               <category xml:id="edt_coord" n="editor|coordinating">
+                  <!--Replaces @role="editor" and @class="coordinating"-->
+                  <catDesc>
+                     <term>Coordinating Editor</term>
+                     <gloss type="ise"/>
+                  </catDesc>
+               </category>
+               <category xml:id="edt_gen" n="editor|general">
+                  <!--Replaces @role="editor" and @class="general"-->
+                  <catDesc>
+                     <term>General Editor</term>
+                     <gloss type="ise"/>
+                  </catDesc>
+               </category>
+               <category xml:id="edt_gentext" n="editor|general textual">
+                  <!--Replaces @role="editor" and @class="general textual"-->
+                  <catDesc>
+                     <term>General Textual Editor</term>
+                     <gloss type="ise"/>
+                  </catDesc>
+               </category>
+               <category xml:id="edt_mrk" corresp="loc:mrk" n="editor|markup">
+                  <!--Replaces @role="editor" and @class="markup"-->
+                  <catDesc>
+                     <term>Markup Editor</term>
+                     <gloss type="loc">A person or organization performing the coding of SGML, HTML, or XML markup of metadata, text, etc.</gloss>
+                     <gloss type="ise"/>
+                  </catDesc>
+               </category>
+               <category xml:id="edt_perf" n="editor|performance">
+                  <!--Replaces @role="editor" and @class="performance"-->
+                  <catDesc>
+                     <term>Performance Editor</term>
+                     <gloss type="ise"/>
+                  </catDesc>
+               </category>
+               <category xml:id="edt_text" n="editor|textual">
+                  <!--Replaces @role="editor" and @class="textual"-->
+                  <catDesc>
+                     <term>Textual Editor</term>
+                     <gloss type="ise"/>
+                  </catDesc>
+               </category>
+               <category xml:id="ptr" corresp="loc:ptr" n="printer">
+                  <!--Replaces @role="printer"-->
+                  <catDesc>
+                     <term>Printer</term>
+                     <gloss type="loc">A person, family, or organization involved in manufacturing a manifestation of printed text, notated music, etc., from type or plates, such as a book, newspaper, magazine, broadside, score, etc.</gloss>
+                     <gloss type="ise"/>
+                  </catDesc>
+               </category>
+               <category xml:id="rtm_ra" corresp="loc:rtm" n="editor|ra,researchAssistant">
+                  <!--Replaces @role="editor" and @class="ra"-->
+                  <!--Replaces @role="researchAssistant"-->
+                  <catDesc>
+                     <term>Editorial Research Assistant</term>
+                     <gloss type="loc">A person who participated in a research project but whose role did not involve direction or management of it</gloss>
+                     <gloss type="ise">Legacy term. Use rtm or appropriate role from 2017 on.</gloss>
+                  </catDesc>
+               </category>
+               <category xml:id="rtm" corresp="loc:rtm">
+                  <catDesc>
+                     <term>Research Team Member</term>
+                     <gloss type="loc">A person who participated in a research project but whose role did not involve direction or management of it.</gloss>
+                     <gloss type="ise"/>
+                  </catDesc>
+               </category>
+               <category xml:id="trl" corresp="loc:trl" n="translator">
+                  <!--Replaces @role="translator"-->
+                  <catDesc>
+                     <term>Translator</term>
+                     <gloss type="loc">A person or organization who renders a text from one language into another, or from an older form of a language into the modern form.</gloss>
+                     <gloss type="ise"/>
+                  </catDesc>
+               </category>
+               <category xml:id="pdr" corresp="loc:pdr">
+                  <catDesc>
+                     <term>Project Director</term>
+                     <gloss type="loc">A person or organization with primary responsibility for all essential aspects of a project, has overall responsibility for managing projects, or provides overall direction to a project manager.</gloss>
+                     <gloss type="ise">ISE/QME/DRE uses the term project director for the person who direct a discrete project published on the ISE platform.</gloss>
+                  </catDesc>
+               </category>
+               <category xml:id="pfr" corresp="loc:pfr">
+                  <catDesc>
+                     <term>Proofreader</term>
+                     <gloss type="loc">A person who corrects printed matter.</gloss>
+                     <gloss type="ise">ISE/QME/DRE use the term proofreader for the person who</gloss>
+                  </catDesc>
+               </category>
+               <category xml:id="own" corresp="loc:own" n="owner">
+                  <catDesc>
+                     <term>Owner</term>
+                     <gloss type="loc">A person, family, or organization that currently owns an item or collection, i.e.has legal possession of a resource.</gloss>
+                     <gloss type="ise">ISE/QME/DRE use the term owner for the person, family, or library that owns the physical copy of an artifact reproduced in facsimile on the platform. The owner is often but not necessarily the copyright holder.</gloss>
+                  </catDesc>
+               </category>
+               <category xml:id="vet">
+                  <catDesc>
+                     <term>Peer Reviewer</term>
+                     <gloss type="ise">ISE/QME/DRE use the term peer reviewer for a person who reviews a transcription, critical materials, dataset, and/or some or all components of an edition.</gloss>
+                  </catDesc>
+               </category>
+               <category xml:id="cph" corresp="loc:cph">
+                  <catDesc>
+                     <term>Copyright holder</term>
+                     <gloss type="loc">A person or organization to whom copy and legal rights have been granted or transferred for the intellectual content of a work. The copyright holder, although not necessarily the creator of the work, usually has the exclusive right to benefit financially from the sale and use of the work to which the associated copyright protection applies.</gloss>
+                     <gloss type="ise">Normally the editor is the copyright holder for an ISE/QME/DRE edition.</gloss>
+                  </catDesc>
+               </category>
+               <category xml:id="edt_comp" corresp="loc:com">
+                  <catDesc>
+                     <term>Compiler</term>
+                     <gloss type="loc">A person, family, or organization responsible for creating a new work (e.g., a bibliography, a directory) through the act of compilation, e.g., selecting, arranging, aggregating, and editing data, information, etc.</gloss>
+                     <gloss type="ise">ISE/QME/DRE use the term compiler for the person who chooses and aggregates the resources included in an edition, if those resources are not all by the editor of the edition. The compiler and the editor may be the same person; in that case, the person needs two responsibility statements.</gloss>
+                  </catDesc>
+               </category>
+               <category xml:id="aut_ann" corresp="loc:ann">
+                  <catDesc>
+                     <term>Author of Annotations</term>
+                     <gloss type="loc">A person who makes manuscript annotations on an item.</gloss>
+                     <gloss type="ise">ISE/QME/DRE use the term author of annotations for a person who writes annotions for a text.</gloss>
+                  </catDesc>
+               </category>
+               <category xml:id="anl" corresp="loc:anl">
+                  <catDesc>
+                     <term>Analyst</term>
+                     <gloss type="loc">A person or organization that reviews, examines, and interprets data or information in a specific area.</gloss>
+                     <gloss type="ise"/>
+                  </catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+         <charDecl>
+            <desc>Characters used in the Internet Shakespeare Editions old-spelling editions.</desc>
+            <!--Add glyphs here-->
+
+            <!--Note xml:id naming standard here is g_UNICODENAME. If there is no unicode name...use something else?-->
+          
+           <!--CHARACTERS-->
+            
+           
+            <glyph xml:id="g_longS">
+               <glyphName>LATIN SMALL LETTER LONG S</glyphName>
+               <mapping type="modern">s</mapping>
+               <mapping type="standard">ſ</mapping>
+               <mapping type="ise2">{s}</mapping>
+               <mapping type="unicode">U+017F</mapping>
+            </glyph>
+            <glyph xml:id="g_thorn">
+               <glyphName>LATIN CAPITAL LETTER THORN</glyphName>
+               <mapping type="modern">th</mapping>
+               <mapping type="standard">þ</mapping>
+               <mapping type="ise2">{th}</mapping>
+               <mapping type="unicode">U+00FE</mapping>
+            </glyph>
+            
+            <!--VV and W are used interchangably (with similar frequency) in editors' OS docs. We need to 
+               map for both of them right now-->
+            <glyph xml:id="g_lower_vv">
+               <glyphName>LOWERCASE DOUBLE V FOR W</glyphName>
+               <mapping type="modern">w</mapping>
+               <mapping type="standard">vv</mapping>
+               <mapping type="ise2">{vv}</mapping>
+               <mapping type="ise2">{w}</mapping>
+            </glyph>
+            
+            <glyph xml:id="g_upper_VV">
+               <glyphName>UPPERCASE DOUBLE V FOR W</glyphName>
+               <mapping type="modern">W</mapping>
+               <mapping type="standard">VV</mapping>
+               <mapping type="ise2">{VV}</mapping>
+               <mapping type="ise2">{W}</mapping>
+            </glyph>
+            <glyph xml:id="g_rotunda">
+               <glyphName>'LATIN SMALL LETTER R ROTUNDA</glyphName>
+               <mapping type="modern">r</mapping>
+               <mapping type="standard">ꝛ</mapping>
+               <mapping type="ise2">{r}</mapping>
+               <mapping type="unicode">U+A75A</mapping>
+            </glyph>
+            <!--LIGATURES-->
+            <glyph xml:id="g_lig_ff">
+               <glyphName>LATIN SMALL LIGATURE FF</glyphName>
+               <mapping type="modern">ff</mapping>
+               <mapping type="standard">ﬀ</mapping>
+               <mapping type="ise2">{ff}</mapping>
+               <mapping type="unicode">U+FB00</mapping>
+            </glyph>
+            <glyph xml:id="g_lig_fi">
+               <glyphName>LATIN SMALL LIGATURE FI</glyphName>
+               <mapping type="modern">fi</mapping>
+               <mapping type="standard">ﬁ</mapping>
+               <mapping type="ise2">{fi}</mapping>
+               <mapping type="unicode">U+FB01</mapping>
+            </glyph>
+            <glyph xml:id="g_lig_fl">
+               <glyphName>LATIN SMALL LIGATURE FL</glyphName>
+               <mapping type="modern">fl</mapping>
+               <mapping type="standard">ﬂ</mapping>
+               <mapping type="ise2">{fl}</mapping>
+               <mapping type="unicode">U+FB02</mapping>
+            </glyph>
+            <glyph xml:id="g_lig_ffi">
+               <glyphName>LATIN SMALL LIGATURE FFI</glyphName>
+               <mapping type="modern">ffi</mapping>
+               <mapping type="standard">ﬃ</mapping>
+               <mapping type="ise2">{ffi}</mapping>
+               <mapping type="unicode">U+FB03</mapping>
+            </glyph>
+            <glyph xml:id="g_lig_ffl">
+               <glyphName>LATIN SMALL LIGATURE FFL</glyphName>
+               <mapping type="modern">ffl</mapping>
+               <mapping type="standard">ﬄ</mapping>
+               <mapping type="ise2">{ffl}</mapping>
+               <mapping type="unicode">U+FB04</mapping>
+            </glyph>
+            <glyph xml:id="g_lig_st">
+               <glyphName>LATIN SMALL LIGATURE ST</glyphName>
+               <mapping type="modern">st</mapping>
+               <mapping type="standard">ﬆ</mapping>
+               <mapping type="ise2">{st}</mapping>
+               <mapping type="unicode">U+FB06</mapping>
+            </glyph>
+            <glyph xml:id="g_lig_longS_t">
+               <glyphName>LATIN SMALL LIGATURE LONG S T</glyphName>
+               <mapping type="modern">st</mapping>
+               <mapping type="standard">ﬅ</mapping>
+               <mapping type="ise2">{{s}t}</mapping>
+               <mapping type="unicode">U+FB05</mapping>
+            </glyph>
+            <glyph xml:id="g_lig_lower_ij">
+               <glyphName>LATIN SMALL LIGATURE IJ</glyphName>
+               <mapping type="modern">ij</mapping>
+               <mapping type="standard">ĳ</mapping>
+               <mapping type="ise2">{ij}</mapping>
+               <mapping type="unicode">U+0133</mapping>
+            </glyph>
+            <glyph xml:id="g_lig_upper_IJ">
+               <glyphName>LATIN CAPITAL LIGATURE IJ</glyphName>
+               <mapping type="modern">IJ</mapping>
+               <mapping type="standard">Ĳ</mapping>
+               <mapping type="ise2">{IJ}</mapping>
+               <mapping type="unicode">U+0132</mapping>
+            </glyph>
+            <glyph xml:id="g_lig_ct">
+               <glyphName>LATIN SMALL LIGATURE CT</glyphName>
+               <mapping type="modern">ct</mapping>
+               <mapping type="ise2">{ct}</mapping>
+            </glyph>
+            
+           <glyph xml:id="g_lig_longS_h">
+              <glyphName>LATIN SMALL LIGATURE LONG S H</glyphName>
+              <mapping type="modern">sh</mapping>
+              <mapping type="standard">ſh</mapping>
+              <mapping type="ise2">{{s}h}</mapping>
+           </glyph>
+            
+            <glyph xml:id="g_lig_longS_longS">
+               <glyphName>LATIN SMALL LIGATURE LONG S LONG S</glyphName>
+               <mapping type="modern">ss</mapping>
+               <mapping type="standard">ſſ</mapping>
+               <mapping type="ise2">{{s}{s}}</mapping>
+            </glyph>
+            
+            <glyph xml:id="g_lig_is">
+               <glyphName>LATIN SMALL LIGATURE IS</glyphName>
+               <mapping type="modern">is</mapping>
+               <mapping type="ise2">{is}</mapping>
+            </glyph>
+            
+            <glyph xml:id="g_lig_longS_longS_i">
+               <glyphName>LATIN SMALL LIGATURE LONG S LONG S I</glyphName>
+               <mapping type="modern">ssi</mapping>
+               <mapping type="standard">ſſi</mapping>
+               <mapping type="ise2">{{s}{s}i}</mapping>
+            </glyph>
+            
+            <glyph xml:id="g_lig_as">
+               <glyphName>LATIN SMALL LIGATURE AS</glyphName>
+               <mapping type="modern">as</mapping>
+               <mapping type="ise2">{as}</mapping>
+            </glyph>
+            
+            <glyph xml:id="g_lig_longS_i">
+               <glyphName>LATIN SMALL LIGATURE LONG S I</glyphName>
+               <mapping type="modern">si</mapping>
+               <mapping type="standard">ſi</mapping>
+               <mapping type="ise2">{{s}i}</mapping>
+            </glyph>
+            
+            <glyph xml:id="g_lig_us">
+               <glyphName>LATIN SMALL LIGATURE US</glyphName>
+               <mapping type="modern">us</mapping>
+               <mapping type="ise2">{us}</mapping>
+            </glyph>
+            
+            <glyph xml:id="g_lig_longS_l">
+               <glyphName>LATIN SMALL LIGATURE LONG S L</glyphName>
+               <mapping type="modern">sl</mapping>
+               <mapping type="standard">ſl</mapping>
+               <mapping type="ise2">{{s}l}</mapping>
+            </glyph>
+            
+            <glyph xml:id="g_lig_ll">
+               <glyphName>LATIN SMALL LIGATURE LL</glyphName>
+               <mapping type="modern">ll</mapping>
+               <mapping type="ise2">{ll}</mapping>
+               <!--Is this character the same as the latin small letter middle-welsh ll (U+1EFB)?-->
+            </glyph>
+            
+           <glyph xml:id="g_lig_fr">
+              <glyphName>LATIN SMALL LIGATURE FR</glyphName>
+              <mapping type="modern">fr</mapping>
+              <mapping type="ise2">{fr}</mapping>
+           </glyph>
+            
+           <glyph xml:id="g_lig_longS_p">
+              <glyphName>LATIN SMALL LIGATURE LONG S P</glyphName>
+              <mapping type="modern">sp</mapping>
+              <mapping type="ise2">{{s}p}</mapping>
+           </glyph>
+          
+          <glyph xml:id="g_lig_os">
+             <glyphName>LATIN SMALL LIGATURE OS</glyphName>
+             <mapping type="modern">os</mapping>
+             <mapping type="ise2">{os}</mapping>
+          </glyph>
+           
+            
+         </charDecl>
+      </encodingDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <p>This document describes the taxonomies used by the Internet Shakespeare Editions.</p>
+      </body>
+   </text>
+</TEI>
