@@ -58,8 +58,24 @@
         <!--MODULE: GAIJI-->
         <moduleRef key="gaiji" include="char charDecl charName charProp g glyph glyphName localName mapping"/>
         
+        <!--To be changed in processing-->
+        <elementSpec ident="g" mode="change"/>
+        
+        
         <!--MODULE: HEADER-->
         <moduleRef key="header" include="abstract authority availability catDesc catRef category change classDecl distributor edition editionStmt editorialDecl encodingDesc fileDesc idno licence listChange listPrefixDef normalization prefixDef profileDesc projectDesc publicationStmt rendition revisionDesc seriesStmt sourceDesc taxonomy teiHeader textClass titleStmt"/>
+        
+        <elementSpec ident="catRef" mode="change">
+          <attList>
+            <attDef ident="scheme" mode="replace">
+              <valList mode="add" type="closed">
+                <valItem ident="idt:iseDocumentTypes">
+                  <gloss>The Internet Shakespeare Editions taxonomy of document types.</gloss>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
         
         <!--MODULE: LINKING-->
         <moduleRef key="linking" include="ab anchor"/>
