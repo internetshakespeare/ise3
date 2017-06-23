@@ -17,32 +17,171 @@
   <text>
     <body>
       <schemaSpec ident="ise_all" start="TEI">
-        <moduleRef key="analysis" include="span"/>
-        <moduleRef key="core" include="abbr address author bibl cb choice cit corr date desc expan foreign gap gloss graphic head hi item l label lb lg list listBibl media milestone name note p pb ptr publisher q quote ref reg resp respStmt sic sp speaker stage term title"/>
-        <moduleRef key="corpus" include="particDesc"/>
-        <moduleRef key="drama" include="castList"/>
-        <moduleRef key="figures" include="cell figDesc figure row table"/>
-        <moduleRef key="gaiji" include="char charDecl charName charProp g glyph glyphName localName mapping"/>
-        <moduleRef key="header" include="abstract authority availability catDesc catRef category change classDecl distributor edition editionStmt editorialDecl encodingDesc fileDesc idno licence listChange listPrefixDef normalization prefixDef profileDesc projectDesc publicationStmt rendition revisionDesc seriesStmt sourceDesc taxonomy teiHeader textClass titleStmt"/>
-        <moduleRef key="linking" include="ab anchor"/>
-        <moduleRef key="namesdates" include="addName forename listPerson persName person surname"/>
-        <moduleRef key="tagdocs" include="att code gi val ident"/>
-        <moduleRef key="textcrit" include="app lem listApp listWit rdg wit witDetail witness"/>
-        <moduleRef key="tei"/>
-        <moduleRef key="textstructure" include="TEI back body byline closer dateline div docAuthor docDate docEdition docImprint docTitle front group opener text titlePage titlePart trailer"/>
-        <moduleRef key="transcr" include="fw space supplied"/>
         
-        <!--   <classSpec ident="att.pointing.group" type="atts" module="tei" mode="delete"/>
-        <classSpec ident="att.ranging" type="atts" module="tei" mode="delete"/>
-        <classSpec ident="att.readFrom" type="atts" module="tei" mode="delete"/>
-        <classSpec ident="att.repeatable" type="atts" module="tei" mode="delete"/>
+        <!--MODULE: ANALYSIS-->
+        <moduleRef key="analysis" include="span"/>
+        <classSpec ident="att.global.analytic" module="analysis" mode="delete" type="atts"/>
+        <elementSpec ident="span" module="analysis" mode="change">
+          <attList>
+            <attDef ident="cert" mode="delete"/>
+            <attDef ident="corresp" mode="delete"/>
+            <attDef ident="facs" mode="delete"/>
+            <attDef ident="prev" mode="delete"/>
+            <attDef ident="next" mode="delete"/>
+            <attDef ident="rend" mode="delete"/>
+            <attDef ident="rendition" mode="delete"/>
+            <attDef ident="style" mode="delete"/>
+            <attDef ident="target" mode="delete"/>
+          </attList>
+        </elementSpec>
+        
+        <!--MODULE: CORE-->
+        <moduleRef key="core" include="abbr address author bibl cb choice cit corr date desc expan foreign gap gloss graphic head hi item l label lb lg list listBibl media milestone name note p pb ptr publisher q quote ref reg resp respStmt sic sp speaker stage term title"/>
+        <elementSpec ident="note" module="core" mode="change">
+          <attList>
+            <attDef ident="anchored" mode="delete"/>
+            <attDef ident="targetEnd" mode="delete"/>
+            <attDef ident="subtype" mode="delete"/>
+          </attList> 
+        </elementSpec>
+        
+        
+        <!--MODULE: CORPUS-->
+        <moduleRef key="corpus" include="particDesc"/>
+        
+        <!--MODULE: DRAMA-->
+        <moduleRef key="drama" include="castList"/>
+        
+        <!--MODULE: FIGURES-->
+        <moduleRef key="figures" include="cell figDesc figure row table"/>
+        
+        <!--MODULE: GAIJI-->
+        <moduleRef key="gaiji" include="char charDecl charName charProp g glyph glyphName localName mapping"/>
+        
+        <!--MODULE: HEADER-->
+        <moduleRef key="header" include="abstract authority availability catDesc catRef category change classDecl distributor edition editionStmt editorialDecl encodingDesc fileDesc idno licence listChange listPrefixDef normalization prefixDef profileDesc projectDesc publicationStmt rendition revisionDesc seriesStmt sourceDesc taxonomy teiHeader textClass titleStmt"/>
+        
+        <!--MODULE: LINKING-->
+        <moduleRef key="linking" include="ab anchor"/>
+        <classSpec ident="att.global.linking" module="linking"  mode="change" type="atts">
+          <attList>
+            <attDef ident="synch" mode="delete"/>
+            <attDef ident="sameAs" mode="delete"/>
+            <attDef ident="copyOf" mode="delete"/>
+            <attDef ident="exclude" mode="delete"/>
+            <attDef ident="select" mode="delete"/>
+          </attList>
+        </classSpec>
+        
+        <!--MODULE: NAMESDATES-->
+        <moduleRef key="namesdates" include="addName forename listPerson persName person surname"/>
+        <classSpec ident="att.datable.iso" type="atts" module="namesdates" mode="delete"/>
+        
+        <moduleRef key="tagdocs" include="att code gi val ident"/>
+        
+        <!--MODULE: TEI-->
+        <moduleRef key="tei"/>
+        <classSpec type="atts" module="tei" ident="att.canonical" mode="change">
+          <attList>
+            <attDef ident="key" mode="delete"/>
+          </attList>
+        </classSpec>
+        <classSpec ident="att.ranging" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.written" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.cReferencing" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.datable" module="tei" type="atts" mode="change">
+          <attList>
+            <attDef ident="period" mode="delete"/>
+          </attList>
+        </classSpec>
+        <classSpec ident="att.datcat" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.declarable" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.declaring" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.fragmentable" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.divLike" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.docStatus" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.duration.w3c" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.duration.iso" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.editLike" module="tei" type="atts" mode="change">
+          <attList>
+            <attDef ident="instant" mode="delete"/>
+          </attList>
+        </classSpec>
+        <classSpec ident="att.global" module="tei" type="atts" mode="change">
+          <attList>
+            <attDef ident="xml:base" mode="delete"/>
+            <attDef ident="xml:space" mode="delete"/>
+          </attList>
+        </classSpec>
+        <classSpec ident="att.handFeatures" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.interpLike" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.measurement" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.naming" module="tei" type="atts" mode="change">
+          <attList>
+            <attDef ident="nymRef" mode="delete"/>
+          </attList>
+        </classSpec>
+        <classSpec ident="att.notation" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.pointing" module="tei" type="atts" mode="change">
+          <attList>
+            <attDef ident="targetLang" mode="delete"/>
+            <attDef ident="evaluate" mode="delete"/>
+          </attList>
+        </classSpec>
+        <classSpec ident="att.pointingGroup" module="tei" type="atts" mode="delete"/>
         <classSpec ident="att.scoping" type="atts" module="tei" mode="delete"/>
         <classSpec ident="att.segLike" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.sortable" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.edition" module="tei" type="atts" mode="delete"/>
+        <classSpec ident="att.readFrom" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.spanning" type="atts" module="tei" mode="delete"/>
         <classSpec ident="att.styleDef" type="atts" module="tei" mode="delete"/>
-        <classSpec ident="att.textCritical" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.repeatable" type="atts" module="tei" mode="delete"/>
         <classSpec ident="att.timed" type="atts" module="tei" mode="delete"/>
         <classSpec ident="att.transcriptional" type="atts" module="tei" mode="delete"/>
-        <classSpec ident="att.translatable" type="atts" module="tei" mode="delete"/>-->
+        <classSpec ident="att.translatable" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.citing" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.partials" type="atts" module="tei" mode="delete"/>
+       <classSpec ident="att.personal" type="atts" module="tei" mode="change">
+         <attList>
+           <attDef ident="full" mode="delete"/>
+           <attDef ident="sort" mode="delete"/>
+         </attList>
+       </classSpec>
+        
+      
+        <classSpec ident="att.global.analytic" type="atts" module="tei" mode="delete"/>
+        <classSpec ident="att.pointing.group" type="atts" module="tei" mode="delete"/>
+        
+     
+        
+       
+        
+        
+        <!--MODULE: TEXTCRIT-->
+        <moduleRef key="textcrit" include="app lem listApp listWit rdg wit witness"/>
+        <classSpec ident="att.textCritical" module="textcrit" type="atts" mode="change">
+          <attList>
+            <attDef ident="cause" mode="delete"/>
+            <attDef ident="varSeq" mode="delete"/>
+            <attDef ident="require" mode="delete"/>
+          </attList>
+        </classSpec>
+        
+        
+        
+        <!--MODULE: TEXTSTRUCTURE-->
+        <moduleRef key="textstructure" include="TEI back body byline closer dateline div docAuthor docDate docEdition docImprint docTitle front group opener text titlePage titlePart trailer"/>
+        
+        
+        <!--MODULE: TRANSCR-->
+        <moduleRef key="transcr" include="fw space supplied"/>
+        <classSpec ident="att.global.change" type="atts" module="transcr" mode="delete"/>
+        <classSpec ident="att.coordinates" type="atts" module="transcr" mode="delete"/>
+
+      
+
+        
         
       </schemaSpec>
     </body>
