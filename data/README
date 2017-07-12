@@ -1,3 +1,0 @@
-# Data
-
-The data directory contains a sample set of data from which you can build the site. The first step in the build process, however, is to replace the data directory with data from the ISE's SVN repository.
