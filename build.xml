@@ -10,25 +10,57 @@
         classname="com.schematron.ant.SchematronTask"/>
 
     <import file="anttask/overridable.xml"/>
-
-
-    <target name="all" depends="validate, build, package"/>
-
-    <target name="validate">
-        <!-- make sure everything validates according to its schema -->
+    
+    <property name="svn.dir" value="${basedir}/svn"/>
+    <property name="data.dir" value="${svn.dir}/data"/>
+    <property name="teibp.dir" value="${basedir}/teibp"/>
+    <property name="utilities.dir" value="${basedir}/lib"/>
+    <property name="outDir" value="${basedir}/products"/>
+    
+    
+    <fileset id="dataFiles" dir="${data.dir}">
+        <include name="**/**.xml"/>
+    </fileset>
+    
+    <fileset id="documentationFiles" dir="${data.dir}/documentation">
+        <include name="**.xml"/>
+    </fileset>
+    
+    <!--We don't need schemas right away, because all of our data should be validated before hand-->
+    
+    
+    <target name="init">
+        <echo message="Cleaning up old version of the data..."/>
+        <delete dir="${svn.dir}"/>
+        <echo message="Now exporting the SVN data into a data/dir"/>
+        <exec executable="svn">
+            <arg line="export https://revision.hcmc.uvic.ca/svn/ise3/ ${svn.dir} --ignore-externals"/>
+        </exec>
     </target>
+    
+    
+    <target name="teiBp">
+        <echo message="Adding TEI boilerplate to documents for now, so we can view something..."/>
+        <echo message="Getting TEI boilerplate repo"/>
+        <delete dir="${teibp.dir}"/>
+        <mkdir dir="${teibp.dir}"/>
+        <get src="https://github.com/GrantLS/TEI-Boilerplate/archive/master.zip" dest="teibp.zip"/>
+        <unzip src="teibp.zip" dest="${teibp.dir}">
+            <cutdirsmapper dirs="1"/>
+        </unzip>
+        <echo message="Now adding teiBp declaration to the documents so that they can be rendered..."/>
+        <java fork="true" classname="net.sf.saxon.Transform" classpath="${utilities.dir}/saxon9he.jar">
+            <arg value="-s:xsl/create-temporary-documentation.xsl"/>
+            <arg value="-xsl:xsl/create-temporary-documentation.xsl"/>
+            <arg value="--suppressXsltNamespaceCheck:on"/>
+            <arg value="dataDir=${data.dir}"/>
+            <arg value="outDir=${outDir}"/>
+        </java>
+       </target>
+    
+    
 
-    <target name="build">
-        <!-- TODO: generate derivative TEI, HTML, etc -->
-        <mkdir dir="build/data"/>
-        <!-- TODO: any processing needed of web resources? -->
-        <!-- apply filters to expath-pkg -->
-        <overridableFilter using="exist-app.properties"/>
-        <copy todir="build/expath-pkg">
-            <fileset dir="expath-pkg"/>
-        </copy>
-    </target>
-
+<!--
     <target name="package">
         <overridableProperties using="exist-app.properties"/>
         <zip destfile="build/${abbrev}-${version}.xar">
@@ -36,10 +68,16 @@
             <zipfileset dir="build/data" prefix="content"/>
             <zipfileset dir="web" prefix="content"/>
         </zip>
-    </target>
+    </target>-->
 
     <target name="clean">
         <delete dir="build"/>
     </target>
 
+
+
+
+    <target name="all" depends="init, teiBp"/>
+    
+    
 </project>
