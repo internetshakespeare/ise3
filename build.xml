@@ -38,27 +38,7 @@
         </exec>
     </target>
     
-    
-    <target name="teiBp">
-        <echo message="Adding TEI boilerplate to documents for now, so we can view something..."/>
-        <echo message="Getting TEI boilerplate repo"/>
-        <delete dir="${teibp.dir}"/>
-        <mkdir dir="${teibp.dir}"/>
-        <get src="https://github.com/GrantLS/TEI-Boilerplate/archive/master.zip" dest="teibp.zip"/>
-        <unzip src="teibp.zip" dest="${teibp.dir}">
-            <cutdirsmapper dirs="1"/>
-        </unzip>
-        <echo message="Now adding teiBp declaration to the documents so that they can be rendered..."/>
-        <java fork="true" classname="net.sf.saxon.Transform" classpath="${utilities.dir}/saxon9he.jar">
-            <arg value="-s:xsl/create-temporary-documentation.xsl"/>
-            <arg value="-xsl:xsl/create-temporary-documentation.xsl"/>
-            <arg value="--suppressXsltNamespaceCheck:on"/>
-            <arg value="dataDir=${data.dir}"/>
-            <arg value="outDir=${outDir}"/>
-        </java>
-       </target>
-    
-    
+   
 
 <!--
     <target name="package">
@@ -77,7 +57,7 @@
 
 
 
-    <target name="all" depends="init, teiBp"/>
+    <target name="all" depends="init"/>
     
     
 </project>
