@@ -11,31 +11,73 @@
 
     <import file="anttask/overridable.xml"/>
     
-    <property name="svn.dir" value="${basedir}/svn"/>
-    <property name="data.dir" value="${svn.dir}/data"/>
-    <property name="teibp.dir" value="${basedir}/teibp"/>
+    <property name="source.dir" value="${basedir}/svn"/>
+    <property name="source.data.dir" value="${source.dir}/data"/>
     <property name="utilities.dir" value="${basedir}/lib"/>
-    <property name="outDir" value="${basedir}/products"/>
+    <property name="site.dir" value="${basedir}/site"/>
+    <property name="siteXml.dir" value="${site.dir}/xml"/>
+    <property name="originalXml.dir" value="${siteXml.dir}/original"/>
+    <property name="standaloneXml.dir" value="${siteXml.dir}/standalone"/>
     
+    <property name="source.schema.dir" value="${source.dir}/sch"/>
+    <property name="site.schema.dir" value="${site.dir}/sch"/>
     
-    <fileset id="dataFiles" dir="${data.dir}">
+    <fileset id="sourceXml" dir="${source.data.dir}">
         <include name="**/**.xml"/>
     </fileset>
     
-    <fileset id="documentationFiles" dir="${data.dir}/documentation">
-        <include name="**.xml"/>
+    <fileset id="originalXml" dir="${originalXml.dir}">
+        <include name="**/**.xml"/>
+    </fileset>
+    
+    <fileset id="standaloneXml" dir="${standaloneXml.dir}">
+        <include name="**/**.xml"/>
+    </fileset>
+    
+    <fileset id="siteXhtml" dir="${site.dir}">
+        <include name="**.html"/>
+    </fileset>
+    
+    <!-- DIR STRUCTURES OF THE SITE
+        
+        site [site.dir]/
+            xml [siteXml.dir]/
+                original [originalXml.dir]/
+                standalone [standaloneXml.dir]/
+            HTML FILES-->
+    
+    <fileset id="schemaFiles" dir="${source.schema.dir}">
+        <include name="**"/>
     </fileset>
     
     <!--We don't need schemas right away, because all of our data should be validated before hand-->
     
     
     <target name="init">
-        <echo message="Cleaning up old version of the data..."/>
-        <delete dir="${svn.dir}"/>
+
+        <echo message="Cleaning up directories from old build..."/>
+        <delete dir="${source.dir}"/>
+        <delete dir="${site.dir}"/>
+        <!--We now make the site dir, but the SVN dir is made for us-->
+        <mkdir dir="${site.dir}"/>
         <echo message="Now exporting the SVN data into a data/dir"/>
         <exec executable="svn">
-            <arg line="export https://revision.hcmc.uvic.ca/svn/ise3/ ${svn.dir} --ignore-externals"/>
+            <arg line="export https://revision.hcmc.uvic.ca/svn/ise3/ ${source.dir} --ignore-externals"/>
         </exec>
+    </target>
+    
+    <target name="copyAuxFiles">
+        <echo message="Copying over auxillary files (schema, etc)..."/>
+        <copy todir="${site.schema.dir}">
+           <fileset refid="schemaFiles"/>
+        </copy>
+    </target>
+    
+    <target name="createOriginalXml">
+        <echo message="Creating (i.e. just flattening, for now) the original XML from the source XML..."/>
+        <copy todir="${originalXml.dir}" flatten="true">
+            <fileset refid="sourceXml"/>
+        </copy>
     </target>
     
    
@@ -50,14 +92,10 @@
         </zip>
     </target>-->
 
-    <target name="clean">
-        <delete dir="build"/>
-    </target>
 
 
 
-
-    <target name="all" depends="init"/>
+    <target name="all" depends="init, copyAuxFiles, createOriginalXml"/>
     
     
 </project>
