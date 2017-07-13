@@ -11,13 +11,20 @@
 
     <import file="anttask/overridable.xml"/>
     
+    <property name="line.separator" value="&#x0a;"/>
+    
     <property name="source.dir" value="${basedir}/svn"/>
     <property name="source.data.dir" value="${source.dir}/data"/>
     <property name="utilities.dir" value="${basedir}/lib"/>
     <property name="site.dir" value="${basedir}/site"/>
     <property name="siteXml.dir" value="${site.dir}/xml"/>
     <property name="originalXml.dir" value="${siteXml.dir}/original"/>
+    <property name="standardXml.dir" value="${siteXml.dir}/standard"/>
     <property name="standaloneXml.dir" value="${siteXml.dir}/standalone"/>
+    <property name="xsl.dir" value="${basedir}/xsl"/>
+    <property name="build.modules.dir" value="${basedir}/build_modules"/>
+    <property name="lib.dir" value="${basedir}/lib"/>
+    <property name="saxon" value="${lib.dir}/saxon9he.jar"/>
     
     <property name="source.schema.dir" value="${source.dir}/sch"/>
     <property name="site.schema.dir" value="${site.dir}/sch"/>
@@ -29,6 +36,7 @@
     <fileset id="originalXml" dir="${originalXml.dir}">
         <include name="**/**.xml"/>
     </fileset>
+   
     
     <fileset id="standaloneXml" dir="${standaloneXml.dir}">
         <include name="**/**.xml"/>
@@ -75,12 +83,47 @@
     
     <target name="createOriginalXml">
         <echo message="Creating (i.e. just flattening, for now) the original XML from the source XML..."/>
+        <mkdir dir="${originalXml.dir}"/>
         <copy todir="${originalXml.dir}" flatten="true">
             <fileset refid="sourceXml"/>
         </copy>
     </target>
     
-   
+    <target name="createStandardXml">
+        <echo message="Creating standard XML...."/>
+        <mkdir dir="${standardXml.dir}"/>
+        <property name="app.list" value="${standardXml.dir}/app_list.txt"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
+            <jvmarg value="-Xmx1024m"/>
+            <arg value="-s:${xsl.dir}/create_app_list_master.xsl"/>
+            <arg value="-xsl:${xsl.dir}/create_app_list_master.xsl"/>
+            <arg value="basedir=${basedir}"/>
+            <arg value="outDoc=${app.list}"/>
+        </java>
+        <loadfile property="appsToBuild" srcfile="${app.list}"/>
+        <foreach list="${appsToBuild}" delimiter="${line.separator}" param="doc" target="attachApparatus"/>
+            
+        
+        
+        <!--Insert anchors-->
+        
+        <!--Expand glyphs as necessary-->
+        
+        <!--Resolve pointers-->
+    </target>
+    
+    <target name="attachApparatus">
+        <echo message="Attaching apparatus to ${doc}"/>
+        <echo message="THIS IS NOT DOING ANYTHING YET..."/>
+    </target>
+    <target name="createStandaloneXml">
+        <echo message="Creating Standalone XML from standard files..."/>
+    </target>
+    
+   <target name="createXhtml">
+       
+       
+   </target>
 
 <!--
     <target name="package">
@@ -95,7 +138,7 @@
 
 
 
-    <target name="all" depends="init, copyAuxFiles, createOriginalXml"/>
+    <target name="all" depends="init, copyAuxFiles, createOriginalXml, createStandardXml"/>
     
     
 </project>
