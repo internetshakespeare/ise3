@@ -20,6 +20,7 @@
     <property name="siteXml.dir" value="${site.dir}/xml"/>
     <property name="originalXml.dir" value="${siteXml.dir}/original"/>
     <property name="standardXml.dir" value="${siteXml.dir}/standard"/>
+    <property name="apparatus.temp.dir" value="${standardXml.dir}/apparatus_temp"/>
     <property name="standaloneXml.dir" value="${siteXml.dir}/standalone"/>
     <property name="xsl.dir" value="${basedir}/xsl"/>
     <property name="build.modules.dir" value="${basedir}/build_modules"/>
@@ -36,6 +37,17 @@
     <fileset id="originalXml" dir="${originalXml.dir}">
         <include name="**/**.xml"/>
     </fileset>
+    
+    <!--These are the files we want to move over-->
+    <fileset id="tempApparatusFiles" dir="${apparatus.temp.dir}">
+        <include name="**.xml"/>
+    </fileset>
+    
+    <fileset id="standardXml" dir="${standardXml.dir}">
+        <include name="**.xml"/>
+    </fileset>
+    
+
    
     
     <fileset id="standaloneXml" dir="${standaloneXml.dir}">
@@ -92,7 +104,23 @@
     <target name="createStandardXml">
         <echo message="Creating standard XML...."/>
         <mkdir dir="${standardXml.dir}"/>
-        <property name="app.list" value="${standardXml.dir}/app_list.txt"/>
+        <antcall target="createAnchoredXml"/>
+        
+            
+           
+        
+        <!--Insert anchors-->
+        
+        <!--Expand glyphs as necessary-->
+        
+        <!--Resolve pointers-->
+    </target>
+    
+    <target name="createAnchoredXml">
+        <echo message="First, need to add anchors to the texts..."/>
+        <echo message="Creating list of documents to which we need to add anchors..."/>
+
+        <property name="app.list" value="${apparatus.temp.dir}/app_list.txt"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
             <jvmarg value="-Xmx1024m"/>
             <arg value="-s:${xsl.dir}/create_app_list_master.xsl"/>
@@ -102,20 +130,53 @@
         </java>
         <loadfile property="appsToBuild" srcfile="${app.list}"/>
         <foreach list="${appsToBuild}" delimiter="${line.separator}" param="doc" target="attachApparatus"/>
-            
-        
-        
-        <!--Insert anchors-->
-        
-        <!--Expand glyphs as necessary-->
-        
-        <!--Resolve pointers-->
     </target>
     
     <target name="attachApparatus">
-        <echo message="Attaching apparatus to ${doc}"/>
+        
+        <propertyregex property="doc.name" input="${doc}" regexp="(.+)\|(.+)" replace="\1"/>
+        <propertyregex property="app.docs" input="${doc}" regexp="(.+)\|(.+)" replace="\2"/>
+        <echo message="Attaching apparatus to ${doc.name}"/>
+        <!--First, tokenize-->
+        <property name="source.file" value="${originalXml.dir}/${doc.name}.xml"/>
+        <property name="tokenized.file" value="${apparatus.temp.dir}/${doc.name}_tokenized.xml"/>
+        <echo message="First, tokenize text"/>
+        <xslt in="${source.file}" out="${tokenized.file}" style="xsl/LemmaMatching/xsl/tokenizeText.xsl">
+            <classpath path="${saxon}"/>
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+        </xslt>
+        <echo message="Now, attach apparatus..."/>
+        <foreach list="${app.docs}" delimiter="," param="app.name" target="matchLemmas"/>
+       <echo message="Now, untokenize the text..."/>
+        <echo message="Now, cleaning up the tokenized text so only necessary anchors remain..."/>
+        <!--<java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
+            <jvmarg value="-Xmx1024m"/>
+            <arg value="-s:${tokenized.file}"/>
+            <arg value="-xsl:xsl/lemmaMatching/xsl/cleanText.xsl"/>
+            <arg value="-o:${resultsDir}/${finalSourceXml}"/>
+            <arg value="apparatusDocPath=../${resultsDir}/${finalApparatusXml}"/>
+        </java>-->
         <echo message="THIS IS NOT DOING ANYTHING YET..."/>
+        <!--Then we will want to delete the files we no longer want-->
+        
+        <delete file="${tokenized.file}"/>
+        <delete file="${app.list}"/>
     </target>
+    
+    <target name="matchLemmas">
+        <property name="app.doc" value="${originalXml.dir}/${app.name}.xml"/>
+      <!--  <java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
+            <jvmarg value="-Xmx1024m"/>
+            <arg value="-s:${apparatusToTransform}"/>
+            <arg value="-o:${apparatus.temp.dir}/${app.doc}.xml"/>
+            <arg value="-xsl:xsl/matchLemmas.xsl"/>
+            <arg value="tokenizedXml=${tokenized.file}"/>
+            <arg value="docResultsPath=${finalSourceXml}"/>
+        </java>-->
+        <echo message="Nothing happening to ${app.doc} yet!"/>
+    </target>
+    
+    
     <target name="createStandaloneXml">
         <echo message="Creating Standalone XML from standard files..."/>
     </target>
