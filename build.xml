@@ -140,13 +140,19 @@
         <!--First, tokenize-->
         <property name="source.file" value="${originalXml.dir}/${doc.name}.xml"/>
         <property name="tokenized.file" value="${apparatus.temp.dir}/${doc.name}_tokenized.xml"/>
+        
+        
         <echo message="First, tokenize text"/>
-        <xslt in="${source.file}" out="${tokenized.file}" style="xsl/LemmaMatching/xsl/tokenizeText.xsl">
+        <xslt in="${source.file}" out="${tokenized.file}" style="${xsl.dir}/tokenizeText.xsl">
             <classpath path="${saxon}"/>
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         </xslt>
+        
+        
         <echo message="Now, attach apparatus..."/>
         <foreach list="${app.docs}" delimiter="," param="app.name" target="matchLemmas"/>
+        
+        
        <echo message="Now, untokenize the text..."/>
         <echo message="Now, cleaning up the tokenized text so only necessary anchors remain..."/>
         <!--<java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
@@ -165,14 +171,14 @@
     
     <target name="matchLemmas">
         <property name="app.doc" value="${originalXml.dir}/${app.name}.xml"/>
-      <!--  <java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
             <jvmarg value="-Xmx1024m"/>
-            <arg value="-s:${apparatusToTransform}"/>
+            <arg value="-s:${app.doc}"/>
             <arg value="-o:${apparatus.temp.dir}/${app.doc}.xml"/>
             <arg value="-xsl:xsl/matchLemmas.xsl"/>
             <arg value="tokenizedXml=${tokenized.file}"/>
             <arg value="docResultsPath=${finalSourceXml}"/>
-        </java>-->
+        </java>
         <echo message="Nothing happening to ${app.doc} yet!"/>
     </target>
     
