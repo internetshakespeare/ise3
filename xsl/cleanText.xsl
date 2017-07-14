@@ -31,7 +31,7 @@
     
     
     <xsl:template match="/">
-        <xsl:message>These app names: <xsl:value-of select="for $n in $appNames return $n"/></xsl:message>
+        <xsl:message>Adding anchors in <xsl:value-of select="//TEI/@xml:id"/></xsl:message>
         <xsl:apply-templates/>
     </xsl:template>
 

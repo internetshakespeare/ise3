@@ -11,6 +11,7 @@
 
     <import file="anttask/overridable.xml"/>
     
+    <property name="echo.separator" value="******************************************************"/>
     <property name="line.separator" value="&#x0a;"/>
     
     <property name="source.dir" value="${basedir}/svn"/>
@@ -75,19 +76,22 @@
     
     
     <target name="init">
-
+        <echo message="${echo.separator}"/>
         <echo message="Cleaning up directories from old build..."/>
+        <echo message="${echo.separator}"/>
         <delete dir="${source.dir}"/>
         <delete dir="${site.dir}"/>
         <!--We now make the site dir, but the SVN dir is made for us-->
         <mkdir dir="${site.dir}"/>
-        <echo message="Now exporting the SVN data into a data/dir"/>
+        <echo message="${echo.separator}"/>
+        <echo message="Exporting the SVN data into a data/dir"/>
         <exec executable="svn">
             <arg line="export https://revision.hcmc.uvic.ca/svn/ise3/ ${source.dir} --ignore-externals"/>
         </exec>
     </target>
     
     <target name="copyAuxFiles">
+        <echo message="${echo.separator}"/>
         <echo message="Copying over auxillary files (schema, etc)..."/>
         <copy todir="${site.schema.dir}">
            <fileset refid="schemaFiles"/>
@@ -95,6 +99,7 @@
     </target>
     
     <target name="createOriginalXml">
+        <echo message="${echo.separator}"/>
         <echo message="Creating (i.e. just flattening, for now) the original XML from the source XML..."/>
         <mkdir dir="${originalXml.dir}"/>
         <copy todir="${originalXml.dir}" flatten="true">
@@ -103,25 +108,34 @@
     </target>
     
     <target name="preprocessStandardXml">
+        <echo message="${echo.separator}"/>
         <echo message="Setting up for standarding XML generation..."/>
+        <echo message="${echo.separator}"/>
         <mkdir dir="${standardXml.temp.dir}"/>
-        <echo message="Now creating files with attached apparatus..."/>
+        <echo message="${echo.separator}"/> <echo message="${echo.separator}"/>
+        <echo message="Creating files with attached apparatus..."/>
         <antcall target="createAnchoredXml"/>
+        <echo message="${echo.separator}"/>
         <echo message="First move the original to the standard temp dir..."/>
         <copy todir="${standardXml.temp.dir}">
             <fileset refid="originalXml"/>
         </copy>
+        <echo message="${echo.separator}"/>
         <echo message="Now move the annotation, collations, and fixed texts over to the temporary directory..."/>
         <copy todir="${standardXml.temp.dir}" overwrite="true">
             <fileset refid="tempApparatusFiles"/>
             <regexpmapper from="^(.*)_final.xml" to="\1.xml"/>
         </copy>
-      <!--  <delete dir="${apparatus.temp.dir}"/>-->
+        <echo message="${echo.separator}"/>
+        <echo message="Deleting temporary directory : ${apparatus.temp.dir}"/>
+        <delete dir="${apparatus.temp.dir}"/>
     </target>
     
    
     <target name="createAnchoredXml">
-        <echo message="First, need to add anchors to the texts..."/>
+        <echo message="${echo.separator}"/>
+        <echo message="Adding anchors to the texts..."/>
+        <echo message="${echo.separator}"/>
         <echo message="Creating list of documents to which we need to add anchors..."/>
 
         <property name="app.list" value="${apparatus.temp.dir}/app_list.txt"/>
@@ -133,35 +147,40 @@
             <arg value="outDoc=${app.list}"/>
         </java>
         <loadfile property="appsToBuild" srcfile="${app.list}"/>
-        <echo message="Now attaching all apparatus..."/>
+        <echo message="${echo.separator}"/>
+        <echo message="Attaching apparatus to documents.."/>
         <foreach list="${appsToBuild}" delimiter="${line.separator}" param="doc" target="attachApparatus"/>
     </target>
     
     <target name="attachApparatus">
-        
+
         <propertyregex property="doc.name" input="${doc}" regexp="(.+)\|(.+)" replace="\1"/>
         <propertyregex property="app.docs" input="${doc}" regexp="(.+)\|(.+)" replace="\2"/>
+        <echo message="${echo.separator}"/>
         <echo message="Attaching apparatus to ${doc.name}"/>
-        <!--First, tokenize-->
+        <echo message="${echo.separator}"/>
+        
         <property name="source.file" value="${originalXml.dir}/${doc.name}.xml"/>
         <property name="tokenized.file" value="${apparatus.temp.dir}/${doc.name}_tokenized.xml"/>
         <property name="final.file" value="${apparatus.temp.dir}/${doc.name}_final.xml"/>
         
         
-        <echo message="First, tokenize text"/>
+        <!--First, tokenize-->
+        
+        <echo message="Tokenizing ${source.file} by characters..."/>
         <xslt in="${source.file}" out="${tokenized.file}" style="${xsl.dir}/tokenizeText.xsl">
             <classpath path="${saxon}"/>
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         </xslt>
         
-        
-        <echo message="Now, attach apparatus..."/>
+        <echo message="${echo.separator}"/>
+        <echo message="Linking apparatus to tokenized file..."/>
         <foreach list="${app.docs}" delimiter="," param="app.name" target="matchLemmas">
             <param name="tokenized.file" value="${tokenized.file}"/>
         </foreach>
         
-        
-        <echo message="Now, untokenize the text and input anchors where necessary..."/>
+        <echo message="${echo.separator}"/>
+        <echo message="Untokenzing the text and inputing anchors where necessary..."/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
             <jvmarg value="-Xmx1024m"/>
             <arg value="-s:${tokenized.file}"/>
@@ -175,6 +194,8 @@
     
     <target name="matchLemmas">
         <property name="app.doc" value="${originalXml.dir}/${app.name}.xml"/>
+        <echo message="${echo.separator}"/>
+        <echo message="Matching ${app.doc} to ${tokenized.file}"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
             <jvmarg value="-Xmx1024m"/>
             <arg value="-s:${app.doc}"/>
@@ -186,9 +207,14 @@
     </target>
     
     <target name="createStandardXml">
+        <echo message="${echo.separator}"/>
         <echo message="Creating standard XML...."/>
-        
+        <echo message="${echo.separator}"/>
         <mkdir dir="${standardXml.dir}"/>
+        
+        <!--XSLT to resolve pointers and add sic/corr-->
+        
+        <!--Then delete the temporary standard stuff-->
     </target>
     
     <target name="createStandaloneXml">
