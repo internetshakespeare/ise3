@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../sch/ise.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="../sch/ise.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="iseH5_FM_collations" version="5.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Collations for iseH5_FM</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <notesStmt>
+            <relatedItem target="doc:iseH5_FM"/>
+         </notesStmt>
+         <sourceDesc>
+            <listWit>
+               <witness corresp="wit:Craig-Bevington"/>
+               <witness corresp="wit:F1"/>
+               <witness corresp="wit:Capell"/>
+               <witness corresp="wit:Boswell"/>
+               <witness corresp="wit:Rowe"/>
+               <witness corresp="wit:Pope"/>
+               <witness corresp="wit:Johnson"/>
+               <witness corresp="wit:Steevens"/>
+               <witness corresp="wit:Taylor"/>
+               <witness corresp="wit:Theobald"/>
+               <witness corresp="wit:Cambridge"/>
+               <witness corresp="wit:F2"/>
+               <witness corresp="wit:F4"/>
+               <witness corresp="wit:Mason"/>
+               <witness corresp="wit:Malone"/>
+               <witness corresp="wit:F3"/>
+               <witness corresp="wit:Q1"/>
+               <witness corresp="wit:Sisson"/>
+               <witness corresp="wit:Rann"/>
+               <witness corresp="wit:Gurr"/>
+               <witness corresp="wit:Q3"/>
+               <witness corresp="wit:Knight"/>
+               <witness corresp="wit:Warburton"/>
+               <witness corresp="wit:Staunton"/>
+               <witness corresp="wit:Craik"/>
+               <witness corresp="wit:Wilson"/>
+               <witness corresp="wit:Rowe2"/>
+               <witness corresp="wit:Coleridge"/>
+               <witness corresp="wit:F5"/>
+               <witness corresp="wit:Harbage"/>
+               <witness corresp="wit:Dyce2"/>
+               <witness corresp="wit:Hanmer"/>
+               <witness corresp="wit:Dyce"/>
+               <witness corresp="wit:Humphreys"/>
+               <witness corresp="wit:Steevens2"/>
+               <witness corresp="wit:Hudson"/>
+               <witness corresp="wit:Mowat-Werstine"/>
+               <witness corresp="wit:Kittredge"/>
+               <witness corresp="wit:Oxford"/>
+               <witness corresp="wit:Anonymous"/>
+               <witness corresp="wit:RSC"/>
+               <witness corresp="wit:Bevington"/>
+               <witness corresp="wit:Evans"/>
+               <witness corresp="wit:Mitford"/>
+               <witness corresp="wit:Walter"/>
+               <witness corresp="wit:Singer"/>
+               <witness corresp="wit:Riverside"/>
+               <witness corresp="wit:Moore Smith"/>
+               <witness corresp="wit:Collier"/>
+               <witness corresp="wit:Dorius"/>
+               <witness corresp="wit:Walker"/>
+               <witness corresp="wit:Alexander"/>
+               <witness corresp="wit:McEachern"/>
+               <witness corresp="wit:Keightley"/>
+               <witness corresp="wit:Pope2"/>
+               <witness corresp="wit:Munro"/>
+               <witness corresp="wit:Delius"/>
+               <witness corresp="wit:Ritson"/>
+               <witness corresp="wit:Herford"/>
+               <witness corresp="wit:Cambridge2"/>
+               <witness corresp="wit:Wordsworth"/>
+               <witness corresp="wit:Q2"/>
+               <witness corresp="wit:Stone"/>
+               <witness corresp="wit:Proudfoot"/>
+            </listWit>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <textClass>
+            <catRef scheme="idt:iseDocumentTypes" target="idt:idtApparatus"/>
+            <catRef scheme="idt:iseWorks" target="idt:iseH5"/>
+         </t

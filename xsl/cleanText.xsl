@@ -15,17 +15,23 @@
         </xd:desc>
     </xd:doc>
     
-    <xsl:param name="apparatusDocPath"/>
-    <xsl:variable name="apparatusDoc" select="document($apparatusDocPath)"/>
+    <xsl:include href="globals.xsl"/>
     
+    <xsl:param name="appDir"/>
+    <xsl:param name="appList"/>
     
-    <xsl:variable name="fromMilestones" select="for $n in $apparatusDoc//@from return hcmc:cleanAppId($n)"/>
-    <xsl:variable name="toMilestones" select="for $n in $apparatusDoc//@to return hcmc:cleanAppId($n)"/>
+    <xsl:variable name="appNames" select="tokenize($appList,',')"/>
+    <xsl:variable name="appDocs" select="for $n in $appNames return document(concat($appDir,'/',$n,'_final.xml'))"/>
+
+    
+    <xsl:variable name="fromMilestones" select="for $n in $appDocs//@from return hcmc:cleanAppId($n)"/>
+    <xsl:variable name="toMilestones" select="for $n in $appDocs//@to return hcmc:cleanAppId($n)"/>
     <xsl:variable name="allMilestones" select="distinct-values(($fromMilestones,$toMilestones))"/>
 
     
     
     <xsl:template match="/">
+        <xsl:message>These app names: <xsl:value-of select="for $n in $appNames return $n"/></xsl:message>
         <xsl:apply-templates/>
     </xsl:template>
 

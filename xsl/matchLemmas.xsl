@@ -35,7 +35,6 @@
     <xsl:output indent="no" encoding="UTF-8"/>
     
     <xsl:param name="tokenizedXml"/>
-    <xsl:param name="docResultsPath"/>
    
    <xd:doc scope="component">
        <xd:desc>
@@ -44,6 +43,7 @@
        </xd:desc>
    </xd:doc>
     <xsl:variable name="sourceDoc" select="document($tokenizedXml)"/>
+    <xsl:variable name="sourceDocId" select="$sourceDoc//TEI/@xml:id"/>
     
     <xsl:template match="/">
         <xsl:apply-templates/>
@@ -98,7 +98,21 @@
         
         <!--Sometimes term contain descendent markup. We ignore it any text
         that is not a direct child of term.-->
-        <xsl:variable name="term" select="normalize-space(string-join($lemma/text(),''))"/>
+        
+        <xsl:variable name="lemmaText" select="normalize-space(string-join($lemma/text(),''))"/>
+        
+        <xsl:variable name="terms" as="xs:string+">
+            <xsl:choose>
+                <xsl:when test="$lemma[gap]">
+                    <xsl:value-of select="normalize-space(string-join($lemma/gap[1]/preceding-sibling::text(),''))"/>
+                    <xsl:value-of select="normalize-space(string-join($lemma/gap[last()]/following-sibling::text(),''))"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="normalize-space(string-join($lemma/text(),''))"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+   
        
         <xsl:variable name="from" select="$elem/@from"/>
         
@@ -108,27 +122,16 @@
             @to-->
         <xsl:variable name="to" select="if ($elem[@to]) then $elem/@to else $from"/>
         
-        <!--Currently multi-line terms are split by an ellipsis, so we need to split
-            the term into its halves, with the first term corresponding with the @from
-            TLN and the last term corresponding with the @toTLN-->
-        
-        <xsl:variable name="termTokens" select="tokenize(normalize-space($term),'\s*\.\s*\.\s*\.\s*')" as="xs:string+"/>
-        
-        <!--Right now, we're not handling the case of if there are three terms
-            (i.e. ellipses instead of an ellipsis) as it's not technically
-            valid for ISE2 either. Break if we find an example of this.-->
-        
-        <xsl:variable name="termCount" select="count($termTokens)"/>
+        <xsl:variable name="termCount" select="count($terms)"/>
         <xsl:if test="$termCount gt 2">
-            <xsl:message>ERROR: "<xsl:value-of select="$term"/>" (<xsl:value-of select="$from"/>-<xsl:value-of select="$to"/>) is incorrectly delimited (<xsl:value-of select="$termCount"/> tokens).</xsl:message>
-            <xsl:message terminate="yes">Aborting.</xsl:message>
+            <xsl:message>ERROR: "<xsl:value-of select="$lemmaText"/>" (<xsl:value-of select="$from"/>-<xsl:value-of select="$to"/>) is incorrectly delimited (<xsl:value-of select="$termCount"/> tokens).</xsl:message>
         </xsl:if>
         
         <!--The points variable will contain a sequence of 0 or more ids
             that correspond to the lemmas.-->
         <xsl:variable name="points" as="xs:string*">
             <!--We take each side of the term in turn-->
-            <xsl:for-each select="$termTokens">
+            <xsl:for-each select="$terms">
                 
                 <!--We need to know where we are in the term sequence-->
                 <xsl:variable name="thisPos" select="position()"/>
@@ -205,7 +208,7 @@
                                 end points (and thus $idCount = 8). If that's the case, then 
                                 warn about it-->
                             <xsl:if test="$idCount gt 2">
-                                <xsl:message>WARNING: Found <xsl:value-of select="$idCount"/> matches for "<xsl:value-of select="$termToCheck"/>" (TLN <xsl:value-of select="$tlnToCheck"/>). Returning the first match.</xsl:message>
+                                <xsl:message>Found <xsl:value-of select="$idCount"/> matches for "<xsl:value-of select="$termToCheck"/>" (TLN <xsl:value-of select="$tlnToCheck"/>). Returning the first match.</xsl:message>
                             </xsl:if>
                             
                             <!--Regardless of how many ids are returned by $idCount, return
@@ -223,14 +226,14 @@
           <!--Each term should have two points: an end and a beginning-->
             <xsl:when test="count($points) = $termCount * 2">
                 <!--The first one is the outermost left limit-->
-                <xsl:attribute name="from" select="concat($docResultsPath,'#',$points[1])"/>
+                <xsl:attribute name="from" select="concat('doc:',$sourceDocId,'#',$points[1])"/>
                 
                 <!--The second one is the outermost right limit-->
-                <xsl:attribute name="to" select="concat($docResultsPath,'#',$points[last()])"/>
+                <xsl:attribute name="to" select="concat('doc:',$sourceDocId,'#',$points[last()])"/>
             </xsl:when>
             <xsl:otherwise>
                 <!--Otherwise, throw an error-->
-                <xsl:message>ERROR: Unable to find "<xsl:value-of select="$term"/>" (TLN <xsl:value-of select="concat(substring-after($from,'tln:'),'-',substring-after($to,'tln:'))"/>)</xsl:message>
+                <xsl:message>Unable to find "<xsl:value-of select="$lemmaText"/>" (TLN <xsl:value-of select="concat(substring-after($from,'tln:'),'-',substring-after($to,'tln:'))"/>)</xsl:message>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>

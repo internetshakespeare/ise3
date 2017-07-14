@@ -20,7 +20,8 @@
     <property name="siteXml.dir" value="${site.dir}/xml"/>
     <property name="originalXml.dir" value="${siteXml.dir}/original"/>
     <property name="standardXml.dir" value="${siteXml.dir}/standard"/>
-    <property name="apparatus.temp.dir" value="${standardXml.dir}/apparatus_temp"/>
+    <property name="standardXml.temp.dir" value="${siteXml.dir}/standard_temp"/>
+    <property name="apparatus.temp.dir" value="${standardXml.temp.dir}/apparatus_temp"/>
     <property name="standaloneXml.dir" value="${siteXml.dir}/standalone"/>
     <property name="xsl.dir" value="${basedir}/xsl"/>
     <property name="build.modules.dir" value="${basedir}/build_modules"/>
@@ -40,7 +41,7 @@
     
     <!--These are the files we want to move over-->
     <fileset id="tempApparatusFiles" dir="${apparatus.temp.dir}">
-        <include name="**.xml"/>
+        <include name="**_final.xml"/>
     </fileset>
     
     <fileset id="standardXml" dir="${standardXml.dir}">
@@ -101,21 +102,24 @@
         </copy>
     </target>
     
-    <target name="createStandardXml">
-        <echo message="Creating standard XML...."/>
-        <mkdir dir="${standardXml.dir}"/>
+    <target name="preprocessStandardXml">
+        <echo message="Setting up for standarding XML generation..."/>
+        <mkdir dir="${standardXml.temp.dir}"/>
+        <echo message="Now creating files with attached apparatus..."/>
         <antcall target="createAnchoredXml"/>
-        
-            
-           
-        
-        <!--Insert anchors-->
-        
-        <!--Expand glyphs as necessary-->
-        
-        <!--Resolve pointers-->
+        <echo message="First move the original to the standard temp dir..."/>
+        <copy todir="${standardXml.temp.dir}">
+            <fileset refid="originalXml"/>
+        </copy>
+        <echo message="Now move the annotation, collations, and fixed texts over to the temporary directory..."/>
+        <copy todir="${standardXml.temp.dir}" overwrite="true">
+            <fileset refid="tempApparatusFiles"/>
+            <regexpmapper from="^(.*)_final.xml" to="\1.xml"/>
+        </copy>
+      <!--  <delete dir="${apparatus.temp.dir}"/>-->
     </target>
     
+   
     <target name="createAnchoredXml">
         <echo message="First, need to add anchors to the texts..."/>
         <echo message="Creating list of documents to which we need to add anchors..."/>
@@ -129,6 +133,7 @@
             <arg value="outDoc=${app.list}"/>
         </java>
         <loadfile property="appsToBuild" srcfile="${app.list}"/>
+        <echo message="Now attaching all apparatus..."/>
         <foreach list="${appsToBuild}" delimiter="${line.separator}" param="doc" target="attachApparatus"/>
     </target>
     
@@ -140,6 +145,7 @@
         <!--First, tokenize-->
         <property name="source.file" value="${originalXml.dir}/${doc.name}.xml"/>
         <property name="tokenized.file" value="${apparatus.temp.dir}/${doc.name}_tokenized.xml"/>
+        <property name="final.file" value="${apparatus.temp.dir}/${doc.name}_final.xml"/>
         
         
         <echo message="First, tokenize text"/>
@@ -150,23 +156,21 @@
         
         
         <echo message="Now, attach apparatus..."/>
-        <foreach list="${app.docs}" delimiter="," param="app.name" target="matchLemmas"/>
+        <foreach list="${app.docs}" delimiter="," param="app.name" target="matchLemmas">
+            <param name="tokenized.file" value="${tokenized.file}"/>
+        </foreach>
         
         
-       <echo message="Now, untokenize the text..."/>
-        <echo message="Now, cleaning up the tokenized text so only necessary anchors remain..."/>
-        <!--<java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
+        <echo message="Now, untokenize the text and input anchors where necessary..."/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
             <jvmarg value="-Xmx1024m"/>
             <arg value="-s:${tokenized.file}"/>
-            <arg value="-xsl:xsl/lemmaMatching/xsl/cleanText.xsl"/>
-            <arg value="-o:${resultsDir}/${finalSourceXml}"/>
-            <arg value="apparatusDocPath=../${resultsDir}/${finalApparatusXml}"/>
-        </java>-->
-        <echo message="THIS IS NOT DOING ANYTHING YET..."/>
-        <!--Then we will want to delete the files we no longer want-->
-        
-        <delete file="${tokenized.file}"/>
-        <delete file="${app.list}"/>
+            <arg value="-xsl:${xsl.dir}/cleanText.xsl"/>
+            <arg value="-o:${final.file}"/>
+            <arg value="basedir=${basedir}"/>
+            <arg value="appDir=${apparatus.temp.dir}"/>
+            <arg value="appList=${app.docs}"/>
+        </java>
     </target>
     
     <target name="matchLemmas">
@@ -174,14 +178,18 @@
         <java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
             <jvmarg value="-Xmx1024m"/>
             <arg value="-s:${app.doc}"/>
-            <arg value="-o:${apparatus.temp.dir}/${app.doc}.xml"/>
+            <arg value="-o:${apparatus.temp.dir}/${app.name}_final.xml"/>
             <arg value="-xsl:xsl/matchLemmas.xsl"/>
+            <arg value="basedir=${basedir}"/>
             <arg value="tokenizedXml=${tokenized.file}"/>
-            <arg value="docResultsPath=${finalSourceXml}"/>
         </java>
-        <echo message="Nothing happening to ${app.doc} yet!"/>
     </target>
     
+    <target name="createStandardXml">
+        <echo message="Creating standard XML...."/>
+        
+        <mkdir dir="${standardXml.dir}"/>
+    </target>
     
     <target name="createStandaloneXml">
         <echo message="Creating Standalone XML from standard files..."/>
@@ -205,7 +213,7 @@
 
 
 
-    <target name="all" depends="init, copyAuxFiles, createOriginalXml, createStandardXml"/>
+    <target name="all" depends="init, copyAuxFiles, createOriginalXml, preprocessStandardXml, createStandardXml"/>
     
     
 </project>

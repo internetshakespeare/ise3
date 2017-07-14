@@ -11,9 +11,9 @@
     
     
     <!--Properties for running test text-->
-    <property name="mlaId" value="JC"/>
-    <property name="text" value="M"/>
-    <property name="app" value="annotations"/>
+    <property name="mlaId" value="H5"/>
+    <property name="text" value="FM"/>
+    <property name="app" value="collations"/>
    
     <property name="svnXmlDir" value="../../../svn/data/texts/${mlaId}"/>
 
@@ -37,8 +37,8 @@
     <property name="sourceApparatusXml" value="${appBase}.xml"/>
     <property name="finalApparatusXml" value="${appBase}_final.xml"/>
     
-    <property name="sourceToTransform" value="${dirToUse}/${sourceXml}"/>
-    <property name="apparatusToTransform" value="${dirToUse}/${sourceApparatusXml}"/>
+    <property name="sourceToTransform" value="${dirToUse}/main/${sourceXml}"/>
+    <property name="apparatusToTransform" value="${dirToUse}/app/${sourceApparatusXml}"/>
     
   <target name="init">
       <echo message="Cleaning up previous run..."/>
