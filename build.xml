@@ -28,6 +28,8 @@
     <property name="build.modules.dir" value="${basedir}/build_modules"/>
     <property name="lib.dir" value="${basedir}/lib"/>
     <property name="saxon" value="${lib.dir}/saxon9he.jar"/>
+    <property name="tei.dir" value="${basedir}/tei-stylesheets"/>
+    <property name="tei.zip" value="${basedir}/tei-stylesheets.zip"/>
     
     <property name="source.schema.dir" value="${source.dir}/sch"/>
     <property name="site.schema.dir" value="${site.dir}/sch"/>
@@ -49,8 +51,9 @@
         <include name="**.xml"/>
     </fileset>
     
-
-   
+    <fileset id="standardXml.temp" dir="${standardXml.temp.dir}">
+        <include name="**.xml"/>
+    </fileset>
     
     <fileset id="standaloneXml" dir="${standaloneXml.dir}">
         <include name="**/**.xml"/>
@@ -88,6 +91,11 @@
         <exec executable="svn">
             <arg line="export https://revision.hcmc.uvic.ca/svn/ise3/ ${source.dir} --ignore-externals"/>
         </exec>
+        <echo message="Importing the TEI stylesheets so we can create temporary documentation..."/>
+        <get src="https://github.com/TEIC/Stylesheets/archive/dev.zip" dest="${tei.zip}"/>
+        <unzip src="${tei.zip}" dest="${tei.dir}">
+            <cutdirsmapper dirs="1"/>
+        </unzip>
     </target>
     
     <target name="copyAuxFiles">
@@ -114,7 +122,7 @@
         <mkdir dir="${standardXml.temp.dir}"/>
         <echo message="${echo.separator}"/> <echo message="${echo.separator}"/>
         <echo message="Creating files with attached apparatus..."/>
-        <antcall target="createAnchoredXml"/>
+       <!-- <antcall target="createAnchoredXml"/>-->
         <echo message="${echo.separator}"/>
         <echo message="First move the original to the standard temp dir..."/>
         <copy todir="${standardXml.temp.dir}">
@@ -212,6 +220,10 @@
         <echo message="${echo.separator}"/>
         <mkdir dir="${standardXml.dir}"/>
         
+        <!--For now, just copy everything...-->
+        <copy todir="${standardXml.dir}">
+            <fileset refid="standardXml.temp"/>
+        </copy>
         <!--XSLT to resolve pointers and add sic/corr-->
         
         <!--Then delete the temporary standard stuff-->
@@ -219,27 +231,42 @@
     
     <target name="createStandaloneXml">
         <echo message="Creating Standalone XML from standard files..."/>
+        <echo message="THIS IS JUST COPYING THE XML FOR NOW..."/>
+        <mkdir dir="${standaloneXml.dir}"/>
+        <copy todir="${standaloneXml.dir}">
+            <fileset refid="standardXml"/>
+        </copy>
     </target>
     
    <target name="createXhtml">
-       
-       
+       <property name="documentation.list" value="${site.dir}/documentation_list.txt"/>
+       <java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
+           <jvmarg value="-Xmx1024m"/>
+           <arg value="-s:${xsl.dir}/create_documentation_list_master.xsl"/>
+           <arg value="-xsl:${xsl.dir}/create_documentation_list_master.xsl"/>
+           <arg value="basedir=${basedir}"/>
+           <arg value="outDoc=${documentation.list}"/>
+       </java>
+       <loadfile property="documentationToBuild" srcfile="${documentation.list}"/>
+       <foreach param="doc" target="transformWithTei" list="${documentationToBuild}" delimiter="${line.separator}"/>
+       <delete file="${documentation.list}"/>
    </target>
+    
+    <target name="transformWithTei">
+        <echo message="${echo.separator}"/>
+        <echo message="Now creating temporary documentation with TEI stylesheets..."/>
+        <echo message="Building ${doc}"/>
+        <property name="docToBuild" value="${standaloneXml.dir}/${doc}.xml"/>
+        <property name="outputDoc" value="${site.dir}/${doc}.html"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
+            <jvmarg value="-Xmx1024m"/>
+            <arg value="-s:${docToBuild}"/>
+            <arg value="-o:${outputDoc}"/>
+            <arg value="-xsl:${tei.dir}/html5/html5.xsl"/>
+        </java>
+    </target>
 
-<!--
-    <target name="package">
-        <overridableProperties using="exist-app.properties"/>
-        <zip destfile="build/${abbrev}-${version}.xar">
-            <fileset dir="build/expath-pkg"/>
-            <zipfileset dir="build/data" prefix="content"/>
-            <zipfileset dir="web" prefix="content"/>
-        </zip>
-    </target>-->
-
-
-
-
-    <target name="all" depends="init, copyAuxFiles, createOriginalXml, preprocessStandardXml, createStandardXml"/>
+    <target name="all" depends="init, copyAuxFiles, createOriginalXml, preprocessStandardXml, createStandardXml, createStandaloneXml, createXhtml"/>
     
     
 </project>
