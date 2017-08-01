@@ -146,7 +146,7 @@
                 <xsl:variable name="tlnToCheck" select="substring-after(if ($thisPos=1) then $from else $to,'tln:')"/>
                 
                 <!--The line break element that corresponds with this TLN element-->
-                <xsl:variable name="thisTln" select="$sourceDoc//lb[@type='tln'][@n=$tlnToCheck]"/>
+                <xsl:variable name="thisTln" select="$sourceDoc//lb[@type = 'tln' or @subtype='tln'][@n=$tlnToCheck]"/>
                 
                 <!--When there is a lb element that corresponds with this
                     TLN, continue. Otherwise, report the error-->

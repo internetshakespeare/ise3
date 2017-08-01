@@ -26,7 +26,7 @@
     </xsl:template>
     
     <xsl:template match="c" mode="generateIds">
-        <xsl:variable name="precedingTln" select="preceding::lb[@type='tln'][1]"/>
+        <xsl:variable name="precedingTln" select="preceding::lb[@type = 'tln' or @subtype='tln'][1]"/>
         <xsl:copy>
             <xsl:attribute name="xml:id" select="concat(generate-id(.),'_',$precedingTln/@n)"/>
             <xsl:apply-templates mode="#current"/>

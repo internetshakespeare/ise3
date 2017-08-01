@@ -250,6 +250,12 @@
        <loadfile property="documentationToBuild" srcfile="${documentation.list}"/>
        <foreach param="doc" target="transformWithTei" list="${documentationToBuild}" delimiter="${line.separator}"/>
        <delete file="${documentation.list}"/>
+       <java classname="net.sf.saxon.Transform" classpath="${saxon}" fork="true">
+           <jvmarg value="-Xmx1024m"/>
+           <arg value="-s:${xsl.dir}/create_proofing_xhtml.xsl"/>
+           <arg value="-xsl:${xsl.dir}/create_proofing_xhtml.xsl"/>
+           <arg value="basedir=${basedir}"/>
+       </java>
    </target>
     
     <target name="transformWithTei">
