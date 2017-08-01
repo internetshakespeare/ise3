@@ -232,6 +232,8 @@
             <xsl:otherwise>
                 <!--Otherwise, throw an error-->
                 <xsl:message>Unable to find "<xsl:value-of select="$lemmaText"/>" (TLN <xsl:value-of select="concat(substring-after($from,'tln:'),'-',substring-after($to,'tln:'))"/>)</xsl:message>
+                <xsl:attribute name="from" select="$from"/>
+                <xsl:attribute name="to" select="$to"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>

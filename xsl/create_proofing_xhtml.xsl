@@ -28,6 +28,8 @@
   
     <xsl:key name="anchor-to-notes" match="note" use="substring-after(span/@to,'#')"/>
     <xsl:key name="anchor-to-coll" match="app" use="substring-after(@to,'#')"/>
+    <xsl:key name="tln-to-notes" match="note" use="substring-after(span/@to,'tln:')"/>
+    <xsl:key name="tln-to-colls" match="app" use="substring-after(@to,'tln:')"/>
   <xsl:variable name="docsToBuild" select="$standaloneDocs[//catRef[starts-with(@target,'idt:idtPrimary')]]"/>
    <xsl:variable name="taxonomies" select="$standaloneDocs[//TEI/@xml:id='taxonomies']"/>
     
@@ -38,7 +40,7 @@
          <xsl:message>Processing <xsl:value-of select="$thisId"/></xsl:message>
          <xsl:variable name="apps" select="$standaloneDocs[//relatedItem[ends-with(@target,$thisId)]]"/>
          <xsl:variable name="notes">
-             <xsl:for-each select="$standaloneDocs//div[@type='annotations']/note">
+             <xsl:for-each select="$apps//div[@type='annotations']/note">
                  <xsl:copy>
                      <xsl:attribute name="xml:id" select="generate-id()"/>
                      <xsl:copy-of select="@*|node()"/>
@@ -46,7 +48,7 @@
              </xsl:for-each>
          </xsl:variable>
          <xsl:variable name="colls">
-             <xsl:for-each select="$standaloneDocs//app">
+             <xsl:for-each select="$apps//app">
                  <xsl:copy>
                      <xsl:attribute name="xml:id" select="generate-id()"/>
                      <xsl:copy-of select="@*|node()"/>
@@ -254,6 +256,11 @@
             cursor: pointer;
           }
           
+          span.anchor.error {
+          color: red;
+          cursor: pointer;
+          }
+          
           div.stage{
             font-style: italic;
             margin: 1em 0;
@@ -446,11 +453,15 @@
           }
 
           
-            function showRef(ref){
+            function showRef(ref, status){
             var infoDiv=document.getElementById('refPopup');
                  if (infoDiv){
                     infoDiv.remove();
                  }
+            var headerElem = document.createElement('h2');
+            if (status == 'error'){
+                headerElem.innerHtml='UNMATCHED LEMMA';
+             }
             var refId = ref.id;
             var thisRef = document.getElementById(refId);
             var tempElem = document.createElement('p');
@@ -460,6 +471,7 @@
             var popup = document.createElement('div');
             popup.setAttribute ('id', 'refPopup');
             popup.setAttribute('style','display:none;');
+            popup.appendChild(headerElem);
             popup.appendChild(tempElem);
             var popupCloser = document.createElement('div');
             popupCloser.setAttribute('class','popupCloser');
@@ -549,9 +561,12 @@
  </xsl:template>
    
    <xsl:template match="note[@xml:id]/*[not(self::span)] | app/*" mode="app">
-       <div class="{local-name()}"><em><xsl:value-of select="local-name()"/></em>: <xsl:apply-templates mode="#current"/></div>
+       <div class="{local-name()}"><em><xsl:value-of select="local-name()"/></em> <xsl:if test="@resp or @source">(<xsl:apply-templates select="@resp,@source" mode="#current"/>)</xsl:if>: <xsl:apply-templates mode="#current"/></div>
    </xsl:template>
    
+   <xsl:template match="@resp|@source">
+       <xsl:value-of select="local-name()"/>: <xsl:value-of select="."/><xsl:text> </xsl:text>
+   </xsl:template>
     
   
   <xsl:template match="front | body | back | docTitle | div | sp | l | stage">
@@ -593,8 +608,22 @@
     <span class="lb"><xsl:copy-of select="hcmc:processAtts(.)"/></span>
   </xsl:template>
   
-  <xsl:template match="lb[@type='tln']">
-    <span class="tln{if (@n mod 5 = 0) then ' showing' else ''}"><xsl:value-of select="@n"/></span>
+  <xsl:template match="lb[@type='tln' or @subtype='tln']">
+    <xsl:param name="notes" tunnel="yes"/>
+    <xsl:param name="colls" tunnel="yes"/>
+    <xsl:variable name="thisN" select="@n"/>
+    <span class="tln showing"><xsl:value-of select="@n"/></span>
+    <xsl:variable name="errorNotes" select="$notes//key('tln-to-notes',$thisN)"/>
+    <xsl:variable name="errorColls" select="$colls//key('tln-to-colls',$thisN)"/>
+      <xsl:variable name="errorCount" select="count($errorNotes) + count($errorColls)"/>
+    <xsl:if test="$errorCount gt 0">
+        <xsl:message>TLN <xsl:value-of select="$thisN"/> has <xsl:value-of select="$errorCount"/> error<xsl:if test="$errorCount gt 1">s</xsl:if>.</xsl:message>
+        <xsl:for-each select="($errorNotes,$errorColls)">
+            <span class="anchor error"><a onclick="javascript:showRef({@xml:id},'error')">X</a></span>
+        </xsl:for-each>
+        
+    </xsl:if>
+    
   </xsl:template>
   
   <xsl:template match="g[@ref]">
@@ -624,14 +653,14 @@
             <xsl:variable name="thisNote" select="."/>
             <xsl:variable name="thisNoteId" select="$thisNote/@xml:id"/>
             <xsl:variable name="thisNoteNum" select="position()"/>
-            <span class="anchor"><a onclick="javascript:showRef({$thisNoteId})">○</a></span>
+            <span class="anchor"><a onclick="javascript:showRef({$thisNoteId}, 'found')">○</a></span>
         </xsl:for-each>
         
         <xsl:for-each select="$theseColls">
             <xsl:variable name="thisColl" select="."/>
             <xsl:variable name="thisCollId" select="$thisColl/@xml:id"/>
             <xsl:variable name="thisCollNum" select="position()"/>
-            <span class="anchor"><a onclick="javascript:showRef({$thisCollId})">†</a></span>
+            <span class="anchor"><a onclick="javascript:showRef({$thisCollId}, 'found')">†</a></span>
         </xsl:for-each>
         
     </xsl:template>
