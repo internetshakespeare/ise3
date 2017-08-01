@@ -65,7 +65,7 @@
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
-    
+
     <xsl:template match="app" name="matchApp">
         <xsl:copy>
             <xsl:copy-of select="hcmc:getCharId(.,lem)"/>
@@ -103,10 +103,11 @@
         
         <xsl:variable name="terms" as="xs:string+">
             <xsl:choose>
-                <xsl:when test="$lemma[gap]">
-                    <xsl:value-of select="normalize-space(string-join($lemma/gap[1]/preceding-sibling::text(),''))"/>
-                    <xsl:value-of select="normalize-space(string-join($lemma/gap[last()]/following-sibling::text(),''))"/>
+                <xsl:when test="$lemma[gap] or $lemma[lb]">
+                    <xsl:value-of select="normalize-space($lemma/text()[1])"/>
+                    <xsl:value-of select="normalize-space($lemma/text()[last()])"/>
                 </xsl:when>
+                
                 <xsl:otherwise>
                     <xsl:value-of select="normalize-space(string-join($lemma/text(),''))"/>
                 </xsl:otherwise>
@@ -123,9 +124,6 @@
         <xsl:variable name="to" select="if ($elem[@to]) then $elem/@to else $from"/>
         
         <xsl:variable name="termCount" select="count($terms)"/>
-        <xsl:if test="$termCount gt 2">
-            <xsl:message>ERROR: "<xsl:value-of select="$lemmaText"/>" (<xsl:value-of select="$from"/>-<xsl:value-of select="$to"/>) is incorrectly delimited (<xsl:value-of select="$termCount"/> tokens).</xsl:message>
-        </xsl:if>
         
         <!--The points variable will contain a sequence of 0 or more ids
             that correspond to the lemmas.-->
