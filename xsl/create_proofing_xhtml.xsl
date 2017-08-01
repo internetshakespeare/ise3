@@ -74,7 +74,7 @@
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
       <head>
         <meta charset="UTF-8"/>
-        <title><xsl:value-of select="TEI/teiHeader/fileDesc/titleStmt/title"/></title>
+        <title><xsl:value-of select="TEI/teiHeader/fileDesc/titleStmt/title"/> (PROOFING)</title>
         <style type="text/css">
           
           html, body{
