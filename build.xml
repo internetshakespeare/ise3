@@ -254,6 +254,7 @@
            <jvmarg value="-Xmx1024m"/>
            <arg value="-s:${xsl.dir}/create_proofing_xhtml.xsl"/>
            <arg value="-xsl:${xsl.dir}/create_proofing_xhtml.xsl"/>
+           <arg value="--suppressXsltNamespaceCheck:on"/>
            <arg value="basedir=${basedir}"/>
        </java>
    </target>

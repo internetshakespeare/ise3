@@ -556,6 +556,18 @@
     
  <xsl:template match="note[@xml:id] | app[@xml:id]" mode="app">
      <div class="{local-name()}" id="{@xml:id}">
+       <xsl:variable name="from" select="if (self::note) then span/@from else @from"/>
+       <xsl:variable name="to" select="if (self::note) then span/@to else @to"/>
+       <h3>
+       <xsl:choose>
+         <xsl:when test="starts-with($to,'tln:')">
+           <h3>ERROR ON TLN <xsl:value-of select="substring-after($from,'tln:')"/><xsl:if test="$from ne $to">-<xsl:value-of select="substring-after($to,'tln:')"/></xsl:if></h3>
+         </xsl:when>
+         <xsl:otherwise>
+           <xsl:value-of select="if (self::note) then 'Annotation' else 'Collation'"/>
+         </xsl:otherwise>
+       </xsl:choose>
+       </h3>
          <xsl:apply-templates mode="#current"/>
      </div>
  </xsl:template>
@@ -564,9 +576,17 @@
        <div class="{local-name()}"><em><xsl:value-of select="local-name()"/></em> <xsl:if test="@resp or @source">(<xsl:apply-templates select="@resp,@source" mode="#current"/>)</xsl:if>: <xsl:apply-templates mode="#current"/></div>
    </xsl:template>
    
-   <xsl:template match="@resp|@source">
+   <xsl:template match="@resp|@source" mode="app">
        <xsl:value-of select="local-name()"/>: <xsl:value-of select="."/><xsl:text> </xsl:text>
    </xsl:template>
+  
+  <xsl:template match="hi[@rendition='italic']" mode="app">
+    <span style="font-style:italic;"><xsl:apply-templates mode="#current"/></span>
+  </xsl:template>
+  
+  <xsl:template match="note[ancestor::app]" mode="app">
+    <xsl:text> [</xsl:text><xsl:apply-templates mode="#current"/>]
+  </xsl:template>
     
   
   <xsl:template match="front | body | back | docTitle | div | sp | l | stage">
