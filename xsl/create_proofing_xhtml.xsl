@@ -587,6 +587,18 @@
   <xsl:template match="note[ancestor::app]" mode="app">
     <xsl:text> [</xsl:text><xsl:apply-templates mode="#current"/>]
   </xsl:template>
+  
+  <xsl:template match="gap" mode="app">
+    <xsl:text> . . . </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="lb" mode="app">
+    <xsl:text> / </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="lem/text() | term/text()">
+    <xsl:value-of select="normalize-space(.)"/>
+  </xsl:template>
     
   
   <xsl:template match="front | body | back | docTitle | div | sp | l | stage">
@@ -637,7 +649,7 @@
     <xsl:variable name="errorColls" select="$colls//key('tln-to-colls',$thisN)"/>
       <xsl:variable name="errorCount" select="count($errorNotes) + count($errorColls)"/>
     <xsl:if test="$errorCount gt 0">
-        <xsl:message>TLN <xsl:value-of select="$thisN"/> has <xsl:value-of select="$errorCount"/> error<xsl:if test="$errorCount gt 1">s</xsl:if>.</xsl:message>
+        <xsl:message>TLN <xsl:value-of select="$thisN"/> has <xsl:value-of select="$errorCount"/> error<xsl:if test="$errorCount gt 1">s</xsl:if></xsl:message>
         <xsl:for-each select="($errorNotes,$errorColls)">
             <span class="anchor error"><a onclick="javascript:showRef({@xml:id},'error')">X</a></span>
         </xsl:for-each>
