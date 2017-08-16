@@ -489,13 +489,48 @@
             popup.removeAttribute('style');
             popup.setAttribute('style','display:block;');
             }
+            
+             function highlightErrors(){
+               var button = document.getElementById('showErrorsButton');
+               var errors = document.getElementsByClassName('error');
+               var buttonClass = button.className;
+               var buttonText = document.getElementById('buttonText');
+               if (buttonClass == 'clicked'){
+                  for (var j=0; j&lt;errors.length;j++){
+                     errors[j].removeAttribute('style','');
+                  }
+                  button.className = '';
+                  buttonText.innerText = 'Highlight Errors';
+               }
+               else {
+                  for (var i=0; i&lt;errors.length; i++){
+                     errors[i].setAttribute('style','background: yellow');
+                  }
+                  button.className = 'clicked';
+                  buttonText.innerText = 'Unhighlight Errors';
+               }
+            }
+            
+            function countErrors(){
+               var errorCountEl = document.getElementById('errorCount');
+               var errors = document.getElementsByClassName('error');
+               if (errors.length == 0){
+                  button = document.getElementById("showErrorsButton");
+                  button.innerText = "No Errors Found!";
+                  button.removeAttribute('onclick','');
+               }
+               else{
+                   errorCountEl.innerText = ' ('+ errors.length + ')';
+               }
+            }
           
 </xsl:text>
         </script>
       </head>
-      <body>
+      <body onload="javascript:countErrors()">
         <xsl:variable name="glyphsCount" select="count(//g)"/>
         <div class="meta">
+          <button id="showErrorsButton" onclick="javascript:highlightErrors()"><span id="buttonText">Highlight Errors</span><span id="errorCount"/></button>     
           <xsl:if test="$glyphsCount gt 0">
             <form>
               <p style="text-indent: -2em; margin-left: 2em;"><input type="checkbox"
